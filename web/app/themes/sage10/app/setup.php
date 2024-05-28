@@ -125,14 +125,25 @@ add_action('widgets_init', function () {
 });
 
 /**
- * Clean WP Head.
+ * Clean WP Head
  * 
- * @link https://developer.wordpress.org/reference/functions/wp_head/
+ * This function removes various unnecessary items from the WP head section.
+ * For more information, see: https://developer.wordpress.org/reference/functions/wp_head/
  */
-remove_action('wp_head', 'wp_generator'); // Remove WordPress version from head
-remove_action('wp_head', 'rsd_link'); // Remove RSD link from head
-remove_action('wp_head', 'wlwmanifest_link'); // Remove WLW manifest link from head
-remove_action('wp_head', 'wp_shortlink_wp_head'); // Remove shortlink from head
-remove_action('wp_head', 'rest_output_link_wp_head', 10); // Remove REST API link from head
-remove_action('wp_head', 'wp_oembed_add_discovery_links'); // Remove oEmbed discovery links
-remove_action('template_redirect', 'rest_output_link_header', 11); // Remove REST API link from HTTP headers
+add_action('init', function () {
+    remove_action('wp_head', 'wp_generator'); // Remove WordPress version from head
+    remove_action('wp_head', 'rsd_link'); // Remove RSD link from head
+    remove_action('wp_head', 'wlwmanifest_link'); // Remove WLW manifest link from head
+    remove_action('wp_head', 'wp_shortlink_wp_head'); // Remove shortlink from head
+    remove_action('wp_head', 'rest_output_link_wp_head', 10); // Remove REST API link from head
+    remove_action('wp_head', 'wp_oembed_add_discovery_links'); // Remove oEmbed discovery links
+});
+
+/**
+ * Remove REST API link from HTTP headers
+ * 
+ * Removing the REST API link from HTTP headers improves security.
+ */
+add_action('template_redirect', function () {
+    remove_action('template_redirect', 'rest_output_link_header', 11);
+});
