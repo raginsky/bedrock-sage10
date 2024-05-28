@@ -63,3 +63,17 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+
+/*
+|--------------------------------------------------------------------------
+| Disable Gutenberg Editor
+|--------------------------------------------------------------------------
+|
+| In order to continue with ACF based page builder, we need to disable
+| the Gutenberg editor. This will allow us to continue using the
+| classic editor.
+|
+*/
+
+add_filter('use_block_editor_for_post', '__return_false', 10);
