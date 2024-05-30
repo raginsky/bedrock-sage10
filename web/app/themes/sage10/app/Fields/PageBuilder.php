@@ -11,7 +11,7 @@ class PageBuilder
         $builder = new FieldsBuilder('builder');
 
         $builder
-            ->setLocation('page_template', '==', 'template-custom.blade.php')
+            ->setLocation('page_template', '==', 'template-flex-content.blade.php')
             ->addTab('builder', ['placement' => 'left'])
             ->addFlexibleContent('components', ['button_label' => 'Add Component'])
             ->endFlexibleContent();
