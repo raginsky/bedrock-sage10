@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Roots\Acorn\Sage\SageServiceProvider;
-use App\Fields\PageBuilder;
+use App\Fields\FlexContent;
 
 class ThemeServiceProvider extends SageServiceProvider
 {
@@ -27,7 +27,7 @@ class ThemeServiceProvider extends SageServiceProvider
         parent::boot();
 
         add_action('acf/init', function () {
-            acf_add_local_field_group(PageBuilder::getFields()->build());
+            acf_add_local_field_group(FlexContent::getFields()->build());
         });
     }
 }
