@@ -3,6 +3,7 @@
 namespace App\Fields;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use App\Fields\Components\Hero;
 
 class FlexContent
 {
@@ -21,6 +22,7 @@ class FlexContent
             ->addTab( 'content' )
             ->addFlexibleContent( 'flex_content', [ 'label' => '', 'button_label' => 'Add Content to Page' ] )
             ->setInstructions( '<b>Click "Add Content to Page" button to see available section layouts options you could add to the page</b>' )
+            ->addLayout(Hero::getFields()) 
             ->endFlexibleContent();
 
         return $flex_content;
