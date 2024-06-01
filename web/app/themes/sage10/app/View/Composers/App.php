@@ -24,9 +24,6 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
-            'layout' => $this->layout(),
-            'bodyClasses' => $this->bodyClasses(),
-            
         ];
     }
 
@@ -38,36 +35,5 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
-    }
-
-    /**
-     * Returns the layout name.
-     * 
-     * @return string
-     */
-
-    public function layout() 
-    {
-        return preg_replace( "(_)", '-', get_row_layout() );
-    }
-
-    /**
-     * Returns the mobile align class.
-     * 
-     * @return string
-     */
-
-    public function mobileAlign() {
-        $mobile_align = get_field( 'mobile_align' );
-
-        if ( $mobile_align ) {
-            return ' acfm-mobile-align';
-        }
-
-        return '';
-    }
-
-    public function bodyClasses() {
-        return self::mobileAlign();
     }
 }

@@ -4,6 +4,6 @@
     $rows = get_field('flex_content');
   @endphp
   @layouts('flex_content')
-  @include ('acf.layouts.'. $layout)
+  @include ('acf.layouts.'. get_row_layout())
   @endlayouts
 </div>

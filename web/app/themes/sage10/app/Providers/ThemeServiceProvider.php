@@ -27,7 +27,7 @@ class ThemeServiceProvider extends SageServiceProvider
     {
         parent::boot();
 
-        $flexContent = include get_template_directory() . '/app/Fields/Layouts/FlexContent.php';
+        $flexContent = include get_template_directory() . '/app/Fields/FlexContent.php';
         acf_add_local_field_group($flexContent->build());
     }
 }
