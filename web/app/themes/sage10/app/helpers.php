@@ -12,3 +12,10 @@ if (!function_exists('get_field_partial')) {
         return include get_template_directory() . "/app/Fields/{$partial}.php";
     }
 }
+
+if (!function_exists('layout')) {
+    function layout()
+    {
+        return preg_replace('/_/', '-', get_row_layout());
+    }
+}
