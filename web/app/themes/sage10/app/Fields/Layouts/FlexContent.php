@@ -18,6 +18,7 @@ $flex_content
     ->addFlexibleContent( 'flex_content', [ 'label' => '', 'button_label' => 'Add Content to Page' ] )
     ->setInstructions( '<b>Click "Add Content to Page" button to see available section layouts options you could add to the page</b>' )
 	->addLayout( get_field_partial( 'layouts.hero' ), [ 'max' => 1 ] )
+	->addLayout( get_field_partial( 'layouts.section' ) )
     ->endFlexibleContent();
 
 return $flex_content;

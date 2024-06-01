@@ -36,4 +36,22 @@ class App extends Composer
     {
         return get_bloginfo('name', 'display');
     }
+
+    public function layout() {
+        return preg_replace( "(_)", '-', get_row_layout() );
+    }
+
+    public function mobileAlign() {
+        $mobile_align = get_field( 'mobile_align' );
+
+        if ( $mobile_align ) {
+            return ' acfm-mobile-align';
+        }
+
+        return '';
+    }
+
+    public function bodyClasses() {
+        return  self::mobileAlign();
+    }
 }
