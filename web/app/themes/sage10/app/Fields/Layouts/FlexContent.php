@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Fields\Layouts;
+namespace App\Fields;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
@@ -17,7 +17,7 @@ $flex_content
     ->addTab( 'content' )
     ->addFlexibleContent( 'flex_content', [ 'label' => '', 'button_label' => 'Add Content to Page' ] )
     ->setInstructions( '<b>Click "Add Content to Page" button to see available section layouts options you could add to the page</b>' )
-    ->addLayout(get_field_partial('components.hero'))
+	->addLayout( get_field_partial( 'layouts.hero' ), [ 'max' => 1 ] )
     ->endFlexibleContent();
 
 return $flex_content;
