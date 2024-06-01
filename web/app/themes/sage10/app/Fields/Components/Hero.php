@@ -3,17 +3,11 @@
 namespace App\Fields\Components;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use function App\Helpers\get_field_partial;
 
-class Hero
-{
-    public static function getFields()
-    {
-        $hero = new FieldsBuilder('hero');
+$hero = new FieldsBuilder('hero');
 
-        $hero
-            ->addText('hero_title', ['label' => 'Hero Title'])
-            ->addImage('hero_image', ['label' => 'Hero Image']);
+$hero
+   ->addTexT('text');
 
-        return $hero;
-    }
-}
+return $hero;

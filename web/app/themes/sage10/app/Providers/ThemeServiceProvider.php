@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Roots\Acorn\Sage\SageServiceProvider;
-use App\Fields\FlexContent;
+
 
 class ThemeServiceProvider extends SageServiceProvider
 {
@@ -14,6 +14,7 @@ class ThemeServiceProvider extends SageServiceProvider
      */
     public function register()
     {
+        require_once get_template_directory() . '/app/helpers.php';
         parent::register();
     }
 
@@ -26,8 +27,7 @@ class ThemeServiceProvider extends SageServiceProvider
     {
         parent::boot();
 
-        add_action('acf/init', function () {
-            acf_add_local_field_group(FlexContent::getFields()->build());
-        });
+        $flexContent = include get_template_directory() . '/app/Fields/Layouts/FlexContent.php';
+        acf_add_local_field_group($flexContent->build());
     }
 }
