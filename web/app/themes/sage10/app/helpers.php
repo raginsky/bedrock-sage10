@@ -19,3 +19,5 @@ if (!function_exists('layout')) {
         return preg_replace('/_/', '-', get_row_layout());
     }
 }
+
+class_alias('App\View\Composers\Page', 'Page');

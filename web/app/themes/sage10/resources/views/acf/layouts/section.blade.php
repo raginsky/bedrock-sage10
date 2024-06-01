@@ -4,7 +4,7 @@
 @if($hideBg)
   <span class="{{$hideBg}}">
       @endif
-    {!! \App\View\Composers\Page::bgImage() !!}
+    {!! Page::bgImage() !!}
     @if($hideBg)
       </span>
 @endif
