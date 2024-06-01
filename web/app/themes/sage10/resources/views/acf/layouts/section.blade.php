@@ -4,14 +4,14 @@
 @if($hideBg)
   <span class="{{$hideBg}}">
       @endif
-    {!! Page::bgImage() !!}
+    {!! \App\View\Composers\Page::bgImage() !!}
     @if($hideBg)
       </span>
 @endif
 
 @container
 @layouts('components')
-@include ('acf.components.'. App::layout())
+@include ('acf.components.'. layout())
 @endlayouts
 @endcontainer
 @endacfmodule

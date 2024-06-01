@@ -1,1 +1,17 @@
-<div class="hero">Hero will be displayed here</div>
+@set($hideBg, get_sub_field('hide_on') ? 'acfm-bg-image-hide-' . strtolower(get_sub_field('hide_on')) : '')
+
+@acfmodule
+@if($hideBg)
+  <span class="{{$hideBg}}">
+      @endif
+    {!! \App\View\Composers\Page::bgImage() !!}
+    @if($hideBg)
+      </span>
+@endif
+
+@container
+@layouts('components')
+@include ('acf.components.'. layout())
+@endlayouts
+@endcontainer
+@endacfmodule

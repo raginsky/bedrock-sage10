@@ -5,6 +5,6 @@
 @set($margin_bottom, get_sub_field('margin_bottom'))
 @set($marginClass, $margin_bottom ? " acfm-margin-bottom--$margin_bottom" : '' )
 
-<div class="acfm-{{App::layout()}}{{$sizeClass}}{{$colorClass}}{{$marginClass}}">
+<div class="acfm-{{layout()}}{{$sizeClass}}{{$colorClass}}{{$marginClass}}">
   @sub('text')
 </div>
