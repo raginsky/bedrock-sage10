@@ -34,7 +34,7 @@ export default async (app) => {
    */
   app
     .setUrl('http://localhost:3000')
-    .setProxyUrl('https://wbpase.local')
+    .setProxyUrl('https://wpbase.local')
     .watch(['resources/views', 'app']);
 
   /**

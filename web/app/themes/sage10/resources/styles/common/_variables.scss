@@ -1,0 +1,74 @@
+@import '../configs/maps/colors';
+
+/** Font */
+$font_base: #{'General Sans/*!rtl:Cairo*/'}, sans-serif;
+$font_secondary: false;
+
+$letter_spacing: false;
+
+$font_weight_light: 300;
+$font_weight_regular: 400;
+$font_weight_medium: 500;
+$font_weight_bold: 700;
+
+$base_font_size: #{$base_font_size_px / 10}rem;
+
+/** Brand border-radius */
+$brand_border_radius: 2rem;
+
+/** Header colors */
+$header_initial_background: $brand_base_bg;
+$header_sticky_background: $brand_base_bg;
+$header_link_color: $brand_base;
+
+/** Buttons  */
+$brand_button_radius: 1rem;
+$button_second_margin: 1vw;
+$button_primary_background: $brand_primary;
+$button_primary_background_hover: $brand_primary_active;
+
+/** Box Model  */
+$spacer: 2rem;
+$enable-rounded: false;
+
+/** Breakpoint */
+// Small screen / phone
+$xs: (
+    min-width: em(321, 16),
+);
+$sm: (
+    min-width: em(576, 16),
+);
+// Medium screen / tablet
+$until_md: (
+    max-width: em(767, 16),
+);
+$md: (
+    min-width: em(768, 16),
+);
+$until_lg: (
+    max-width: em(991, 16),
+);
+$lg: (
+    min-width: em(992, 16),
+);
+// Large screen / desktop
+$until_xl: (
+    max-width: em(1199, 16),
+);
+$xl: (
+    min-width: em(1200, 16),
+);
+$until_xxl: (
+    max-width: em(1599, 16),
+);
+$xxl: (
+    min-width: em(1600, 16),
+);
+$xxxl: (
+    min-width: em(1920, 16),
+);
+
+/** Navbar */
+$navbar_until_breakpoint: $until_xl;
+$navbar_breakpoint: $xl;

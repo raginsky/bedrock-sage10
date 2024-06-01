@@ -1,0 +1,11 @@
+@mixin define-all-text-colors($map: $map_text_colors, $prefix: '&-', $suffix: '') {
+    @each $name, $value in $map {
+        #{$prefix}#{$name}#{$suffix} {
+            color: $value;
+        }
+    }
+}
+
+@mixin define-text-color($key, $map: $map_text_colors) {
+    color: map_get($map, $key);
+}
