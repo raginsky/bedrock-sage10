@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c86f312506efd537273e02dd78a1077",
+    "content-hash": "07065175c50d571317ddb61b0e822f64",
     "packages": [
         {
             "name": "brick/math",
@@ -2726,74 +2726,6 @@
             "time": "2024-03-14T13:48:21+00:00"
         },
         {
-            "name": "log1x/sage-directives",
-            "version": "v2.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Log1x/sage-directives.git",
-                "reference": "c6b5ed9a698dfde9d55c25994977481be7e81132"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/sage-directives/zipball/c6b5ed9a698dfde9d55c25994977481be7e81132",
-                "reference": "c6b5ed9a698dfde9d55c25994977481be7e81132",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.10",
-                "pestphp/pest": "^2.9",
-                "roots/acorn": "*"
-            },
-            "type": "package",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "Log1x\\SageDirectives\\SageDirectivesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Log1x\\SageDirectives\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brandon Nifong",
-                    "email": "brandon@tendency.me"
-                }
-            ],
-            "description": "A set of Blade directives for use with Roots Sage.",
-            "homepage": "https://github.com/log1x/sage-directives",
-            "keywords": [
-                "acorn",
-                "blade",
-                "blade-directives",
-                "directives",
-                "roots",
-                "sage",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/log1x/sage-directives/issues",
-                "source": "https://github.com/Log1x/sage-directives/tree/v2.0.3"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/Log1x",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-03-26T13:40:49+00:00"
-        },
-        {
             "name": "log1x/sage-svg",
             "version": "v1.1.2",
             "source": {
@@ -4021,6 +3953,73 @@
                 }
             ],
             "time": "2024-04-02T14:38:22+00:00"
+        },
+        {
+            "name": "roots/acorn-prettify",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/acorn-prettify.git",
+                "reference": "405aa44ef8b62dbf99d72803ef3a94e15baa0663"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/acorn-prettify/zipball/405aa44ef8b62dbf99d72803ef3a94e15baa0663",
+                "reference": "405aa44ef8b62dbf99d72803ef3a94e15baa0663",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Roots\\AcornPrettify\\AcornPrettifyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roots\\AcornPrettify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me",
+                    "homepage": "https://github.com/log1x"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                },
+                {
+                    "name": "QWp6t",
+                    "email": "craig@roots.io",
+                    "homepage": "https://github.com/qwp6t"
+                }
+            ],
+            "description": "Theme-agnostic front-end modifications for WordPress",
+            "support": {
+                "issues": "https://github.com/roots/acorn-prettify/issues",
+                "source": "https://github.com/roots/acorn-prettify/tree/v1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-01-23T11:46:06+00:00"
         },
         {
             "name": "roots/bedrock-autoloader",
