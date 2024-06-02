@@ -12,5 +12,5 @@ $breakpoints: (
   'xxxl': 'screen and (min-width: em(1920, 16))',
 );
 
-$navbar_until_breakpoint: map-get($breakpoints, 'until-xl');
-$navbar_breakpoint: map-get($breakpoints, 'xl');
+$navbar_until_breakpoint: map.get($breakpoints, 'until-xl');
+$navbar_breakpoint: map.get($breakpoints, 'xl');

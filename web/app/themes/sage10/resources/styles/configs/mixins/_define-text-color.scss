@@ -11,5 +11,5 @@
 }
 
 @mixin define-text-color($key, $map: $map_text_colors) {
-  color: map_get($map, $key);
+  color: map.get($map, $key);
 }

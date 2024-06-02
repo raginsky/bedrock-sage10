@@ -23,8 +23,8 @@ $brand_light: #f5f5f5;
 $brand_base: var(--base-color);
 $brand_gray: var(--color-gray);
 
-$brand_primary_active: darken($brand_primary, 10%);
-$brand_secondary_active: darken($brand_secondary, 10%);
+$brand_primary_active: color.adjust($brand_primary, $lightness: -10%);
+$brand_secondary_active: color.adjust($brand_secondary, $lightness: -10%);
 
 $var_color_primary: var(--color-primary);
 $var_color_secondary: var(--color-secondary);

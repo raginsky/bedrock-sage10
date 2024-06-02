@@ -6,10 +6,11 @@ module.exports = {
   ],
   customSyntax: 'postcss-scss',
   rules: {
-    'import-notation': null,
-    'no-empty-source': null,
-    'function-no-unknown': null,
-    'scss/no-global-function-names': null,
-    'at-rule-empty-line-before': null,
+    'function-no-unknown': [
+      true,
+      {
+        ignoreFunctions: ['em', 'rem', 'source'],
+      },
+    ],
   },
 };

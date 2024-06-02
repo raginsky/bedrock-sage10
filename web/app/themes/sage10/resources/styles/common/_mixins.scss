@@ -1,6 +1,6 @@
 @mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    $query: map-get($breakpoints, $breakpoint);
+    $query: map.get($breakpoints, $breakpoint);
 
     @media #{$query} {
       @content;
@@ -21,7 +21,7 @@
     $result: ();
 
     @each $item in $prop {
-      $result: append($result, $item, comma);
+      $result: list.append($result, $item, comma);
     }
 
     transition-timing-function: $easing;
