@@ -100,7 +100,7 @@ img {
   max-width: 90vw;
   margin: 0 auto;
 
-  @include respond-to('md') {
+  @include media('md') {
     max-width: 100%;
   }
 }
@@ -113,7 +113,7 @@ img {
 }
 
 .acfm-mobile-align {
-  @include respond-to('until-md') {
+  @include media('until-md') {
     text-align: center;
   }
 }

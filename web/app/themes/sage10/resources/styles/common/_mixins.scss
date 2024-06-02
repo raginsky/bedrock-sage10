@@ -1,5 +1,5 @@
 // stylelint-disable property-blacklist
-@mixin respond-to($breakpoint) {
+@mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $query: map-get($breakpoints, $breakpoint);
 
@@ -45,7 +45,7 @@
   }
 
   // https://css-tricks.com/snippets/css/fluid-typography/
-  @include respond-to('xs') {
+  @include media('xs') {
     // stylelint-disable-next-line function-calc-no-invalid
     font-size: calc(
       #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
@@ -53,7 +53,7 @@
     );
   }
 
-  @include respond-to('xl') {
+  @include media('xl') {
     font-size: rem($pixelSize);
   }
 }

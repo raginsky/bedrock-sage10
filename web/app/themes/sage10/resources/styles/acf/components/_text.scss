@@ -78,7 +78,7 @@
   }
 
   &-contain {
-    @include respond-to('sm') {
+    @include media('sm') {
       max-width: em(860, 16);
       padding: 0 2.5rem;
       margin: 0 auto;
