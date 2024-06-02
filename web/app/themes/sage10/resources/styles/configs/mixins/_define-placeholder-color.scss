@@ -1,23 +1,23 @@
 // stylelint-disable selector-no-vendor-prefix
 
 @mixin define_placeholder_color($color, $opacity) {
-    &::-webkit-input-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
 
-    &::-moz-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
 
-    &:-ms-input-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
 
-    &:-moz-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
 }

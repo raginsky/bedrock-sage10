@@ -9,7 +9,7 @@ $breakpoints: (
   'xl': 'screen and (min-width: em(1200, 16))',
   'until-xxl': 'screen and (max-width: em(1599, 16))',
   'xxl': 'screen and (min-width: em(1600, 16))',
-  'xxxl': 'screen and (min-width: em(1920, 16))'
+  'xxxl': 'screen and (min-width: em(1920, 16))',
 );
 
 $navbar_until_breakpoint: map-get($breakpoints, 'until-xl');

@@ -1,33 +1,33 @@
 .wpbase-header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 1em 0;
+  color: $header_link_color;
+  background-color: $header_sticky_background;
+
+  // stylelint-disable selector-class-pattern
+  .error404 & {
     position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 20;
-    width: 100%;
-    padding: 1em 0;
-    color: $header_link_color;
     background-color: $header_sticky_background;
+  }
 
-    // stylelint-disable selector-class-pattern
-    .error404 & {
-        position: sticky;
-        background-color: $header_sticky_background;
+  @media #{$navbar_breakpoint} {
+    position: fixed;
+    background-color: $header_initial_background;
+  }
+
+  /* wordpress admin bar */
+  .admin-bar & {
+    &.sticky {
+      transform: translateY(32px);
+
+      @media screen and (width <= 600px) {
+        transform: translateY(0);
+      }
     }
-
-    @media #{$navbar_breakpoint} {
-        position: fixed;
-        background-color: $header_initial_background;
-    }
-
-    /* wordpress admin bar */
-    .admin-bar & {
-        &.sticky {
-            transform: translateY(32px);
-
-            @media screen and (width <= 600px) {
-                transform: translateY(0);
-            }
-        }
-    }
+  }
 }

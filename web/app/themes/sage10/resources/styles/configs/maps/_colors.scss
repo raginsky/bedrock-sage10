@@ -9,16 +9,16 @@ $brand_highlight: #ff2a00;
 $brand_light: #f5f5f5;
 
 :root {
-    --base-color: #{$brand_dark};
-    --base-color-bg: #{$brand_white};
-    --color-primary: #{$brand_primary};
-    --color-secondary: #{$brand_secondary};
-    --color-highlight: #{$brand_highlight};
-    --color-dark: #{$brand_dark};
-    --color-gray: #f2f2f2;
-    --color-light: #{$brand_light};
-    --color-white: #{$brand_white};
-    --color-base-shadow: 0, 0, 0;
+  --base-color: #{$brand_dark};
+  --base-color-bg: #{$brand_white};
+  --color-primary: #{$brand_primary};
+  --color-secondary: #{$brand_secondary};
+  --color-highlight: #{$brand_highlight};
+  --color-dark: #{$brand_dark};
+  --color-gray: #f2f2f2;
+  --color-light: #{$brand_light};
+  --color-white: #{$brand_white};
+  --color-base-shadow: 0, 0, 0;
 }
 
 $brand_base: var(--base-color);
@@ -36,33 +36,33 @@ $var_color_light: var(--color-light);
 $var_color_white: var(--color-white);
 
 $map_text_colors: (
-    primary: $var_color_primary,
-    secondary: $var_color_secondary,
-    white: $var_color_white,
-    light: $var_color_light,
-    dark: $var_color_dark,
+  primary: $var_color_primary,
+  secondary: $var_color_secondary,
+  white: $var_color_white,
+  light: $var_color_light,
+  dark: $var_color_dark,
 );
 
 $map_background_colors: (
-    white: $var_color_white,
-    light: $var_color_light,
-    dark: $var_color_dark,
-    primary: $var_color_primary,
-    secondary: $var_color_secondary,
-    gray: $var_color_gray,
+  white: $var_color_white,
+  light: $var_color_light,
+  dark: $var_color_dark,
+  primary: $var_color_primary,
+  secondary: $var_color_secondary,
+  gray: $var_color_gray,
 );
 
 $map_buttons_colors: (
-    primary: $var_color_primary,
-    secondary: $var_color_secondary,
-    highlight: $var_color_highlight,
+  primary: $var_color_primary,
+  secondary: $var_color_secondary,
+  highlight: $var_color_highlight,
 );
 
 $map_admin_colors: (
-    white: $var_color_white,
-    light: $var_color_light,
-    dark: $var_color_dark,
-    primary: $var_color_primary,
-    secondary: $var_color_secondary,
-    highlight: $var_color_highlight,
+  white: $var_color_white,
+  light: $var_color_light,
+  dark: $var_color_dark,
+  primary: $var_color_primary,
+  secondary: $var_color_secondary,
+  highlight: $var_color_highlight,
 );

@@ -1,11 +1,11 @@
 @mixin define-all-backgrounds($map: $map_background_colors, $prefix: '&-') {
-    @each $name, $value in $map {
-        #{$prefix}#{$name} {
-            background-color: $value;
-        }
+  @each $name, $value in $map {
+    #{$prefix}#{$name} {
+      background-color: $value;
     }
+  }
 }
 
 @mixin define-background($key, $map: $map_background_colors) {
-    background-color: map_get($map, $key);
+  background-color: map_get($map, $key);
 }
