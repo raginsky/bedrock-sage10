@@ -6,9 +6,7 @@
     @media #{$query} {
       @content;
     }
-  }
-
- @else {
+  } @else {
     @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map.";
   }
 }
@@ -20,9 +18,7 @@
     @if ($prop != all) {
       will-change: $prop;
     }
-  }
-
- @else {
+  } @else {
     $result: ();
 
     @each $item in $prop {
@@ -44,9 +40,7 @@
     $threeQuarter: $minimum;
 
     font-size: rem($minimum);
-  }
-
- @else {
+  } @else {
     font-size: rem($threeQuarter);
   }
 
