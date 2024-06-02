@@ -24,7 +24,8 @@
     .admin-bar & {
         &.sticky {
             transform: translateY(32px);
-            @media screen and (max-width: 600px) {
+
+            @media screen and (width <= 600px) {
                 transform: translateY(0);
             }
         }
