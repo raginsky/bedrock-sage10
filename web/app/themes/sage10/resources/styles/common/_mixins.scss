@@ -1,4 +1,3 @@
-// stylelint-disable property-blacklist
 @mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $query: map-get($breakpoints, $breakpoint);
@@ -29,32 +28,6 @@
     transition-duration: $duration;
     transition-property: $result;
     will-change: $result;
-  }
-}
-
-@mixin responsive-font($pixelSize: 21, $minimum: 4) {
-  $rem: #{calc($pixelSize / 10)}rem;
-  $threeQuarter: ceil($pixelSize - calc(calc($pixelSize / 4)));
-
-  @if ($minimum != 4) {
-    $threeQuarter: $minimum;
-
-    font-size: rem($minimum);
-  } @else {
-    font-size: rem($threeQuarter);
-  }
-
-  // https://css-tricks.com/snippets/css/fluid-typography/
-  @include media('xs') {
-    // stylelint-disable-next-line function-calc-no-invalid
-    font-size: calc(
-      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
-        calc((100vw - 320px) / (1200 - 320))
-    );
-  }
-
-  @include media('xl') {
-    font-size: rem($pixelSize);
   }
 }
 

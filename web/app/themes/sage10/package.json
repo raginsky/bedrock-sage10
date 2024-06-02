@@ -22,10 +22,9 @@
     "lint:js:fix": "eslint --fix resources/scripts",
     "lint:css": "stylelint 'resources/**/*.{css,scss,vue}'",
     "lint:css:fix": "stylelint --fix 'resources/**/*.{css,scss,vue}'",
-    "test": "yarn lint",
-    "lint:prettier": "prettier --check 'resources/**/*.{css,scss,vue,js,ts}'",
-    "fix:prettier": "prettier --write 'resources/**/*.{css,scss,vue,js,ts}'",
-    "fix": "yarn lint:css:fix && yarn lint:js:fix && yarn fix:prettier"
+    "prettier": "prettier --check 'resources/**/*.{css,scss,vue,js,ts}'",
+    "prettier:fix": "prettier --write 'resources/**/*.{css,scss,vue,js,ts}'",
+    "format": "yarn lint:js:fix && yarn lint:css:fix && yarn prettier:fix"
   },
   "devDependencies": {
     "@roots/bud": "6.20.0",
