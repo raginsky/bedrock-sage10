@@ -21,5 +21,8 @@ $base_font_size_px: 16;
 @import 'common/fonts';
 @import 'common/global';
 
+/** Import Layouts */
+@import 'layouts/header';
+
 /** Import ACF Components */
 @import 'acf/components/text';
