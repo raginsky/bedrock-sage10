@@ -6,7 +6,7 @@
 @import 'configs/maps/colors';
 
 /** Import maps related mixins */
-@import 'configs/mixins/define-backround';
+@import 'configs/mixins/define-background';
 @import 'configs/mixins/define-text-color';
 @import 'configs/mixins/define-account-color';
 @import 'configs/mixins/define-circle';
@@ -15,10 +15,11 @@
 $base_font_size_px: 16;
 
 @import 'common/functions';
-@import 'common/fonts';
+@import 'common/breakpoints';
 @import 'common/variables';
 @import 'common/mixins';
+@import 'common/fonts';
 @import 'common/global';
 
+/** Import ACF Components */
 @import 'acf/components/text';
-@import 'acf/components/title';

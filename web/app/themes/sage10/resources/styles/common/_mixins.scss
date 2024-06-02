@@ -1,166 +1,95 @@
 // stylelint-disable property-blacklist
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $query: map-get($breakpoints, $breakpoint);
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map.";
+  }
+}
 
 @mixin transition($prop: all, $duration: 400ms, $easing: $easing) {
-    @if (length($prop) == 1) {
-        transition: $prop $duration $easing;
+  @if (length($prop) == 1) {
+    transition: $prop $duration $easing;
 
-        @if ($prop != all) {
-            will-change: $prop;
-        }
-    } @else {
-        $result: ();
-
-        @each $item in $prop {
-            $result: append($result, $item, comma);
-        }
-
-        transition-timing-function: $easing;
-        transition-duration: $duration;
-        transition-property: $result;
-        will-change: $result;
+    @if ($prop != all) {
+      will-change: $prop;
     }
+  } @else {
+    $result: ();
+
+    @each $item in $prop {
+      $result: append($result, $item, comma);
+    }
+
+    transition-timing-function: $easing;
+    transition-duration: $duration;
+    transition-property: $result;
+    will-change: $result;
+  }
 }
 
 @mixin responsive-font($pixelSize: 21, $minimum: 4) {
-    $rem: #{$pixelSize / 10}rem;
-    $threeQuarter: ceil($pixelSize - ($pixelSize / 4));
+  $rem: #{calc($pixelSize / 10)}rem;
+  $threeQuarter: ceil($pixelSize - calc(calc($pixelSize / 4)));
 
-    @if ($minimum != 4) {
-        $threeQuarter: $minimum;
+  @if ($minimum != 4) {
+    $threeQuarter: $minimum;
 
-        font-size: rem($minimum);
-    } @else {
-        font-size: rem($threeQuarter);
-    }
+    font-size: rem($minimum);
+  } @else {
+    font-size: rem($threeQuarter);
+  }
 
-    // https://css-tricks.com/snippets/css/fluid-typography/
-    // calc( [minimum size]
-    // + ([maximum size] - [minimum size])
-    // * ((100vw - [minimum viewport width])
-    // / ([maximum viewport width] - [minimum viewport width])));
-    @media #{$xs} {
-        // stylelint-disable-next-line function-calc-no-invalid
-        font-size: calc(#{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) * ((100vw - 320px) / (1200 - 320)));
-    }
+  // https://css-tricks.com/snippets/css/fluid-typography/
+  @include respond-to('xs') {
+    // stylelint-disable-next-line function-calc-no-invalid
+    font-size: calc(
+      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
+        calc((100vw - 320px) / (1200 - 320))
+    );
+  }
 
-    @media #{$xl} {
-        font-size: rem($pixelSize);
-    }
+  @include respond-to('xl') {
+    font-size: rem($pixelSize);
+  }
 }
 
 @mixin secondary-font() {
-    @if ($font_secondary) {
-        font-family: $font_secondary;
-    }
+  @if ($font_secondary) {
+    font-family: $font_secondary;
+  }
 }
 
 @mixin letter-spacing() {
-    @if ($letter_spacing) {
-        letter-spacing: $letter_spacing;
-    }
-}
-
-@mixin height-ratio($width, $height, $newHeight: 10) {
-    // Aspect ratio formula src:https://eikhart.com/blog/aspect-ratio-calculator
-    $aspectRatio: $width / $height;
-    $newWidth: ($newHeight * $aspectRatio);
-    //newHeight = ( newWidth / aspectRatio )
-
-    width: em($newWidth);
-    height: em($newHeight);
-}
-
-@mixin vw-ratio($width, $height, $newWidth: 10) {
-    // Aspect ratio formula src:https://eikhart.com/blog/aspect-ratio-calculator
-    $aspectRatio: $width / $height;
-    //$newWidth: ($newHeight * $aspectRatio);
-    $newHeight: ($newWidth / $aspectRatio);
-
-    width: #{$newWidth}vw;
-    height: #{$newHeight}vw;
-}
-
-@mixin max-vmin-ratio($width, $height, $newMaxWidth: 30) {
-    // Aspect ratio formula src:https://eikhart.com/blog/aspect-ratio-calculator
-    $aspectRatio: $width / $height;
-    $newHeight: ($newMaxWidth / $aspectRatio);
-    max-width: $newMaxWidth * 1vw;
-
-    max-height: $newHeight * 1vw;
-}
-
-@mixin logo-dimensions($width, $height, $newHeight, $newMaxWidth) {
-    @include height-ratio($width, $height, $newHeight);
-    //@include max-vmin-ratio($width, $height, $newMaxWidth);
-}
-
-@mixin sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-@mixin fadein-animation($from: 1, $to: 10, $time: 100) {
-    opacity: 0;
-    transform: translateY(3rem);
-
-    @for $i from $from through $to {
-        &:nth-child(#{$i}) {
-            animation: listItem 1s $easing forwards $i * $time + 50ms;
-        }
-    }
-
-    @keyframes listItem {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-}
-
-@mixin form-control {
-    width: 100%;
-    height: $form_control_height;
-    padding: 1.3rem 2rem;
-    line-height: 2.2rem;
-    color: $form_control_placeholder;
-    background-color: $form_control_background;
-    border: 1px solid $brand_base;
-    border-radius: $form_control_radius;
-}
-
-@mixin brand-shadow {
-    overflow: hidden;
-    background-color: $brand_base_bg;
-    border-radius: $brand_border_radius;
-    box-shadow: $brand_shadow;
+  @if ($letter_spacing) {
+    letter-spacing: $letter_spacing;
+  }
 }
 
 @mixin font-size-xs {
-    @include responsive-font(14);
+  @include responsive-font(14);
 }
 
 @mixin font-size-sm {
-    @include responsive-font(18);
+  @include responsive-font(18);
 }
 
 @mixin font-size-md {
-    @include responsive-font(20);
+  @include responsive-font(20);
 }
 
 @mixin font-size-lg {
-    @include responsive-font(50);
-    @include letter-spacing();
-    line-height: 1.2;
+  @include responsive-font(50);
+  @include letter-spacing();
+  line-height: 1.2;
 }
 
 @mixin font-size-xl {
-    @include responsive-font(80);
-    @include letter-spacing();
-    line-height: 1.2;
+  @include responsive-font(80);
+  @include letter-spacing();
+  line-height: 1.2;
 }

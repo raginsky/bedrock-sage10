@@ -7,7 +7,7 @@
         $context: $context * 1px;
     }
 
-    @return $pixels / $context * 1em;
+    @return calc($pixels / $context) * 1em;
 }
 
 @function rem($pixels, $context: 10) {
@@ -19,7 +19,7 @@
         $context: $context * 1px;
     }
 
-    @return $pixels / $context * 1rem;
+    @return calc($pixels / $context) * 1rem;
 }
 
 @function str-replace($string, $search, $replace: '') {
@@ -36,6 +36,6 @@
 
 @function px-vw($px, $vw: 1920) {
     $viewport: $vw * 0.01 * 1px;
-    @return $px / $viewport * 1vw;
+    @return calc($px / $viewport) * 1vw;
     @return $px;
 }
