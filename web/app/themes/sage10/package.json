@@ -23,7 +23,8 @@
     "lint:css": "stylelint 'resources/**/*.{css,scss,vue}'",
     "lint:css:fix": "stylelint --fix 'resources/**/*.{css,scss,vue}'",
     "test": "yarn lint",
-    "fix:prettier": "prettier --write 'resources/**/*.{css,scss,vue}'",
+    "lint:prettier": "prettier --check 'resources/**/*.{css,scss,vue,js,ts}'",
+    "fix:prettier": "prettier --write 'resources/**/*.{css,scss,vue,js,ts}'",
     "fix": "yarn lint:css:fix && yarn lint:js:fix && yarn fix:prettier"
   },
   "devDependencies": {
