@@ -52,7 +52,8 @@
     "roots/acorn": "^4.2",
     "log1x/acf-composer": "^3.0",
     "log1x/sage-svg": "^1.1",
-    "roots/acorn-prettify": "^1.0"
+    "roots/acorn-prettify": "^1.0",
+    "roots/acorn-mail": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

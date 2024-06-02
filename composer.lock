@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07065175c50d571317ddb61b0e822f64",
+    "content-hash": "d0a1445008a353ae5d58a87f8f4a742e",
     "packages": [
         {
             "name": "brick/math",
@@ -3953,6 +3953,64 @@
                 }
             ],
             "time": "2024-04-02T14:38:22+00:00"
+        },
+        {
+            "name": "roots/acorn-mail",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/acorn-mail.git",
+                "reference": "ba0aeb6a7f2d4893f01b27a39d29ca86eb462983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/acorn-mail/zipball/ba0aeb6a7f2d4893f01b27a39d29ca86eb462983",
+                "reference": "ba0aeb6a7f2d4893f01b27a39d29ca86eb462983",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "roots/acorn": "^4.0"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Roots\\AcornMail\\AcornMailServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roots\\AcornMail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me",
+                    "homepage": "https://github.com/log1x"
+                }
+            ],
+            "description": "Simple WordPress SMTP using Acorn's mail configuration.",
+            "support": {
+                "issues": "https://github.com/roots/acorn-mail/issues",
+                "source": "https://github.com/roots/acorn-mail/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T14:18:18+00:00"
         },
         {
             "name": "roots/acorn-prettify",
