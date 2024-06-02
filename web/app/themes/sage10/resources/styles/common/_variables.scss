@@ -19,8 +19,8 @@ $base_font_size: #{calc($base_font_size_px / 10)}rem;
 $brand_border_radius: 2rem;
 
 /** Header colors */
-$header_initial_background: $brand_base_bg;
-$header_sticky_background: $brand_base_bg;
+$header_initial_background: $brand_base;
+$header_sticky_background: $brand_base;
 $header_link_color: $brand_base;
 
 /** Buttons  */

@@ -77,3 +77,18 @@ collect(['setup', 'filters'])
 */
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
+
+/*
+|--------------------------------------------------------------------------
+| Custom Admin Styles
+|--------------------------------------------------------------------------
+|
+| This function will allow us to add custom styles to the WordPress
+| admin area.
+|
+*/  
+
+function custom_admin_styles() {
+    wp_enqueue_style('admin-styles', get_template_directory_uri() . '/admin-style.css');
+}
+add_action('admin_enqueue_scripts', 'custom_admin_styles');

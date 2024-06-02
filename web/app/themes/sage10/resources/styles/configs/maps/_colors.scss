@@ -4,8 +4,8 @@ $brand_primary: #2458ff;
 $brand_secondary: $brand_primary;
 $brand_white: #fff;
 $brand_dark: #0b0b0f;
-$brand_black: $brand_dark;
-$brand_highlight: #f24725;
+$brand_black: #000;
+$brand_highlight: #ff2a00;
 $brand_light: #f5f5f5;
 
 :root {
@@ -21,38 +21,11 @@ $brand_light: #f5f5f5;
     --color-base-shadow: 0, 0, 0;
 }
 
-.dark-theme {
-    --base-color: #{$brand_white};
-    --base-color-bg: #{$brand_dark};
-    --color-gray: #2a2e39;
-    --color-base-shadow: 255, 255, 255;
-}
-
 $brand_base: var(--base-color);
-$brand_base_bg: var(--base-color-bg);
 $brand_gray: var(--color-gray);
-$brand_base-shadow: rgba(var(--color-base-shadow), 0.1);
-
-$brand_danger: #f24725;
-$brand_info: #fbba42;
-$brand_success: #32cf8e;
-
-$brand_highlight: $brand_danger;
-
-$brand_primary_svg: str-replace('' + $brand_primary, '#', '%23');
-$brand_base_svg: str-replace('' + $brand_base, '#', '%23');
-$brand_secondary_svg: str-replace('' + $brand_secondary, '#', '%23');
-$brand_highlight_svg: str-replace('' + $brand_highlight, '#', '%23');
-$brand_white_svg: str-replace('' + $brand_white, '#', '%23');
-$brand_dark_svg: str-replace('' + $brand_dark, '#', '%23');
-$brand_danger_svg: str-replace('' + $brand_danger, '#', '%23');
 
 $brand_primary_active: darken($brand_primary, 10%);
 $brand_secondary_active: darken($brand_secondary, 10%);
-
-$brand_danger_light: #feece8;
-$brand_info_light: #fff8eb;
-$brand_success_light: #eafaf3;
 
 $var_color_primary: var(--color-primary);
 $var_color_secondary: var(--color-secondary);

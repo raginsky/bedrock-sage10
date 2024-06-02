@@ -1,0 +1,112 @@
+:root {
+    --color-primary: #2458ff;
+    --color-secondary: #ffa608;
+    --color-highlight: #f24725;
+    --color-dark: #000;
+    --color-light: #e0e0e0;
+    --color-white: #fff;
+    --color-gray: #808080;
+}
+
+.acf-tab-wrap.-left .acf-tab-group {
+    width: 60px
+}
+
+.acf-fields .prfwp-popup-text iframe {
+    height: initial !important;
+}
+
+.acf-fields.-sidebar {
+    position: relative;
+    padding: 0 0 0 60px !important
+}
+
+.acf-fields.-sidebar:before {
+    width: 60px
+}
+
+.radio_colors ul.acf-radio-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.radio_colors ul.acf-radio-list li {
+    margin: 2px 5px;
+    font-size: 10px;
+    max-width: 5em;
+    min-width: 4em;
+}
+
+.radio_colors .radio_color_box {
+    position: relative;
+    height: 1em;
+    padding: 0 .15em;
+    color: #fff;
+    border: 2px solid #f8f8f8;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 0 1px #ccc;
+    box-shadow: 0 0 0 1px #ccc
+}
+
+.radio_colors .radio_color_box.light {
+    color: inherit
+}
+
+.radio_colors .radio_color_box:before {
+    position: absolute;
+    bottom: -1.4em;
+    left: 50%;
+    content: "";
+    border: 8px solid transparent;
+    border-top: 0 solid transparent;
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.radio_colors .radio_color_box.white {
+    background-color: var(--color-white)
+}
+
+.radio_colors .radio_color_box.gray {
+    background-color: var(--color-gray)
+}
+
+.radio_colors .radio_color_box.light {
+    background-color: var(--color-light)
+}
+
+.radio_colors .radio_color_box.dark {
+    background-color: var(--color-dark)
+}
+
+.radio_colors .radio_color_box.primary {
+    background-color: var(--color-primary)
+}
+
+.radio_colors .radio_color_box.secondary {
+    background-color: var(--color-secondary)
+}
+
+.radio_colors .radio_color_box.highlight {
+    background-color: var(--color-highlight)
+}
+
+.radio_colors input {
+    display: none
+}
+
+.radio_colors input:checked + .radio_color_box {
+    color: #1e8cbe;
+    text-shadow: 0 0 3px #fff;
+    -webkit-box-shadow: 0 0 0 2px #1e8cbe;
+    box-shadow: 0 0 0 2px #1e8cbe
+}
+
+.radio_colors input:checked + .radio_color_box + span {
+    font-weight: 700;
+    color: #1e8cbe
+}
