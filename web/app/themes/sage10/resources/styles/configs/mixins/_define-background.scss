@@ -1,6 +1,6 @@
 @mixin define-all-backgrounds($map: $map_background_colors, $prefix: '&-') {
   @each $name, $value in $map {
-    #{$prefix}#{$name} {
+    #{$prefix}#{'#{$name}'} {
       background-color: $value;
     }
   }

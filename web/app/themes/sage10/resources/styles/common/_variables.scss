@@ -32,7 +32,7 @@ $button_primary_background_hover: $brand_primary_active;
 /** Spacing */
 $spacing_1: 1rem;
 
-$spacing_half: $spacing_1 / 2; // 0.5rem
+$spacing_half: calc($spacing_1 / 2); // 0.5rem
 $spacing_2: $spacing_1 * 2; // 2rem
 $spacing_3: $spacing_1 * 3; // 3rem
 $spacing_4: $spacing_1 * 4; // 4rem
