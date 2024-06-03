@@ -11,8 +11,8 @@
 }
 
 @mixin responsive-font($pixelSize: 21, $minimum: 4) {
-  $rem: #{$pixelSize / 10}rem;
-  $threeQuarter: ceil($pixelSize - ($pixelSize / 4));
+  $rem: #{calc($pixelSize / 10)}rem;
+  $threeQuarter: ceil($pixelSize - calc($pixelSize / 4));
 
   @if ($minimum != 4) {
     $threeQuarter: $minimum;
