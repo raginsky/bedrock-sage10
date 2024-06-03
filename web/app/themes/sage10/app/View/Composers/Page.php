@@ -23,9 +23,8 @@ class Page extends Composer
     public function with()
     {
         return [
-            'pageLayout' => $this->pageLayout(),
             'id' => $this->id(),
-            'padding' => $this->padding(),
+            'gap' => $this->gap(),
             'bg' => $this->bg(),
             'bgImage' => $this->bgImage(),
             'bgImageAlign' => $this->bgImageAlign(),
@@ -40,11 +39,6 @@ class Page extends Composer
         ];
     }
 
-    public static function pageLayout()
-    {
-        return preg_replace('(_)', '-', get_row_layout());
-    }
-
     public static function id()
     {
         $id = strtolower(preg_replace('(-| )', '_', get_sub_field('title')));
@@ -55,11 +49,11 @@ class Page extends Composer
         return '';
     }
 
-    public static function padding()
+    public static function gap()
     {
-        $padding = get_sub_field('padding');
-        if ($padding) {
-            return ' acf-' . $padding;
+        $gap = get_sub_field('gap');
+        if ($gap) {
+            return ' acf-' . $gap;
         }
 
         return '';
@@ -134,16 +128,6 @@ class Page extends Composer
         return '';
     }
 
-    public static function moduleAttr()
-    {
-        return self::padding() .
-            self::bg() .
-            self::bgImageAlign() .
-            self::bgImageSize() .
-            self::alignCenter() .
-            self::textColor();
-    }
-
     public static function rowOrReverse()
     {
         $reverse_columns = get_sub_field('reverse_columns');
@@ -192,5 +176,15 @@ class Page extends Composer
         }
 
         return 'target=_blank';
+    }
+
+    public static function moduleAttr()
+    {
+        return self::gap() .
+            self::bg() .
+            self::bgImageAlign() .
+            self::bgImageSize() .
+            self::alignCenter() .
+            self::textColor();
     }
 }
