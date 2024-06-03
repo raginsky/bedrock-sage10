@@ -1,4 +1,4 @@
-<div class="acfm-flex-content">
+<div class="acf-flex-content">
   <?php
   $rows = get_field('flex_content');
   if ($rows) {

@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'sass:map';
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -24,6 +27,8 @@ $base_font_size_px: 16;
 
 /** Import Layouts */
 @import 'layouts/header';
+@import 'layouts/hero';
+@import 'layouts/section';
 
 /** Import ACF Components */
 @import 'acf/components/text';

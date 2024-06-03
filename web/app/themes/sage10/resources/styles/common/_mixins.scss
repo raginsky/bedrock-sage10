@@ -10,6 +10,29 @@
   }
 }
 
+@mixin responsive-font($pixelSize: 21, $minimum: 4) {
+  $rem: #{$pixelSize / 10}rem;
+  $threeQuarter: ceil($pixelSize - ($pixelSize / 4));
+
+  @if ($minimum != 4) {
+    $threeQuarter: $minimum;
+
+    font-size: rem($minimum);
+  } @else {
+    font-size: rem($threeQuarter);
+  }
+  @include media('xs') {
+    font-size: calc(
+      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
+        calc((100vw - 320px) / (1200 - 320))
+    );
+  }
+
+  @include media('xl') {
+    font-size: rem($pixelSize);
+  }
+}
+
 @mixin transition($prop: all, $duration: 400ms, $easing: $easing) {
   @if (length($prop) == 1) {
     transition: $prop $duration $easing;

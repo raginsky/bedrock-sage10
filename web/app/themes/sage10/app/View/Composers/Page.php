@@ -59,7 +59,7 @@ class Page extends Composer
     {
         $padding = get_sub_field('padding');
         if ($padding) {
-            return ' acfm-' . $padding;
+            return ' acf-' . $padding;
         }
 
         return '';
@@ -69,7 +69,7 @@ class Page extends Composer
     {
         $bg = get_sub_field('background');
         if ($bg) {
-            return ' acfm-bg-' . $bg;
+            return ' acf-bg-' . $bg;
         }
 
         return '';
@@ -81,12 +81,12 @@ class Page extends Composer
         $bg_image_sm = get_sub_field('bg_image_sm');
 
         if ($bg_image && $bg_image_sm) {
-            return '<div class="acfm-bg-image acfm-bg-image--sm" style="background-image:url(' . $bg_image_sm . ')"></div>' .
-                '<div class="acfm-bg-image acfm-bg-image--md" style="background-image:url(' . $bg_image . ')"></div>';
+            return '<div class="acf-bg-image acf-bg-image--sm" style="background-image:url(' . $bg_image_sm . ')"></div>' .
+                '<div class="acf-bg-image acf-bg-image--md" style="background-image:url(' . $bg_image . ')"></div>';
         } elseif ($bg_image || $bg_image_sm) {
             $bg_image = $bg_image ?: $bg_image_sm;
 
-            return '<div class="acfm-bg-image" style="background-image:url(' . $bg_image . ')"></div>';
+            return '<div class="acf-bg-image" style="background-image:url(' . $bg_image . ')"></div>';
         }
 
         return '';
@@ -96,7 +96,7 @@ class Page extends Composer
     {
         $align = get_sub_field('bg_align');
         if ($align) {
-            return ' acfm-bg-image--align-' . $align;
+            return ' acf-bg-image--align-' . $align;
         }
 
         return '';
@@ -106,7 +106,7 @@ class Page extends Composer
     {
         $size = get_sub_field('bg_size');
         if ($size) {
-            return ' acfm-bg-image--size-' . $size;
+            return ' acf-bg-image--size-' . $size;
         }
 
         return '';
@@ -117,7 +117,7 @@ class Page extends Composer
         $align_center = get_sub_field('align_center');
 
         if ($align_center) {
-            return ' acfm-text-align-center';
+            return ' acf-text-align-center';
         }
 
         return '';
@@ -128,7 +128,7 @@ class Page extends Composer
         $text_color = get_sub_field('text_color');
 
         if ($text_color) {
-            return ' acfm-text-color-' . $text_color;
+            return ' acf-text-color-' . $text_color;
         }
 
         return '';
@@ -149,10 +149,10 @@ class Page extends Composer
         $reverse_columns = get_sub_field('reverse_columns');
 
         if ($reverse_columns) {
-            return ' acfm-row--reverse-columns';
+            return ' acf-row--reverse-columns';
         }
 
-        return ' acfm-row';
+        return ' acf-row';
     }
 
     public static function verticalAlignment()
@@ -160,10 +160,10 @@ class Page extends Composer
         $alignment_stretch = get_sub_field('vertical_alignment');
 
         if ($alignment_stretch) {
-            return ' acfm-row--align-stretch';
+            return ' acf-row--align-stretch';
         }
 
-        return ' acfm-row--align-center';
+        return ' acf-row--align-center';
     }
 
     public static function justifyContent()
@@ -171,7 +171,7 @@ class Page extends Composer
         $rowAlignment = get_sub_field('justify_content');
 
         if ($rowAlignment) {
-            return ' acfm-row--justify-' . $rowAlignment;
+            return ' acf-row--justify-' . $rowAlignment;
         }
 
         return '';

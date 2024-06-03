@@ -1,4 +1,4 @@
-@set($hideBg, get_sub_field('hide_on') ? 'acfm-bg-image-hide-' . strtolower(get_sub_field('hide_on')) : '')
+@set($hideBg, get_sub_field('hide_on') ? 'acf-bg-image-hide-' . strtolower(get_sub_field('hide_on')) : '')
 
 @acfmodule
 @if($hideBg)

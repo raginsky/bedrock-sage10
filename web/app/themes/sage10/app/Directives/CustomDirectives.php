@@ -13,7 +13,7 @@ class CustomDirectives
         Blade::directive('acfmodule', function ($tag) {
             empty($tag) ? $tag = 'section' : $tag = $tag;
             if (layout()) {
-                return "<{$tag} <?= Page::id(); ?>" . ' class="acfm-' . layout() .
+                return "<{$tag} <?= Page::id(); ?>" . ' class="acf-' . layout() .
 "<?= Page::moduleAttr(); ?>";
 }
 return '';
@@ -28,7 +28,7 @@ return '';
 });
 
 Blade::directive('container', function ($classPrefix) {
-$containerClass = $classPrefix ? $classPrefix : 'acfm-' . layout();
+$containerClass = $classPrefix ? $classPrefix : 'acf-' . layout();
 
 return "<?= get_sub_field('has_container') ? '<div class=\"{$containerClass}__container container\">' : '' ?>";
 });

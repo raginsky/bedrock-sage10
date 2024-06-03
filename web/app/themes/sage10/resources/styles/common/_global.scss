@@ -111,7 +111,7 @@ img {
   margin: 0 auto;
 }
 
-.acfm-mobile-align {
+.acf-mobile-align {
   @include media('until-md') {
     text-align: center;
   }

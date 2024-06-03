@@ -1,4 +1,4 @@
-.acfm-text {
+.acf-text {
   line-height: calc(28 / 18);
 
   &:not(:last-child) {
@@ -86,7 +86,7 @@
   }
 }
 
-.acfm-title i {
+.acf-title i {
   font-style: normal;
   color: $brand_primary;
 }
