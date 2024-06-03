@@ -10,7 +10,7 @@
   &--sm {
     background-repeat: no-repeat;
 
-    @media #{$xl} {
+    @include media('xl') {
       display: none;
     }
   }
@@ -21,7 +21,7 @@
     background-position: bottom right;
     background-repeat: no-repeat;
 
-    @media #{$xl} {
+    @include media('xl') {
       display: block;
     }
   }

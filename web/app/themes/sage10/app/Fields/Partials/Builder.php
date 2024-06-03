@@ -12,6 +12,7 @@ $builder
     ->addLayout( get_field_partial( 'components.title' ) )
     ->addLayout( get_field_partial( 'components.text' ) )
     ->addLayout( get_field_partial( 'components.image' ) )
+    ->addLayout( get_field_partial( 'components.buttons' ) )
     ->addLayout( get_field_partial( 'components.customList' ) )
     ->addLayout( get_field_partial( 'components.row' ) )
     

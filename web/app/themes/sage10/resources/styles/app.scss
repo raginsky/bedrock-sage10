@@ -1,14 +1,15 @@
 @use 'sass:color';
 @use 'sass:map';
+@use 'sass:math';
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/** Import Config sass maps */
+/* Import Config sass maps */
 @import 'configs/maps/colors';
 
-/** Import maps related mixins */
+/* Import maps related mixins */
 @import 'configs/mixins/define-background';
 @import 'configs/mixins/define-text-color';
 
@@ -21,20 +22,25 @@ $base_font_size_px: 16;
 @import 'common/fonts';
 @import 'common/global';
 
-/** Import Pages */
+/* Import Pages */
 @import 'pages/custom-sections';
 @import 'pages/404';
 
-/** Import Layouts */
+/* Import Layouts */
 @import 'layouts/header';
 @import 'layouts/hero';
 @import 'layouts/section';
 
-/** Import ACF Components */
+/* Import Components */
+@import 'components/buttons';
+
+/* --------------------------- ACF --------------------------- */
+
+/* Import ACF Components */
 @import 'acf/components/row';
 @import 'acf/components/buttons';
 
-/** Import ACF Utils */
+/* Import ACF Utils */
 @import 'acf/utils/text';
 @import 'acf/utils/background';
 @import 'acf/utils/background-image';
@@ -42,8 +48,5 @@ $base_font_size_px: 16;
 @import 'acf/utils/margin';
 @import 'acf/utils/svg';
 
-/** Import ACF Custom Lists */
+/* Import ACF Custom Lists */
 @import 'acf/lists/default';
-
-/** Import Components */
-@import 'components/buttons';

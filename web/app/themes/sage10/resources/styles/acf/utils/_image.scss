@@ -1,6 +1,6 @@
 .acf-image {
   &--sm {
-    @media #{$md} {
+    @include media('md') {
       display: none;
     }
   }
@@ -8,7 +8,7 @@
   &--md {
     display: none;
 
-    @media #{$md} {
+    @include media('md') {
       display: block;
     }
   }

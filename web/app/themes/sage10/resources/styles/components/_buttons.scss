@@ -16,12 +16,8 @@
   transform: perspective(1px) translateZ(0);
 }
 
-@mixin button-size($height, $font-size: null) {
+@mixin button-size($height) {
   height: em($height, 16);
-
-  @if $font-size {
-    @include font-size($font-size);
-  }
 }
 
 @mixin button-variant($color, $background, $border, $hover-background: null) {

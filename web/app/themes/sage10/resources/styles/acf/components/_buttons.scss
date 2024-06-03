@@ -1,5 +1,5 @@
 .acf-btn {
-  @include button-size(55, 18);
+  @include button-size(55);
 
   &-primary {
     @include button-primary();
@@ -16,7 +16,7 @@
   &:not(:first-child) {
     margin-left: 1em;
 
-    @media #{$md} {
+    @include media('md') {
       margin-left: 1em;
     }
   }
@@ -33,7 +33,7 @@
 .acf-buttons {
   margin-bottom: 1em;
 
-  @media #{$md} {
+  @include media('md') {
     margin-bottom: 0.5em;
   }
 }
