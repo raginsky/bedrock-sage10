@@ -1,4 +1,4 @@
-@acfmodule(div)
+@wrapper(div)
 @set($component, 'acf-' . layout())
 
 @hassub('image_sm')
@@ -17,4 +17,4 @@
          @hassub('image_sm') class="{{$component}}--md" @endsub>
 @endsub
 
-@endacfmodule(div)
+@endwrapper(div)

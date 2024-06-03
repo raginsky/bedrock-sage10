@@ -1,7 +1,7 @@
-@acfmodule(div)
+@wrapper(div)
 @fields('buttons')
 @include('acf.fragments.button')
 @endfields
-@endacfmodule(div)
+@endwrapper(div)
 
 
