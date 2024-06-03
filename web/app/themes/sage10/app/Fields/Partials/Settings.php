@@ -40,7 +40,7 @@ $settings = new FieldsBuilder( 'settings' );
                 'label'       => 'Text Color',
                 'allow_null'  => 1
             ])->setWidth(20)
-            ->addChoices($global_config->text_color_pallet)
+            ->addChoices( $global_config->text_color_pallet )
             ->addImage('bg_image', [
                 'label'         => 'Background Image',
                 'preview_size'  => 'medium',
@@ -51,10 +51,6 @@ $settings = new FieldsBuilder( 'settings' );
                 'preview_size'  => 'medium',
                 'return_format' => 'url'
             ])->setWidth(20)
-            ->addSelect('hide_on', [
-                'label'       => 'Hide Background on',
-                'allow_null'  => 1
-            ])->addChoices('Mobile', 'Desktop')->setWidth(15)
             ->addSelect('bg_size', [
                 'label'       => 'Background Size',
                 'allow_null'  => 1

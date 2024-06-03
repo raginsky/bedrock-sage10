@@ -13,8 +13,8 @@ class CustomDirectives
         Blade::directive('acfmodule', function ($tag) {
             empty($tag) ? $tag = 'section' : $tag = $tag;
             if (layout()) {
-                return "<{$tag} <?= Page::id(); ?>" . ' class="acf-' . layout() .
-"<?= Page::moduleAttr(); ?>";
+                return "<section <?= Page::id(); ?>" . ' class="acf-' . layout() .
+"<?= Page::moduleAttr(); ?>" . '"';
 }
 return '';
 });
