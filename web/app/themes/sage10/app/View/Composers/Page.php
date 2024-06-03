@@ -41,143 +41,88 @@ class Page extends Composer
 
     public static function id()
     {
-        $id = strtolower(preg_replace('(-| )', '_', get_sub_field('title')));
-        if ($id) {
-            return "id='{$id}' ";
-        }
-
-        return '';
+        $title = get_sub_field('title');
+        $id = $title ? strtolower(preg_replace('/[-\s]/', '_', $title)) : '';
+    
+        return $id ? "id='{$id}' " : '';
     }
-
+    
     public static function gap()
     {
-        $gap = get_sub_field('gap');
-        if ($gap) {
-            return ' acf-' . $gap;
-        }
-
-        return '';
+        return ($gap = get_sub_field('gap')) ? ' acf-' . $gap : '';
     }
-
+    
     public static function bg()
     {
-        $bg = get_sub_field('background');
-        if ($bg) {
-            return ' acf-bg-' . $bg;
-        }
-
-        return '';
+        return ($bg = get_sub_field('background')) ? ' acf-bg-' . $bg : '';
     }
+    
 
     public static function bgImage()
     {
         $bg_image = get_sub_field('bg_image');
         $bg_image_sm = get_sub_field('bg_image_sm');
-
+    
         if ($bg_image && $bg_image_sm) {
-            return '<div class="acf-bg-image acf-bg-image--sm" style="background-image:url(' . $bg_image_sm . ')"></div>' .
-                '<div class="acf-bg-image acf-bg-image--md" style="background-image:url(' . $bg_image . ')"></div>';
-        } elseif ($bg_image || $bg_image_sm) {
-            $bg_image = $bg_image ?: $bg_image_sm;
-
-            return '<div class="acf-bg-image" style="background-image:url(' . $bg_image . ')"></div>';
+            return '<div class="acf-bg-image acf-bg-image--sm" style="background-image:url(' . esc_url($bg_image_sm) . ')"></div>' .
+                   '<div class="acf-bg-image acf-bg-image--md" style="background-image:url(' . esc_url($bg_image) . ')"></div>';
         }
-
-        return '';
+    
+        $bg_image = $bg_image ?: $bg_image_sm;
+    
+        return $bg_image ? '<div class="acf-bg-image" style="background-image:url(' . esc_url($bg_image) . ')"></div>' : '';
     }
-
+    
     public static function bgImageAlign()
     {
-        $align = get_sub_field('bg_align');
-        if ($align) {
-            return ' acf-bg-image--align-' . $align;
-        }
-
-        return '';
+        return ($align = get_sub_field('bg_align')) ? ' acf-bg-image--align-' . $align : '';
     }
-
+    
     public static function bgImageSize()
     {
-        $size = get_sub_field('bg_size');
-        if ($size) {
-            return ' acf-bg-image--size-' . $size;
-        }
-
-        return '';
+        return ($size = get_sub_field('bg_size')) ? ' acf-bg-image--size-' . $size : '';
     }
-
+    
     public static function alignCenter()
     {
-        $align_center = get_sub_field('align_center');
-
-        if ($align_center) {
-            return ' acf-text-align-center';
-        }
-
-        return '';
+        return get_sub_field('align_center') ? ' acf-text-align-center' : '';
     }
-
+    
     public static function textColor()
     {
-        $text_color = get_sub_field('text_color');
-
-        if ($text_color) {
-            return ' acf-text-color-' . $text_color;
-        }
-
-        return '';
+        return ($text_color = get_sub_field('text_color')) ? ' acf-text-color-' . $text_color : '';
     }
-
+    
     public static function rowOrReverse()
     {
-        $reverse_columns = get_sub_field('reverse_columns');
-
-        if ($reverse_columns) {
-            return ' acf-row--reverse-columns';
-        }
-
-        return ' acf-row';
+        return get_sub_field('reverse_columns') ? ' acf-row--reverse-columns' : ' acf-row';
     }
-
+    
     public static function verticalAlignment()
     {
-        $alignment_stretch = get_sub_field('vertical_alignment');
-
-        if ($alignment_stretch) {
-            return ' acf-row--align-stretch';
-        }
-
-        return ' acf-row--align-center';
+        return get_sub_field('vertical_alignment') ? ' acf-row--align-stretch' : ' acf-row--align-center';
     }
-
+    
     public static function justifyContent()
     {
         $rowAlignment = get_sub_field('justify_content');
-
-        if ($rowAlignment) {
-            return ' acf-row--justify-' . $rowAlignment;
-        }
-
-        return '';
+        return $rowAlignment ? ' acf-row--justify-' . $rowAlignment : '';
     }
+    
 
     public static function linkTarget()
     {
         $link_target = get_sub_field('target');
-
-        if ($link_target === 'blank') {
-            return 'target=_blank';
-        }
-        if ($link_target === 'self') {
-            return 'target=_self';
-        }
-        if ($link_target === 'download') {
-            return 'download';
-        }
-
-        return 'target=_blank';
+    
+        $targets = [
+            'blank' => 'target=_blank',
+            'self' => 'target=_self',
+            'download' => 'download'
+        ];
+    
+        return $targets[$link_target] ?? 'target=_blank';
     }
-
+    
     public static function moduleAttr()
     {
         return self::gap() .
@@ -186,5 +131,10 @@ class Page extends Composer
             self::bgImageSize() .
             self::alignCenter() .
             self::textColor();
+    }
+      
+    private static function esc_url($url)
+    {
+        return filter_var($url, FILTER_SANITIZE_URL);
     }
 }
