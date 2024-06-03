@@ -1,7 +1,7 @@
-@acfmodule
+@wrapper
 @container
 @layouts('components')
 @include ('acf.components.'. layout())
 @endlayouts
 @endcontainer
-@endacfmodule
+@endwrapper

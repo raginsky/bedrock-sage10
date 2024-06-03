@@ -6,41 +6,32 @@ use App;
 use App\View\Composers\Page;
 use Illuminate\Support\Facades\Blade;
 
-class CustomDirectives
-{
-    public static function register(): void
-    {
-        Blade::directive('acfmodule', function ($tag) {
-            empty($tag) ? $tag = 'section' : $tag = $tag;
-            if (layout()) {
-                return "<section <?= Page::id(); ?>" . ' class="acf-' . layout() .
-"<?= Page::moduleAttr(); ?>" . '"';
-}
-return '';
+class CustomDirectives {
+public static function register(): void {
+        
+Blade::directive('wrapper', function () {
+return layout()
+? "<section <?php echo Page::id(); ?> class=\"acf-" . layout() . "<?php echo Page::moduleAttr(); ?>\">"
+: '';
 });
 
-Blade::directive('endacfmodule', function ($tag) {
-empty($tag) ? $tag = 'section' : $tag = $tag;
-if (layout()) {
-return "</{$tag}>";
-}
-return '';
+Blade::directive('endwrapper', function () {
+return layout() ? "</section>" : '';
 });
 
-Blade::directive('container', function ($classPrefix) {
-$containerClass = $classPrefix ? $classPrefix : 'acf-' . layout();
-
-return "<?= get_sub_field('has_container') ? '<div class=\"{$containerClass}__container container\">' : '' ?>";
+Blade::directive('container', function () {
+return "<?= get_sub_field('container') ? '<div class=\"acf-" . layout() . "__container container\">' : '' ?>";
 });
 
-Blade::directive('endcontainer', function ($tag) {
-return "<?= get_sub_field('has_container') ? '</div>' : '' ?>";
+Blade::directive('endcontainer', function () {
+return "<?= get_sub_field('container') ? '</div>' : '' ?>";
 });
 
 Blade::directive('svg', function ($id) {
-return "<svg class=\" svg-{$id}\">
+return "<svg class=\"svg-{$id}\">
     <use xlink:href=\"#{$id}\" />
 </svg>";
 });
-}
-}
+
+
+}}

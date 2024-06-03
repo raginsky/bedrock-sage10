@@ -18,7 +18,7 @@ $settings = new FieldsBuilder( 'settings' );
                 'ui_on_text'  => 'Center',
                 'ui_off_text' => 'Left'
             ])->setWidth(10)
-            ->addTrueFalse('has_container', [
+            ->addTrueFalse('container', [
                 'label'       => 'Container',
                 'ui'          => 1,
                 'ui_on_text'  => 'Container',
