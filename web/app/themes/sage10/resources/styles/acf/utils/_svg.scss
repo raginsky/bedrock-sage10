@@ -1,0 +1,12 @@
+.svg-stroke,
+.svg-stroke-thin {
+  fill: none;
+  stroke: $brand_primary;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+
+  &.svg-stroke-thin {
+    stroke-linejoin: round;
+    stroke-width: 1px;
+  }
+}

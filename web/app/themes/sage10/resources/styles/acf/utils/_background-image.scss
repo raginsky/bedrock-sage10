@@ -1,0 +1,97 @@
+.acf-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  order: 1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+
+  &--sm {
+    background-repeat: no-repeat;
+
+    @media #{$xl} {
+      display: none;
+    }
+  }
+
+  &--md {
+    display: none;
+    height: 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    @media #{$xl} {
+      display: block;
+    }
+  }
+
+  &-hide {
+    &-mobile {
+      @media #{$navbar_until_breakpoint} {
+        display: none;
+      }
+    }
+
+    &-desktop {
+      @media #{$navbar_breakpoint} {
+        display: none;
+      }
+    }
+  }
+
+  &--size {
+    &-cover {
+      background-size: cover;
+    }
+
+    &-contain {
+      background-position: top center;
+      background-size: contain;
+    }
+  }
+
+  &--align {
+    &-right {
+      &-top {
+        background-position: right top;
+      }
+
+      &-center {
+        background-position: right center;
+      }
+
+      &-bottom {
+        background-position: right bottom;
+      }
+    }
+
+    &-left {
+      &-top {
+        background-position: left top;
+      }
+
+      &-center {
+        background-position: left center;
+      }
+
+      &-bottom {
+        background-position: left bottom;
+      }
+    }
+
+    &-center {
+      &-top {
+        background-position: center top;
+      }
+
+      &-center {
+        background-position: center center;
+      }
+
+      &-bottom {
+        background-position: center bottom;
+      }
+    }
+  }
+}

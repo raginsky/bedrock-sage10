@@ -9,14 +9,16 @@ use Illuminate\Support\Facades\Blade;
 class CustomDirectives {
 public static function register(): void {
         
-Blade::directive('wrapper', function () {
+Blade::directive('wrapper', function ($tag) {
+    empty($tag) ? ($tag = 'section') : ($tag = $tag);
 return layout()
-? "<section <?php echo Page::id(); ?> class=\"acf-" . layout() . "<?php echo Page::moduleAttr(); ?>\">"
+? "<{$tag} <?php echo Page::id(); ?> class=\"acf-" . layout() . "<?php echo Page::moduleAttr(); ?>\">"
 : '';
 });
 
-Blade::directive('endwrapper', function () {
-return layout() ? "</section>" : '';
+Blade::directive('endwrapper', function ($tag) {
+empty($tag) ? ($tag = 'section') : ($tag = $tag);
+return layout() ? "</{$tag}>" : '';
 });
 
 Blade::directive('container', function () {

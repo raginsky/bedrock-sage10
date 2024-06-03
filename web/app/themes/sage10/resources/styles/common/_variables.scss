@@ -28,3 +28,17 @@ $brand_button_radius: 1rem;
 $button_second_margin: 1vw;
 $button_primary_background: $brand_primary;
 $button_primary_background_hover: $brand_primary_active;
+
+/** Spacing */
+$spacing_1: 1rem;
+
+$spacing_half: $spacing_1 / 2; // 0.5rem
+$spacing_2: $spacing_1 * 2; // 2rem
+$spacing_3: $spacing_1 * 3; // 3rem
+$spacing_4: $spacing_1 * 4; // 4rem
+$spacing_5: $spacing_1 * 5; // 5rem
+$spacing_6: $spacing_1 * 6; // 6rem
+$spacing_7: $spacing_1 * 7; // 7rem
+$spacing_8: $spacing_1 * 8; // 8rem
+$spacing_9: $spacing_1 * 9; // 9rem
+$spacing_10: $spacing_1 * 10; // 10rem

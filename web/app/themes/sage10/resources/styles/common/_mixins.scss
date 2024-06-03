@@ -12,7 +12,7 @@
 
 @mixin responsive-font($pixelSize: 21, $minimum: 4) {
   $rem: #{calc($pixelSize / 10)}rem;
-  $threeQuarter: ceil($pixelSize - calc($pixelSize / 4));
+  $threeQuarter: math.ceil($pixelSize - calc($pixelSize / 4));
 
   @if ($minimum != 4) {
     $threeQuarter: $minimum;
@@ -21,10 +21,11 @@
   } @else {
     font-size: rem($threeQuarter);
   }
+
   @include media('xs') {
+    // prettier-ignore
     font-size: calc(
-      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
-        calc((100vw - 320px) / (1200 - 320))
+      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) * calc((100vw - 320px) / (1200 - 320))
     );
   }
 

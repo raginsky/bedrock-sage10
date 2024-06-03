@@ -17,6 +17,8 @@ add_filter('excerpt_more', function () {
 
 /**
  * Disable comments on Media attachments
+ * 
+ * @param bool $open
  */
 add_filter( 'comments_open', function ( $open, $post_id ) {
     $post = get_post( $post_id );

@@ -1,0 +1,15 @@
+.acf-margin {
+  &-bottom {
+    &--small {
+      margin-bottom: 0.5em;
+    }
+
+    &--normal {
+      margin-bottom: 1em;
+    }
+
+    &--large {
+      margin-bottom: 1.5em;
+    }
+  }
+}

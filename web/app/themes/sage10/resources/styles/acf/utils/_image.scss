@@ -1,0 +1,19 @@
+.acf-image {
+  &--sm {
+    @media #{$md} {
+      display: none;
+    }
+  }
+
+  &--md {
+    display: none;
+
+    @media #{$md} {
+      display: block;
+    }
+  }
+
+  .acf-buttons + & {
+    padding-top: 1.6rem;
+  }
+}
