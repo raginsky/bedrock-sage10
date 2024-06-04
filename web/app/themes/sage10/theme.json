@@ -31,12 +31,12 @@
           "slug": "transparent"
         },
         {
-          "color": "#000",
+          "color": "#000000",
           "name": "Black",
           "slug": "black"
         },
         {
-          "color": "#fff",
+          "color": "#ffffff",
           "name": "White",
           "slug": "white"
         },
@@ -96,7 +96,7 @@
           "slug": "slate-950"
         },
         {
-          "color": "#f2f2f2",
+          "color": "f2f2f2",
           "name": "Gray",
           "slug": "gray"
         },
@@ -1211,14 +1211,14 @@
           "slug": "secondary"
         },
         {
-          "color": "#ff2a00",
-          "name": "Highlight",
-          "slug": "highlight"
-        },
-        {
           "color": "#0b0b0f",
           "name": "Dark",
           "slug": "dark"
+        },
+        {
+          "color": "#ff2a00",
+          "name": "Highlight",
+          "slug": "highlight"
         },
         {
           "color": "#f5f5f5",
@@ -1329,6 +1329,11 @@
           "name": "9xl",
           "size": "8rem",
           "slug": "9xl"
+        },
+        {
+          "name": "md",
+          "size": "1rem",
+          "slug": "md"
         }
       ]
     }
