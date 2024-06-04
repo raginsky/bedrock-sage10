@@ -1,11 +1,7 @@
-@php
-  $component = 'acf-section';
-@endphp
-
 @wrapper('div')
-  <div class="relative z-1 {{ $component }}">
+  <div class="relative z-1 acf-{{layout()}}">
     @container
-      <div class="relative z-2 {{ $component }}__container">
+      <div class="relative z-2">
         @layouts('components')
           @include('acf.components.' . layout())
         @endlayouts
