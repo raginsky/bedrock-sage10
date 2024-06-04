@@ -20,4 +20,5 @@ if (!function_exists('layout')) {
     }
 }
 
+class_alias('App\View\Composers\App', 'App');
 class_alias('App\View\Composers\Page', 'Page');

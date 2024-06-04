@@ -4,7 +4,7 @@
   if ($rows) {
       ?>
       @layouts('flex_content')
-      @include ('acf.layouts.'. layout())
+        @include ('acf.layouts.'. layout())
       @endlayouts
       <?php
   } else {

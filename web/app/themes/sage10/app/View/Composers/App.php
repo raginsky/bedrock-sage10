@@ -32,7 +32,7 @@ class App extends Composer
      *
      * @return string
      */
-    public function siteName()
+    public static function siteName()
     {
         return get_bloginfo('name', 'display');
     }

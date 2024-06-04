@@ -45,6 +45,9 @@ $footer_row
         ->addFlexibleContent('column_components', [
             'button_label' => 'Add Column Component'
         ])
+        ->addLayout( get_field_partial( 'components.footer.footerTitle' ) )
+        ->addLayout( get_field_partial( 'components.footer.footerText' ) )
+        ->addLayout( get_field_partial( 'components.footer.footerCopyright' ) )
         ->endFlexibleContent()
 
         // Additional Fields for Columns
