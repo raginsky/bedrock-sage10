@@ -1,0 +1,32 @@
+.acf-footer-main {
+  position: relative;
+  overflow-x: hidden;
+
+  &__title {
+    padding-bottom: 0.5em;
+    font-weight: $font_weight_bold;
+    color: $brand_primary;
+  }
+
+  .container {
+    padding-top: 10rem;
+    border-top: 1px solid $brand_base;
+  }
+
+  a {
+    @include transition(300ms);
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  .acf-row {
+    padding: 2rem 0;
+
+    &__col:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

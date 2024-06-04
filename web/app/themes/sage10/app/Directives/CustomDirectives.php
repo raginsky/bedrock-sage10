@@ -28,12 +28,4 @@ return "<?= get_sub_field('container') ? '<div class=\"acf-" . layout() . "__con
 Blade::directive('endcontainer', function () {
 return "<?= get_sub_field('container') ? '</div>' : '' ?>";
 });
-
-Blade::directive('svg', function ($id) {
-return "<svg class=\"svg-{$id}\">
-    <use xlink:href=\"#{$id}\" />
-</svg>";
-});
-
-
 }}

@@ -50,3 +50,10 @@ $base_font_size_px: 16;
 
 /* Import ACF Custom Lists */
 @import 'acf/lists/default';
+
+/* Import ACF Footer */
+@import 'acf/footer-components/footer-main';
+@import 'acf/footer-components/footer-title';
+@import 'acf/footer-components/footer-text';
+@import 'acf/footer-components/footer-logo';
+@import 'acf/footer-components/footer-copyright';

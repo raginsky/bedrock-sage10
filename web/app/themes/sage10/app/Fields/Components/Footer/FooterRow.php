@@ -47,6 +47,7 @@ $footer_row
         ])
         ->addLayout( get_field_partial( 'components.footer.footerTitle' ) )
         ->addLayout( get_field_partial( 'components.footer.footerText' ) )
+        ->addLayout( get_field_partial( 'components.footer.footerLogo' ) )
         ->addLayout( get_field_partial( 'components.footer.footerCopyright' ) )
         ->endFlexibleContent()
 
