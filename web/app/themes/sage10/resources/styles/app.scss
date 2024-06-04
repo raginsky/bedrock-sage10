@@ -32,13 +32,10 @@ $base_font_size_px: 16;
 @import 'layouts/section';
 
 /* Import Components */
-@import 'components/buttons';
 
 /* --------------------------- ACF --------------------------- */
 
 /* Import ACF Components */
-@import 'acf/components/row';
-@import 'acf/components/buttons';
 
 /* Import ACF Utils */
 @import 'acf/utils/text';

@@ -32,9 +32,6 @@ class Page extends Composer
             'alignCenter' => $this->alignCenter(),
             'textColor' => $this->textColor(),
             'moduleAttr' => $this->moduleAttr(),
-            'rowOrReverse' => $this->rowOrReverse(),
-            'verticalAlignment' => $this->verticalAlignment(),
-            'justifyContent' => $this->justifyContent(),
             'linkTarget' => $this->linkTarget(),
         ];
     }
@@ -92,23 +89,6 @@ class Page extends Composer
     {
         return ($text_color = get_sub_field('text_color')) ? ' acf-text-color-' . $text_color : '';
     }
-    
-    public static function rowOrReverse()
-    {
-        return get_sub_field('reverse_columns') ? ' acf-row--reverse-columns' : ' acf-row';
-    }
-    
-    public static function verticalAlignment()
-    {
-        return get_sub_field('vertical_alignment') ? ' acf-row--align-stretch' : ' acf-row--align-center';
-    }
-    
-    public static function justifyContent()
-    {
-        $rowAlignment = get_sub_field('justify_content');
-        return $rowAlignment ? ' acf-row--justify-' . $rowAlignment : '';
-    }
-    
 
     public static function linkTarget()
     {

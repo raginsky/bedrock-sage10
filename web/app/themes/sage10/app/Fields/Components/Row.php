@@ -4,7 +4,7 @@ namespace App\Fields;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$row = new FieldsBuilder( 'row' );
+$row = new FieldsBuilder('row');
 
 $row
     // Reverse Columns on Mobile
@@ -40,7 +40,6 @@ $row
         'button_label' => 'Add Column',
         'instructions' => 'Click "Add Column" to add new Column to the row'
     ])
-
         // Column Components Flexible Content
         ->addFlexibleContent('column_components', [
             'button_label' => 'Add Column Component'

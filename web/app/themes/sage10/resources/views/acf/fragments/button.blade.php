@@ -1,13 +1,50 @@
 @php
-    $style = str_replace(' ', '-', strtolower(get_sub_field('class')));
-    $margin = str_replace(' ', '-', strtolower(get_sub_field('margin_bottom')));
-    $class = 'acf-btn' . ($style ? ' acf-btn-' . $style : '') . ($margin ? ' acf-margin-bottom--' . $margin : '');
-@endphp
+    $style = strtolower(str_replace(' ', '-', get_sub_field('class')));
+    $margin = strtolower(str_replace(' ', '-', get_sub_field('margin_bottom')));
 
-@set($link, get_sub_field('page_url') ? get_sub_field('page_url') : (get_sub_field('url') ? get_sub_field('url') : '#'))
+    // Define Tailwind CSS classes based on ACF fields
+    $styleClass = '';
+    if ($style) {
+        switch ($style) {
+            case 'primary':
+                $styleClass = 'bg-blue-500 text-white border border-blue-500 hover:bg-blue-700';
+                break;
+            case 'secondary':
+                $styleClass = 'text-gray-700 underline hover:text-blue-700';
+                break;
+            case 'outline':
+                $styleClass = 'border border-gray-500 text-gray-500 hover:bg-gray-200';
+                break;
+            default:
+                $styleClass = '';
+        }
+    }
+
+    $marginClass = '';
+    if ($margin) {
+        switch ($margin) {
+            case 'small':
+                $marginClass = 'mb-2';
+                break;
+            case 'normal':
+                $marginClass = 'mb-4';
+                break;
+            case 'large':
+                $marginClass = 'mb-6';
+                break;
+            default:
+                $marginClass = '';
+        }
+    }
+
+    $class = 'inline-flex items-center justify-center py-4 px-8 ' . $styleClass . ' ' . $marginClass;
+
+    // Determine the link URL
+    $link = get_sub_field('page_url') ?: (get_sub_field('url') ?: '#');
+@endphp
 
 @hassub('button_label')
     <a class="{{ $class }}" href="{{ $link }}">
-        <span class="acf-btn__label">@sub('button_label')</span>
+        <span>@sub('button_label')</span>
     </a>
 @endsub
