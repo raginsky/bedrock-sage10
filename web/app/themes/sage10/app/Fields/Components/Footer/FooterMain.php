@@ -6,6 +6,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 
 $footer_main = new FieldsBuilder( 'footer_main' );
 
-$footer_main->addTextarea( 'title', [ 'rows' => '2', 'new_lines' => 'br' ] );
+$footer_main
+	->addFields( get_field_partial( 'components.footer.footerBuilder' ) );
 
 return $footer_main;
