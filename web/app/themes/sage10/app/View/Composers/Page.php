@@ -46,7 +46,23 @@ class Page extends Composer
     
     public static function gap()
     {
-        return ($gap = get_sub_field('gap')) ? ' acf-' . $gap : '';
+        $gap = get_sub_field('gap');
+        switch ($gap) {
+            case 'small-gap':
+                return ' gap-2';
+            case 'normal-gap':
+                return ' gap-4';
+            case 'large-gap':
+                return ' gap-8';
+            case 'no-gap-top':
+                return ' pt-0';
+            case 'no-gap-bottom':
+                return ' pb-0';
+            case 'no-gap':
+                return ' p-0';
+            default:
+                return '';
+        }
     }
     
     public static function bg()
@@ -72,17 +88,47 @@ class Page extends Composer
     
     public static function bgImageAlign()
     {
-        return ($align = get_sub_field('bg_align')) ? ' acf-bg-image--align-' . $align : '';
+        $align = get_sub_field('bg_align');
+        switch ($align) {
+            case 'right-top':
+                return ' bg-right-top';
+            case 'right-center':
+                return ' bg-right';
+            case 'right-bottom':
+                return ' bg-right-bottom';
+            case 'left-top':
+                return ' bg-left-top';
+            case 'left-center':
+                return ' bg-left';
+            case 'left-bottom':
+                return ' bg-left-bottom';
+            case 'center-top':
+                return ' bg-center-top';
+            case 'center-center':
+                return ' bg-center';
+            case 'center-bottom':
+                return ' bg-center-bottom';
+            default:
+                return ' bg-center';
+        }
     }
     
     public static function bgImageSize()
     {
-        return ($size = get_sub_field('bg_size')) ? ' acf-bg-image--size-' . $size : '';
+        $size = get_sub_field('bg_size');
+        switch ($size) {
+            case 'cover':
+                return ' bg-cover';
+            case 'contain':
+                return ' bg-contain';
+            default:
+                return '';
+        }
     }
     
     public static function alignCenter()
     {
-        return get_sub_field('align_center') ? ' acf-text-align-center' : '';
+        return get_sub_field('align_center') ? ' text-center' : '';
     }
     
     public static function textColor()

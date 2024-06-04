@@ -4,18 +4,19 @@ namespace App\Fields;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-include( get_template_directory() . "/app/Fields/Partials/Config.php" );
+include(get_template_directory() . "/app/Fields/Partials/Config.php");
 
 $settings = new FieldsBuilder('settings');
 
 $settings
+    // Settings Tab
     ->addTab('settings', ['placement' => 'left'])
-    
+
     // Section ID
     ->addText('title', [
         'label' => 'Section ID'
     ])->setWidth(20)
-    
+
     // Alignment and Container
     ->addTrueFalse('align_center', [
         'label'       => 'Align Text',
@@ -30,7 +31,7 @@ $settings
         'ui_off_text' => 'No Container'
     ])->setWidth(15)
     ->setDefaultValue('1')
-    
+
     // Gap
     ->addSelect('gap', [
         'label'       => 'Gap',
@@ -38,7 +39,7 @@ $settings
     ])->setWidth(15)
     ->addChoices('normal-gap', 'large-gap', 'small-gap', 'no-gap-top', 'no-gap-bottom', 'no-gap')
     ->setDefaultValue('normal-gap')
-    
+
     // Background and Text Color
     ->addRadio('background', [
         'label'       => 'Background Color',
@@ -50,7 +51,7 @@ $settings
         'allow_null'  => 1
     ])->setWidth(20)
     ->addChoices($global_config->text_color_pallet)
-    
+
     // Background Images
     ->addImage('bg_image', [
         'label'         => 'Background Image',
@@ -62,7 +63,7 @@ $settings
         'preview_size'  => 'medium',
         'return_format' => 'url'
     ])->setWidth(20)
-    
+
     // Background Size and Alignment
     ->addSelect('bg_size', [
         'label'       => 'Background Size',

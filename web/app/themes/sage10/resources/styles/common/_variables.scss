@@ -22,23 +22,3 @@ $brand_border_radius: 2rem;
 $header_initial_background: $brand_base;
 $header_sticky_background: $brand_base;
 $header_link_color: $brand_base;
-
-/** Buttons  */
-$brand_button_radius: 1rem;
-$button_second_margin: 1vw;
-$button_primary_background: $brand_primary;
-$button_primary_background_hover: $brand_primary_active;
-
-/** Spacing */
-$spacing_1: 1rem;
-
-$spacing_half: calc($spacing_1 / 2); // 0.5rem
-$spacing_2: $spacing_1 * 2; // 2rem
-$spacing_3: $spacing_1 * 3; // 3rem
-$spacing_4: $spacing_1 * 4; // 4rem
-$spacing_5: $spacing_1 * 5; // 5rem
-$spacing_6: $spacing_1 * 6; // 6rem
-$spacing_7: $spacing_1 * 7; // 7rem
-$spacing_8: $spacing_1 * 8; // 8rem
-$spacing_9: $spacing_1 * 9; // 9rem
-$spacing_10: $spacing_1 * 10; // 10rem
