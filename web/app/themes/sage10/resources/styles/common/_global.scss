@@ -74,8 +74,6 @@ h3,
 h4,
 h5,
 h6 {
-  @include letter-spacing();
-
   margin: 0;
   font: inherit;
 }
@@ -92,27 +90,4 @@ p {
 iframe {
   max-width: 100%;
   border: none;
-}
-
-img {
-  display: block;
-  max-width: 90vw;
-  margin: 0 auto;
-
-  @include media('md') {
-    max-width: 100%;
-  }
-}
-
-.container {
-  max-width: 140.2rem;
-  padding-right: 1.6rem;
-  padding-left: 1.6rem;
-  margin: 0 auto;
-}
-
-.acf-mobile-align {
-  @include media('until-md') {
-    text-align: center;
-  }
 }

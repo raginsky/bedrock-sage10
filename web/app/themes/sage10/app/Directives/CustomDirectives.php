@@ -22,7 +22,8 @@ return layout() ? "</{$tag}>" : '';
 });
 
 Blade::directive('container', function () {
-return "<?= get_sub_field('container') ? '<div class=\"acf-" . layout() . "__container container\">' : '' ?>";
+return
+"<?= get_sub_field('container') ? '<div class=\"acf-" . layout() . "__container max-w-container px-container mx-auto\">' : '' ?>";
 });
 
 Blade::directive('endcontainer', function () {

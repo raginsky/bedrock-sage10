@@ -7,36 +7,15 @@
   height: 100%;
   background-repeat: no-repeat;
 
-  &--sm {
-    background-repeat: no-repeat;
-
-    @include media('xl') {
+  &-hide-mobile {
+    @media #{$navbar_until_breakpoint} {
       display: none;
     }
   }
 
-  &--md {
-    display: none;
-    height: 100%;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-
-    @include media('xl') {
-      display: block;
-    }
-  }
-
-  &-hide {
-    &-mobile {
-      @media #{$navbar_until_breakpoint} {
-        display: none;
-      }
-    }
-
-    &-desktop {
-      @media #{$navbar_breakpoint} {
-        display: none;
-      }
+  &-hide-desktop {
+    @media #{$navbar_breakpoint} {
+      display: none;
     }
   }
 }

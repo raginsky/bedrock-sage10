@@ -77,14 +77,14 @@ class Page extends Composer
         $bg_image_sm = get_sub_field('bg_image_sm');
     
         if ($bg_image && $bg_image_sm) {
-            return '<div class="acf-bg-image acf-bg-image--sm" style="background-image:url(' . esc_url($bg_image_sm) . ')"></div>' .
-                   '<div class="acf-bg-image acf-bg-image--md" style="background-image:url(' . esc_url($bg_image) . ')"></div>';
+            return '<div class="acf-bg-image bg-cover bg-no-repeat xl:hidden" style="background-image:url(' . esc_url($bg_image_sm) . ')"></div>' .
+                   '<div class="acf-bg-image bg-cover bg-no-repeat hidden xl:block" style="background-image:url(' . esc_url($bg_image) . ')"></div>';
         }
     
         $bg_image = $bg_image ?: $bg_image_sm;
     
-        return $bg_image ? '<div class="acf-bg-image" style="background-image:url(' . esc_url($bg_image) . ')"></div>' : '';
-    }
+        return $bg_image ? '<div class="acf-bg-image bg-cover bg-no-repeat" style="background-image:url(' . esc_url($bg_image) . ')"></div>' : '';
+    }    
     
     public static function bgImageAlign()
     {

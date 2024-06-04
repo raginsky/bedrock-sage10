@@ -1,4 +1,3 @@
-// Import the TailwindCSS typography plugin using ES module syntax
 import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} config */
@@ -14,12 +13,16 @@ const config = {
         black: '#000000',
         highlight: '#ff2a00',
         light: '#f5f5f5',
-        gray: 'f2f2f2',
+        gray: {
+          100: '#f2f2f2',
+          800: '#333333',
+        },
       },
       zIndex: {
         20: '20',
       },
       fontSize: {
+        base: '1rem', // 16px
         xs: '0.75rem',
         sm: '0.875rem',
         md: '1rem',
@@ -39,7 +42,7 @@ const config = {
         relaxed: '1.625',
         loose: '2',
       },
-      backgroundColor: (theme) => ({
+      backgroundColor: theme => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -48,7 +51,7 @@ const config = {
         dark: '#0b0b0f',
         gray: '#f2f2f2',
       }),
-      textColor: (theme) => ({
+      textColor: theme => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -58,7 +61,7 @@ const config = {
         gray: '#f2f2f2',
         highlight: '#ff2a00',
       }),
-      borderColor: (theme) => ({
+      borderColor: theme => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -66,6 +69,23 @@ const config = {
         dark: '#0b0b0f',
         gray: '#f2f2f2',
       }),
+      maxWidth: {
+        container: '87.625rem', // 1402px
+      },
+      padding: {
+        container: '1.6rem', // 16px
+      },
+      minHeight: {
+        heroLg: '56.25rem', // 900px
+        heroXl: '73.75rem', // 1180px
+      },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
   },
   plugins: [typography],
