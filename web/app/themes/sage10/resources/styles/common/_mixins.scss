@@ -1,3 +1,4 @@
+// stylelint-disable
 @mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $query: map.get($breakpoints, $breakpoint);
@@ -16,7 +17,6 @@
 
   @if ($minimum != 4) {
     $threeQuarter: $minimum;
-
     font-size: rem($minimum);
   } @else {
     font-size: rem($threeQuarter);

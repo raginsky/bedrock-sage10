@@ -1317,12 +1317,12 @@
       "fontSizes": [
         {
           "name": "xs",
-          "size": "0.75rem",
+          "size": "0.875rem",
           "slug": "xs"
         },
         {
           "name": "sm",
-          "size": "0.875rem",
+          "size": "1.125rem",
           "slug": "sm"
         },
         {
@@ -1332,12 +1332,12 @@
         },
         {
           "name": "lg",
-          "size": "1.125rem",
+          "size": "3.125rem",
           "slug": "lg"
         },
         {
           "name": "xl",
-          "size": "1.25rem",
+          "size": "5rem",
           "slug": "xl"
         },
         {
@@ -1382,7 +1382,7 @@
         },
         {
           "name": "md",
-          "size": "1rem",
+          "size": "1.25rem",
           "slug": "md"
         }
       ]

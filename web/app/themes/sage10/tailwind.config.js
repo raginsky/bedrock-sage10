@@ -1,6 +1,5 @@
 import typography from '@tailwindcss/typography';
 
-/** @type {import('tailwindcss').Config} config */
 const config = {
   content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
   theme: {
@@ -22,12 +21,11 @@ const config = {
         20: '20',
       },
       fontSize: {
-        base: '1rem', // 16px
-        xs: '0.75rem',
-        sm: '0.875rem',
-        md: '1rem',
-        lg: '1.125rem',
-        xl: '1.25rem',
+        xs: '0.875rem', // 14px
+        sm: '1.125rem', // 18px
+        md: '1.25rem', // 20px
+        lg: '3.125rem', // 50px
+        xl: '5rem', // 80px
       },
       fontWeight: {
         normal: '400',
@@ -41,6 +39,11 @@ const config = {
         normal: '1.5',
         relaxed: '1.625',
         loose: '2',
+        lg: '1.2',
+        xl: '1.2',
+      },
+      borderRadius: {
+        lg: '2rem',
       },
       backgroundColor: theme => ({
         ...theme('colors'),
@@ -81,11 +84,17 @@ const config = {
       },
     },
     screens: {
-      sm: '640px',
+      xs: '321px',
+      sm: '576px',
       md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      lg: '992px',
+      xl: '1200px',
       '2xl': '1536px',
+      '3xl': '1920px',
+      'until-md': { max: '767px' },
+      'until-lg': { max: '991px' },
+      'until-xl': { max: '1199px' },
+      'until-xxl': { max: '1599px' },
     },
   },
   plugins: [typography],
