@@ -54,58 +54,7 @@ class ThemeOptions extends Field
         ]);
 
         // Social Media Links
-        $themeOptions
-            ->addRepeater('social_media', [
-                'label' => 'Social Media Links',
-                'button_label' => 'Add Social Media Link',
-                'layout' => 'block',
-            ])
-                ->addText('platform', [
-                    'label' => 'Platform',
-                    'instructions' => 'Enter the social media platform (e.g., Facebook, Twitter).',
-                    'wrapper' => [
-                        'width' => '50',
-                    ],
-                ])
-                ->addUrl('url', [
-                    'label' => 'URL',
-                    'instructions' => 'Enter the URL to your social media profile.',
-                    'wrapper' => [
-                        'width' => '50',
-                    ],
-                ])
-            ->endRepeater();
-
-
-        $themeOptions
-        ->addColorPicker('primary_color', [
-            'label' => 'Primary Color',
-            'instructions' => 'Select the primary color for the site.',
-            'wrapper' => [
-                'width' => '25',
-            ],
-        ]);
-
-    $themeOptions
-        ->addColorPicker('secondary_color', [
-            'label' => 'Secondary Color',
-            'instructions' => 'Select the secondary color for the site.',
-            'wrapper' => [
-                'width' => '25',
-            ],
-        ]);
-
-        // Custom Footer Text
-        $themeOptions
-            ->addWysiwyg('footer_text', [
-                'label' => 'Footer Text',
-                'instructions' => 'Enter custom text for the site footer.',
-                'media_upload' => 0,
-                'toolbar' => 'basic',
-                'wrapper' => [
-                    'width' => '100',
-                ],
-            ]);
+        $themeOptions->addFields( get_field_partial( 'layouts.footerContent' ) );
 
         // Return the built field group
         return $themeOptions->build();

@@ -1,1 +1,1 @@
-<footer class="content-info"></footer>
+@include('acf.layouts.footer-content')
