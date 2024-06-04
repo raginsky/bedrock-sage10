@@ -8,11 +8,6 @@ $font_base:
 $font_secondary: false;
 $letter_spacing: false;
 
-$font_weight_light: 300;
-$font_weight_regular: 400;
-$font_weight_medium: 500;
-$font_weight_bold: 700;
-
 $base_font_size: #{calc($base_font_size_px / 10)}rem;
 
 /** Brand border-radius */

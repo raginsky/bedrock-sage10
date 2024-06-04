@@ -4,43 +4,85 @@ namespace App\Fields;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-include( get_template_directory() . "/app/Fields/Partials/Config.php" );
+include(get_template_directory() . "/app/Fields/Partials/Config.php");
 
-$title = new FieldsBuilder( 'title' );
+$title = new FieldsBuilder('title');
+
 $title
-	->addTab( 'Content' )
-	->addTextarea( 'title', [ 'rows' => '2', 'new_lines' => 'br' ] )
-	->addTab( 'Settings' )
-	->addRadio( 'color', [ 'allow_null' => 1 ] )
-	->setSelector( '.radio_colors' )
-	->setWidth( 20 )
-	->addChoices( $global_config->text_color_pallet )
-	->addSelect( 'tag', [ 'label' => 'Title Tag' ] )
-	->setWidth( 15 )
-	->addChoices( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'small' )
-	->setDefaultValue( 'h4' )
-	->addText( 'url', [] )
-	->setWidth( 15 )
-	->conditional( 'tag', '==', 'a' )
-	->addSelect( 'size', [ 'allow_null' => 1 ] )
-	->setWidth( 15 )
-	->addChoices( 'xl', 'lg', 'md', 'sm', 'xs' )
-	->setDefaultValue( 'md' )
-	->addSelect( 'weight', [ 'label' => 'Font Weight' ] )
-	->setWidth( 15 )
-	->addChoices( 'Normal', 'Light', 'Medium', 'Bold' )
-	->setDefaultValue( 'Normal' )
-	->addTrueFalse( 'uppercase', [
-		'label'       => 'Text style',
-		'ui'          => 1,
-		'ui_on_text'  => 'Uppercase',
-		'ui_off_text' => 'Lowercase'
-	] )
-	->setWidth( 20 )
-	->addSelect( 'margin_bottom', [
-		'allow_null' => 1
-	] )
-	->setWidth( 15 )
-	->addChoices( 'small', 'normal', 'large' );
+    // Content Tab
+    ->addTab('Content')
+    ->addTextarea('title', [
+        'rows' => '2',
+        'new_lines' => 'br'
+    ])
+
+    // Settings Tab
+    ->addTab('Settings')
+    ->addRadio('color', [
+        'label'       => 'Color',
+        'allow_null'  => 1,
+        'choices'     => $global_config->text_color_pallet,
+        'wrapper'     => ['width' => 20]
+    ])
+    ->addSelect('tag', [
+        'label'       => 'Title Tag',
+        'choices'     => [
+            'h1' => 'H1',
+            'h2' => 'H2',
+            'h3' => 'H3',
+            'h4' => 'H4',
+            'h5' => 'H5',
+            'h6' => 'H6',
+            'p'  => 'P',
+            'a'  => 'A',
+            'small' => 'Small'
+        ],
+        'default_value' => 'h4',
+        'wrapper'     => ['width' => 15]
+    ])
+    ->addText('url', [])
+    ->conditional('tag', '==', 'a')
+    ->setWidth(15)
+    ->addSelect('size', [
+        'label'       => 'Size',
+        'allow_null'  => 1,
+        'choices'     => [
+            'xl' => 'Extra Large',
+            'lg' => 'Large',
+            'md' => 'Medium',
+            'sm' => 'Small',
+            'xs' => 'Extra Small'
+        ],
+        'default_value' => 'md',
+        'wrapper'     => ['width' => 15]
+    ])
+    ->addSelect('weight', [
+        'label'       => 'Font Weight',
+        'choices'     => [
+            'normal' => 'Normal',
+            'light'  => 'Light',
+            'medium' => 'Medium',
+            'bold'   => 'Bold'
+        ],
+        'default_value' => 'normal',
+        'wrapper'     => ['width' => 15]
+    ])
+    ->addTrueFalse('uppercase', [
+        'label'       => 'Text Style',
+        'ui'          => 1,
+        'ui_on_text'  => 'Uppercase',
+        'ui_off_text' => 'Lowercase',
+        'wrapper'     => ['width' => 20]
+    ])
+    ->addSelect('margin_bottom', [
+        'label'       => 'Margin Bottom',
+        'allow_null'  => 1,
+        'choices'     => [
+            'small'  => 'Small',
+            'normal' => 'Normal',
+            'large'  => 'Large'
+        ],
+        'wrapper'     => ['width' => 15]
+    ]);
 
 return $title;
