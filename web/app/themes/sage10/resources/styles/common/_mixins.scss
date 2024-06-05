@@ -23,9 +23,9 @@
   }
 
   @include media('xs') {
-    // prettier-ignore
     font-size: calc(
-      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) * calc((100vw - 320px) / (1200 - 320))
+      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
+        calc((100vw - 320px) / (1200 - 320))
     );
   }
 

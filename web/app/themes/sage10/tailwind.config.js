@@ -45,7 +45,7 @@ const config = {
       borderRadius: {
         lg: '2rem',
       },
-      backgroundColor: theme => ({
+      backgroundColor: (theme) => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -54,7 +54,7 @@ const config = {
         dark: '#0b0b0f',
         gray: '#f2f2f2',
       }),
-      textColor: theme => ({
+      textColor: (theme) => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -64,7 +64,7 @@ const config = {
         gray: '#f2f2f2',
         highlight: '#ff2a00',
       }),
-      borderColor: theme => ({
+      borderColor: (theme) => ({
         ...theme('colors'),
         primary: '#2458ff',
         secondary: '#2458ff',
@@ -74,6 +74,8 @@ const config = {
       }),
       maxWidth: {
         container: '87.625rem', // 1402px
+        'container-lg': '1566px',
+        'container-md': '1280px',
       },
       padding: {
         container: '1.6rem', // 16px
