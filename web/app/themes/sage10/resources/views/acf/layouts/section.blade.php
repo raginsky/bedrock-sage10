@@ -1,4 +1,4 @@
-@wrapper('div')
+@wrapper(div)
   <div class="relative z-1 acf-{{layout()}}">
     @container
       <div class="relative z-2">
@@ -8,4 +8,4 @@
       </div>
     @endcontainer
   </div>
-@endwrapper('div')
+@endwrapper(div)
