@@ -78,6 +78,10 @@ const config = {
   },
   safelist: [
     {
+      /** 
+       * Allow all classes that start with bg-, text-, or font-
+       * see more: https://tailwindcss.com/docs/content-configuration#safelisting-classes
+      */
       pattern:
         /^(bg|text|font)-(primary|secondary|highlight|dark|light|white|gray|xs|sm|md|lg|xl)$/,
     },
