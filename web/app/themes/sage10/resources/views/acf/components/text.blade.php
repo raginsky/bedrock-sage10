@@ -18,10 +18,8 @@
             $marginClass = ' mb-6';
             break;
     }
-    
-    $contain = get_sub_field('contain') ? ' max-w-screen-sm mx-auto px-4' : '';
 @endphp
 
-<div class="acf-{{ layout() }}{{ $sizeClass }}{{ $colorClass }}{{ $marginClass }}{{ $contain }}">
+<div class="acf-{{ layout() }}{{ $sizeClass }}{{ $colorClass }}{{ $marginClass }}">
     @sub('text')
 </div>

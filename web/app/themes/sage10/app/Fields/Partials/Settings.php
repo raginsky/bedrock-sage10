@@ -10,7 +10,7 @@ $settings = new FieldsBuilder('settings');
 
 $settings
     // Settings Tab
-    ->addTab('settings', ['placement' => 'left'])
+    ->addTab('settings', ['placement' => 'top'])
 
     // Section ID
     ->addText('title', [
@@ -59,23 +59,23 @@ $settings
         'label'         => 'Background Image',
         'preview_size'  => 'medium',
         'return_format' => 'url'
-    ])->setWidth(20)
+    ])->setWidth(25)
     ->addImage('bg_image_sm', [
         'label'         => 'Small Background Image',
         'preview_size'  => 'medium',
         'return_format' => 'url'
-    ])->setWidth(20)
+    ])->setWidth(25)
 
     // Background Size and Alignment
     ->addSelect('bg_size', [
         'label'       => 'Background Size',
         'allow_null'  => 1
-    ])->setWidth(15)
+    ])->setWidth(25)
     ->addChoices('cover', 'contain')
     ->addSelect('bg_align', [
         'label'       => 'Background Alignment',
         'allow_null'  => 1
-    ])->setWidth(15)
+    ])->setWidth(25)
     ->addChoices([
         'center-top'    => 'Center Top',
         'center-center' => 'Center Center',

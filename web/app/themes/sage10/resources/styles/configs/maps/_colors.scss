@@ -1,11 +1,12 @@
 /** Colors */
 $brand_primary: #2458ff;
-$brand_secondary: $brand_primary;
+$brand_secondary: #ffa608;
 $brand_white: #fff;
 $brand_dark: #0b0b0f;
 $brand_black: #000;
 $brand_highlight: #ff2a00;
 $brand_light: #f5f5f5;
+$brand_gray: #f2f2f2;
 
 :root {
   --base-color: #{$brand_dark};
@@ -14,7 +15,7 @@ $brand_light: #f5f5f5;
   --color-secondary: #{$brand_secondary};
   --color-highlight: #{$brand_highlight};
   --color-dark: #{$brand_dark};
-  --color-gray: #f2f2f2;
+  --color-gray: #{brand_gray};
   --color-light: #{$brand_light};
   --color-white: #{$brand_white};
   --color-base-shadow: 0, 0, 0;

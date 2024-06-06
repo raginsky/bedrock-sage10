@@ -43,12 +43,6 @@ $text
             'large' => 'Large'
         ],
         'wrapper'     => ['width' => 15]
-    ])
-    ->addTrueFalse('contain', [
-        'label'       => 'Width',
-        'ui_on_text'  => 'Centered',
-        'ui_off_text' => 'Max',
-        'wrapper'     => ['width' => 30]
     ]);
 
 return $text;
