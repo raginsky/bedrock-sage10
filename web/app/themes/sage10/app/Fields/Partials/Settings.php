@@ -45,11 +45,13 @@ $settings
         'label'       => 'Background Color',
         'allow_null'  => 1
     ])->setWidth(20)
+    ->setSelector( '.color-selector' )
     ->addChoices($global_config->bg_color_pallet)
     ->addRadio('text_color', [
         'label'       => 'Text Color',
         'allow_null'  => 1
     ])->setWidth(20)
+    ->setSelector( '.color-selector' )
     ->addChoices($global_config->text_color_pallet)
 
     // Background Images

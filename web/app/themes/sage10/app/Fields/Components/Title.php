@@ -24,6 +24,7 @@ $title
         'choices'     => $global_config->text_color_pallet,
         'wrapper'     => ['width' => 20]
     ])
+    ->setSelector( '.color-selector' )
     ->addSelect('tag', [
         'label'       => 'Title Tag',
         'choices'     => [

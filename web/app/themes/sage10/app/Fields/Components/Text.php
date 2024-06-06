@@ -33,6 +33,7 @@ $text
         'choices'     => $global_config->text_color_pallet,
         'wrapper'     => ['width' => 25]
     ])
+    ->setSelector( '.color-selector' )
     ->addSelect('margin_bottom', [
         'label'       => 'Margin Bottom',
         'allow_null'  => 1,

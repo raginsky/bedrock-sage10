@@ -42,7 +42,7 @@ $settings
         'allow_null'  => 1,
         'choices'     => $global_config->bg_color_pallet,
         'wrapper'     => ['width' => 15]
-    ])->setSelector('.radio_colors')
+    ])->setSelector('.color-selector')
 
     // Text Color Option
     ->addRadio('text_color', [
@@ -50,7 +50,7 @@ $settings
         'allow_null'  => 1,
         'choices'     => $global_config->text_color_pallet,
         'wrapper'     => ['width' => 15]
-    ])->setSelector('.radio_colors')
+    ])->setSelector('.color-selector')
 
     // Background Image Option
     ->addImage('bg_image', [
