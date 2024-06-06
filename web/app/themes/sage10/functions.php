@@ -89,6 +89,6 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 */  
 
 function custom_admin_styles() {
-    wp_enqueue_style('admin-styles', get_template_directory_uri() . '/admin-style.css');
+    wp_enqueue_style('admin-styles', get_template_directory_uri() . '/resources/styles/admin-style.css');
 }
 add_action('admin_enqueue_scripts', 'custom_admin_styles');
