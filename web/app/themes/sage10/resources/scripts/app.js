@@ -4,7 +4,9 @@ import domReady from '@roots/sage/client/dom-ready';
  * Application entrypoint
  */
 domReady(async () => {
-  // ...
+  document.querySelectorAll('#primary-navigation li').forEach((li) => {
+    li.classList.add('hover:text-blue-500');
+  });
 });
 
 /**

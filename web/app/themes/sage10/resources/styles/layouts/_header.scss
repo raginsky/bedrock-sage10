@@ -1,4 +1,9 @@
 .wpbase-header {
+  .logo {
+    fill: currentColor;
+    width: 2rem;
+    height: 2rem;
+  }
   /* wordpress admin bar */
   .admin-bar & {
     &.sticky {
