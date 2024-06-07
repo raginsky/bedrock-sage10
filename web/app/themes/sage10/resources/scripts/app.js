@@ -4,9 +4,21 @@ import domReady from '@roots/sage/client/dom-ready';
  * Application entrypoint
  */
 domReady(async () => {
-  document.querySelectorAll('#primary-navigation li').forEach((li) => {
-    li.classList.add('hover:text-blue-500');
-  });
+  /* Navigation adjustments */
+  const navContent = document.getElementById('nav-content');
+  const navToggle = document.getElementById('nav-toggle');
+
+  if (navContent) {
+    navContent.querySelectorAll('li').forEach((li) => {
+      li.classList.add('hover:text-blue-500');
+    });
+
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navContent.classList.toggle('hidden');
+      });
+    }
+  }
 });
 
 /**

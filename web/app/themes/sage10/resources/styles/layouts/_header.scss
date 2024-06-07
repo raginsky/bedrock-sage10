@@ -1,17 +1,3 @@
 .wpbase-header {
-  .logo {
-    fill: currentColor;
-    width: 2rem;
-    height: 2rem;
-  }
-  /* wordpress admin bar */
-  .admin-bar & {
-    &.sticky {
-      transform: translateY(32px);
-
-      @media screen and (width <= 600px) {
-        transform: translateY(0);
-      }
-    }
-  }
+  //
 }
