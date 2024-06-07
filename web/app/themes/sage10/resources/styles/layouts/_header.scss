@@ -3,8 +3,8 @@
   .admin-bar & {
     transform: translateY(32px);
 
-    @media screen and (width <= 600px) {
-      transform: translateY(0);
+    @media screen and (width <= 782px) {
+      transform: translateY(46px);
     }
   }
 }

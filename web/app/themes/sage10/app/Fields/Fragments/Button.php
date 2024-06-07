@@ -8,22 +8,31 @@ $button = new FieldsBuilder('button');
 
 $button
     // Button Label
-    ->addText('button_label', [])
-    ->setWidth(16)
-
-    // Page URL
-    ->addPageLink('page_url', [
-        'label'          => 'Page URL',
-        'post_type'      => ['page'],
-        'allow_archives' => 0,
-        'allow_null'     => 1,
-        'wrapper'        => ['width' => 16]
+    ->addText('button_label', [
+        'wrapper' => [
+            'width' => 16,
+        ],
     ])
 
-    // Custom URL
-    ->addText('url', [
-        'label'   => 'URL',
-        'wrapper' => ['width' => 16]
+    // Page URL
+    ->addLink('page_url', [
+        'label' => 'Page URL',
+        'return_format' => 'url',
+        'wrapper' => [
+            'width' => 20,
+        ],
+    ])
+
+    ->addSelect('target', [
+        'label' => 'Link Target',
+        'choices' => [
+            '_self' => 'Same Tab',
+            '_blank' => 'New Tab',
+        ],
+        'default_value' => '_self',
+        'wrapper' => [
+            'width' => 30,
+        ],
     ])
 
     // Button Class

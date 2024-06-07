@@ -40,11 +40,12 @@
     $class = 'inline-flex items-center justify-center py-4 px-8 ' . $styleClass . ' ' . $marginClass;
 
     // Determine the link URL
-    $link = get_sub_field('page_url') ?: (get_sub_field('url') ?: '#');
+    $link = get_sub_field('page_url') ?: '#';
+    $target = get_sub_field('target') ?: '_self';
 @endphp
 
 @hassub('button_label')
-    <a class="{{ $class }}" href="{{ $link }}">
+    <a class="{{ $class }}" href="{{ $link }}" target="{{$target}}">
         <span>@sub('button_label')</span>
     </a>
 @endsub

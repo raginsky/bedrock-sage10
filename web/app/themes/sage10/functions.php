@@ -92,3 +92,17 @@ function custom_admin_styles() {
     wp_enqueue_style('admin-styles', get_template_directory_uri() . '/resources/styles/admin-style.css');
 }
 add_action('admin_enqueue_scripts', 'custom_admin_styles');
+
+
+/*
+|--------------------------------------------------------------------------
+| Custom Admin StylesOverride _admin_bar_bump_cb - a default callback for WP_Admin_Bar
+|--------------------------------------------------------------------------
+|
+|  Prevents WP from adding a margin on top of page when logged in. 
+|  (Adding a dummy function as it has to contain something – WordPress adds the default one if callback is empty)
+|  https://mattr.co.uk/remove-wp-admin-bar-inline-css-from-head
+|
+*/
+
+add_theme_support('admin-bar', ['callback' => function() {} ]);
