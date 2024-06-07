@@ -8,11 +8,11 @@ const config = {
         primary: '#2458ff',
         secondary: '#ffa608',
         white: '#ffffff',
-        dark: '#0b0b0f',
+        dark: '#202020',
         black: '#000000',
         highlight: '#ff2a00',
         light: '#f5f5f5',
-        gray: '#f2f2f2',
+        gray: '#808080',
       },
       zIndex: {
         20: '20',
@@ -31,9 +31,8 @@ const config = {
         bold: '700',
       },
       maxWidth: {
-        container: '87.625rem', // 1402px
-        'container-lg': '1566px',
-        'container-md': '1280px',
+        'container-md': '128rem',
+        'container-lg': '156.6rem',
       },
       padding: {
         container: '1.6rem', // 16px
@@ -49,7 +48,7 @@ const config = {
         white: '#ffffff',
         light: '#f5f5f5',
         dark: '#0b0b0f',
-        gray: '#f2f2f2',
+        gray: '#808080',
       }),
       textColor: (theme) => ({
         ...theme('colors'),
@@ -58,7 +57,7 @@ const config = {
         white: '#ffffff',
         light: '#f5f5f5',
         dark: '#0b0b0f',
-        gray: '#f2f2f2',
+        gray: '#808080',
         highlight: '#ff2a00',
       }),
     },

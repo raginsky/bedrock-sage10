@@ -22,11 +22,20 @@ return layout() ? "</{$tag}>" : '';
 });
 
 Blade::directive('container', function () {
-return
-"<?= get_sub_field('container') ? '<div class=\"acf-" . layout() . "__container max-w-container-md lg:max-w-container-lg mx-auto px-container\">' : '' ?>";
-});
+return "<?php if (get_sub_field('container') === 'large') : ?>
+<div class=\"acf-<?= layout() ?>__container max-w-container-lg mx-auto px-container\">
+    <?php elseif (get_sub_field('container') === 'medium') : ?>
+    <div class=\"acf-<?= layout() ?>__container max-w-container-md mx-auto px-container\">
+        <?php elseif (get_sub_field('container') === 'none') : ?>
+        NONE
+        <div class=\"max-w-full mx-auto px-container\">
+            <?php endif; ?>";
+            });
 
-Blade::directive('endcontainer', function () {
-return "<?= get_sub_field('container') ? '</div>' : '' ?>";
-});
-}}
+            Blade::directive('endcontainer', function () {
+            return "<?php if (get_sub_field('container')) : ?>
+        </div>
+        <?php endif; ?>";
+        });
+
+        }}

@@ -24,16 +24,19 @@ $settings
         'ui'          => 1,
         'ui_on_text'  => 'Center',
         'ui_off_text' => 'Left',
-        'wrapper'     => ['width' => 10]
-    ])
-    ->addTrueFalse('container', [
-        'label'       => 'Container',
-        'ui'          => 1,
-        'ui_on_text'  => 'Container',
-        'ui_off_text' => 'No Container',
         'wrapper'     => ['width' => 15]
     ])
-    ->setDefaultValue('1')
+    ->addSelect('container', [
+        'label'       => 'Container',
+        'wrapper'     => ['width' => 20],
+        'choices'     => [
+            'large'  => 'Large Container',
+            'medium'   => 'Medium Container',
+            'none' => 'No Container',
+        ],
+        'default_value' => 'medium',
+        'ui'          => 1,
+    ])
 
     // Gap
     ->addSelect('gap', [
@@ -45,19 +48,20 @@ $settings
     ->setDefaultValue('normal-gap')
 
     // Background and Text Color
-    ->addRadio('background', [
-        'label'       => 'Background Color',
-        'allow_null'  => 1
-    ])
-    ->setSelector( '.color-selector' )
-    ->addChoices($global_config->bg_color_pallet)
     ->addRadio('text_color', [
         'label'       => 'Text Color',
+        'allow_null'  => 1,
+        'wrapper'     => ['width' => 30]
+    ])
+    ->setSelector( '.color-selector' )
+    ->addChoices($global_config->text_color_pallet)
+    ->addRadio('background', [
+        'label'       => 'Background Color',
         'allow_null'  => 1,
         'wrapper'     => ['width' => 20]
     ])
     ->setSelector( '.color-selector' )
-    ->addChoices($global_config->text_color_pallet)
+    ->addChoices($global_config->bg_color_pallet)
 
     // Background Images
     ->addImage('bg_image', [
@@ -77,13 +81,13 @@ $settings
     ->addSelect('bg_size', [
         'label'       => 'Background Size',
         'allow_null'  => 1,
-        'wrapper'     => ['width' => 25]
+        'wrapper'     => ['width' => 15]
     ])
     ->addChoices('cover', 'contain')
     ->addSelect('bg_align', [
-        'label'       => 'Background Alignment',
+        'label'       => 'Alignment',
         'allow_null'  => 1,
-        'wrapper'     => ['width' => 25]
+        'wrapper'     => ['width' => 15]
     ])
     ->addChoices([
         'center-top'    => 'Center Top',

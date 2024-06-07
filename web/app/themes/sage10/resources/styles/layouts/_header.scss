@@ -1,3 +1,10 @@
 .wpbase-header {
-  //
+  /* wordpress admin bar */
+  .admin-bar & {
+    transform: translateY(32px);
+
+    @media screen and (width <= 600px) {
+      transform: translateY(0);
+    }
+  }
 }

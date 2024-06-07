@@ -31,23 +31,6 @@ class ThemeOptions extends Field
         // Initialize the field group
         $themeOptions = Builder::make('theme_options');
 
-        // Header Tab
-        $themeOptions->addTab('Header', [
-            'placement' => 'top',
-        ]);
-
-        // Site Logo
-        $themeOptions
-            ->addImage('site_logo', [
-                'label' => 'Site Logo',
-                'instructions' => 'Upload the site logo.',
-                'return_format' => 'url',
-                'preview_size' => 'medium',
-                'wrapper' => [
-                    'width' => '50',
-                ],
-            ]);
-
         // Footer Tab
         $themeOptions->addTab('Footer', [
             'placement' => 'top',

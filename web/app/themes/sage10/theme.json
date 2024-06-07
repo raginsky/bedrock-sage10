@@ -96,7 +96,7 @@
           "slug": "slate-950"
         },
         {
-          "color": "#f2f2f2",
+          "color": "#808080",
           "name": "Gray",
           "slug": "gray"
         },
@@ -1211,7 +1211,7 @@
           "slug": "secondary"
         },
         {
-          "color": "#0b0b0f",
+          "color": "#202020",
           "name": "Dark",
           "slug": "dark"
         },

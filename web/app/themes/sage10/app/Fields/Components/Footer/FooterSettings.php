@@ -13,15 +13,18 @@ $settings
     ->addTab('settings', ['placement' => 'top'])
 
     // Container Option
-    ->addTrueFalse('container', [
+    ->addSelect('container', [
         'label'       => 'Container',
+        'wrapper'     => ['width' => 15],
+        'choices'     => [
+            'large'  => 'Large Container',
+            'medium'   => 'Medium Container',
+            'none' => 'No Container',
+        ],
+        'default_value' => 'medium',
         'ui'          => 1,
-        'ui_on_text'  => 'Container',
-        'ui_off_text' => 'No Container',
-        'default_value' => 1,
-        'wrapper'     => ['width' => 25]
     ])
-
+    
     // Gap Option
     ->addSelect('gap', [
         'label'       => 'Gap',
@@ -35,7 +38,7 @@ $settings
             'no-gap'        => 'No Gap'
         ],
         'default_value' => 'normal-gap',
-        'wrapper'     => ['width' => 25]
+        'wrapper'     => ['width' => 20]
     ])
 
     // Background Color Option
@@ -43,7 +46,7 @@ $settings
         'label'       => 'Background Color',
         'allow_null'  => 1,
         'choices'     => $global_config->bg_color_pallet,
-        'wrapper'     => ['width' => 25]
+        'wrapper'     => ['width' => 30]
     ])->setSelector('.color-selector')
 
     // Text Color Option
