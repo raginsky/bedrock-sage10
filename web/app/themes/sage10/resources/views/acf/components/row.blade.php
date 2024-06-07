@@ -1,14 +1,17 @@
 @set($component, 'row')
 
-<div class="acf-{{$component}} flex flex-col gap-16 
-            @if(get_sub_field('reverse_columns')) flex-col-reverse @endif
-            @if(get_sub_field('vertical_alignment')) items-stretch @else items-center @endif
-            @if(get_sub_field('justify_content')) justify-{{ get_sub_field('justify_content') }} @endif">
+<div @class([
+    'acf-' . $component . ' flex gap-16',
+    'flex-col-reverse' => get_sub_field('reverse_columns'),
+    'items-stretch' => get_sub_field('vertical_alignment'),
+    'items-center' => !get_sub_field('vertical_alignment'),
+    'justify-' . get_sub_field('justify_content') => get_sub_field('justify_content')
+])>
     @fields('columns')
     @group('settings')
     @php
-        $colMDWidthClass = get_sub_field('column_md_width') ? 'md:w-' . get_sub_field('column_md_width') . '/12' : '';
-        $colLGWidthClass = get_sub_field('column_lg_width') ? 'lg:w-' . get_sub_field('column_lg_width') . '/12' : '';
+        $colMDWidthClass = get_sub_field('column_md_width') ? ' md:' . get_sub_field('column_md_width') : '';
+        $colLGWidthClass = get_sub_field('column_lg_width') ? ' lg:' . get_sub_field('column_lg_width') : '';
         $hideColumn = get_sub_field('hide_on') ? (strtolower(get_sub_field('hide_on')) == 'mobile' ? ' md:hidden' : ' lg:hidden') : '';
     @endphp
     @endgroup

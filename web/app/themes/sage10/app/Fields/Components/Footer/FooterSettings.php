@@ -10,7 +10,7 @@ $settings = new FieldsBuilder('settings');
 
 $settings
     // Settings Tab
-    ->addTab('settings', ['placement' => 'left'])
+    ->addTab('settings', ['placement' => 'top'])
 
     // Container Option
     ->addTrueFalse('container', [
@@ -18,8 +18,9 @@ $settings
         'ui'          => 1,
         'ui_on_text'  => 'Container',
         'ui_off_text' => 'No Container',
-        'default_value' => 1
-    ])->setWidth(15)
+        'default_value' => 1,
+        'wrapper'     => ['width' => 25]
+    ])
 
     // Gap Option
     ->addSelect('gap', [
@@ -33,15 +34,16 @@ $settings
             'no-gap-bottom' => 'No Gap Bottom',
             'no-gap'        => 'No Gap'
         ],
-        'default_value' => 'normal-gap'
-    ])->setWidth(15)
+        'default_value' => 'normal-gap',
+        'wrapper'     => ['width' => 25]
+    ])
 
     // Background Color Option
     ->addRadio('background', [
         'label'       => 'Background Color',
         'allow_null'  => 1,
         'choices'     => $global_config->bg_color_pallet,
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 25]
     ])->setSelector('.color-selector')
 
     // Text Color Option
@@ -49,7 +51,7 @@ $settings
         'label'       => 'Text Color',
         'allow_null'  => 1,
         'choices'     => $global_config->text_color_pallet,
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 25]
     ])->setSelector('.color-selector')
 
     // Background Image Option

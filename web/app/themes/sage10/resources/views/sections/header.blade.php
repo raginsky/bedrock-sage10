@@ -1,8 +1,7 @@
 <header class="sticky top-0 z-20 w-full bg-primary py-4">
   <div class="container mx-auto flex justify-between items-center px-4">
     <a class="flex items-center" href="{{ home_url('/') }}">
-      {!! $siteName !!}
-      @svg('Logo')
+      @include('svg.logo')
     </a>
 
     @if (has_nav_menu('primary_navigation'))

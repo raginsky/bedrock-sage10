@@ -1,7 +1,7 @@
 @wrapper(div)
 @fields('menu_items')
     @php
-        $link = get_sub_field('page_url') ?: (get_sub_field('url') ?: '#');
+        $link = get_sub_field('page_url') ?: '#';
         $target = get_sub_field('target') ?: '_self';
     @endphp
     <div class="mb-4">

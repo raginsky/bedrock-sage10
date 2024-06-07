@@ -10,22 +10,20 @@ $footerMenu
     ->addRepeater('menu_items', [
         'layout' => 'block',
         'button_label' => 'Add Menu Item',
+        'min' => 1,
     ])
         ->addText('menu_label', [
             'label' => 'Menu Label',
             'required' => 1,
+            'wrapper' => [
+                'width' => '50',
+            ],
         ])
         ->addLink('page_url', [
             'label' => 'Page URL',
             'return_format' => 'url',
             'wrapper' => [
-                'width' => '50',
-            ],
-        ])
-        ->addText('url', [
-            'label' => 'Custom URL',
-            'wrapper' => [
-                'width' => '50',
+                'width' => '20',
             ],
         ])
         ->addSelect('target', [
@@ -36,7 +34,7 @@ $footerMenu
             ],
             'default_value' => '_self',
             'wrapper' => [
-                'width' => '50',
+                'width' => '30',
             ],
         ])
     ->endRepeater();
