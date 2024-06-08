@@ -11,6 +11,7 @@ Welcome to the WP Theme project! This repository contains a custom WordPress the
   - [Installation](#installation)
   - [Usage](#usage)
   - [Documentation and Resources](#documentation-and-resources)
+  - [Important notes](#important-notes)
 
 ## Overview
 
@@ -26,14 +27,17 @@ This project is a WordPress theme development setup that leverages modern tools 
 
 The project is structured as follows:
 
-├── config /
-├──scripts/
-│├── web/
-│ ├──app/
-│  ├── mu-plugins/
-│  ├── plugins/
-│  ├── themes/
-│  ├── sage10/
+```bash
+├── bedrock/
+│   ├── config/
+│   ├── scripts/
+│   ├── web/
+│       ├── app/
+│           ├── mu-plugins/
+│           ├── plugins/
+│           ├── themes/
+│               ├── sage10/
+```
 
 ## Requirements
 
@@ -104,3 +108,10 @@ To get started, you will need the following:
 - [ACF Builder Documentation](https://github.com/Log1x/acf-composer)
 - [Bedrock Documentation](https://roots.io/bedrock/docs/installation/)
 - [LocalWP Documentation](https://localwp.com/help-docs/getting-started/installing-local/)
+- [Bedrock with Local](https://roots.io/bedrock/docs/bedrock-with-local/)
+
+## Important notes
+
+ACF Pro is a paid plugin and requires a license key for use in production. You can purchase a license from the [ACF website]
+(https://www.advancedcustomfields.com/pro/).
+It does not included to current repository but required for full functionality. 
