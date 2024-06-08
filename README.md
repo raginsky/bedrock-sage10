@@ -1,6 +1,6 @@
-# WP Theme Project
+# WpBase Theme Project
 
-Welcome to the WP Theme project! This repository contains a custom WordPress theme built with Sage 10, Acorn, TailwindCSS, ACF Pro, and ACF Builder. The project is structured using Bedrock and is intended to be used with LocalWP for local development.
+Welcome to the WpBase Theme project! This repository contains a custom WordPress theme built with Sage 10, Acorn, TailwindCSS, ACF Pro, and ACF Builder. The project is structured using Bedrock and is intended to be used with LocalWP for local development.
 
 ## Table of Contents
 - [WP Theme Project](#wp-theme-project)
