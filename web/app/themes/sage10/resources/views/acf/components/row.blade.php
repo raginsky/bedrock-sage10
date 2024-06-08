@@ -1,8 +1,8 @@
 @set($component, 'row')
 
 <div @class([
-    'acf-' . $component . ' flex flex-row',
-    'flex-col-reverse' => get_sub_field('reverse_columns'),
+    'acf-' . $component . ' flex flex-col lg:flex-row',
+    'flex-col-reverse' => get_sub_field('column_reverse'),
     'items-stretch' => get_sub_field('vertical_alignment'),
     'items-center' => !get_sub_field('vertical_alignment'),
     'justify-' . get_sub_field('justify_content') => get_sub_field('justify_content')

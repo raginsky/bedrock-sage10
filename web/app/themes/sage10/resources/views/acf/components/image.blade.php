@@ -10,7 +10,8 @@
          alt="@sub('image_sm', 'alt')"
          loading="lazy"
          @if($newWidth) width="{{ $newWidth }}" @endif
-         class="{{ $component }}--sm block max-w-full h-auto md:hidden">
+         class="{{ $component }}--sm max-w-full h-auto
+         @hassub('image') block md:hidden @endsub ">
 @endsub
 
 @hassub('image')
@@ -18,7 +19,8 @@
          alt="@sub('image', 'alt')"
          loading="lazy"
          @if($newWidth) width="{{ $newWidth }}" @endif
-         class="{{ $component }}--md hidden max-w-full h-auto md:block">
+         class="{{ $component }}--md max-w-full h-auto
+         @hassub('image_sm') hidden md:block @endsub ">
 @endsub
 
 @endwrapper(div)

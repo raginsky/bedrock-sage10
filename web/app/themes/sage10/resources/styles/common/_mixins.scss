@@ -61,13 +61,9 @@
 @mixin font-size-lg {
   @include responsive-font(50);
   @include letter-spacing();
-
-  line-height: 1.2;
 }
 
 @mixin font-size-xl {
   @include responsive-font(80);
   @include letter-spacing();
-
-  line-height: 1.2;
 }

@@ -1,0 +1,11 @@
+.acf-row {
+  &__col {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include media($navbar_breakpoint) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

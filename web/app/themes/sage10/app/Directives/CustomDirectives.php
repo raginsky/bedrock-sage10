@@ -12,8 +12,7 @@ public static function register(): void {
 Blade::directive('wrapper', function ($tag) {
     empty($tag) ? ($tag = 'section') : ($tag = $tag);
 return layout()
-? "<{$tag} <?php echo Page::id(); ?> class=\"acf-" . layout() . " flex flex-col
-relative z-1 <?php echo Page::moduleAttr(); ?>\">"
+? "<{$tag} <?php echo Page::id(); ?> class=\"acf-" . layout() . " relative z-1 <?php echo Page::moduleAttr(); ?>\">"
 : '';
 });
 
@@ -24,11 +23,11 @@ return layout() ? "</{$tag}>" : '';
 
 Blade::directive('container', function () {
 return "<?php if (get_sub_field('container') === 'large') : ?>
-<div class=\"acf-<?= layout() ?>__container max-w-container-lg z-3 mx-auto w-full px-container\">
+<div class=\"acf-<?= layout() ?>__container max-w-container-lg z-3 mx-auto w-full px-container flex flex-col\">
     <?php elseif (get_sub_field('container') === 'medium') : ?>
-    <div class=\"acf-<?= layout() ?>__container max-w-container-md z-3 mx-auto w-full px-container\">
+    <div class=\"acf-<?= layout() ?>__container max-w-container-md z-3 mx-auto w-full px-container flex flex-col\">
         <?php elseif (get_sub_field('container') === 'none') : ?>
-        <div class=\"max-w-full mx-auto z-3 w-full px-container\">
+        <div class=\"max-w-full mx-auto z-3 w-full px-container flex flex-col\">
             <?php endif; ?>";
             });
 
