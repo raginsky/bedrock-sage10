@@ -6,7 +6,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
   </head>
-  <body @php(body_class()) class="leading-normal tracking-normal">>
+  <body @php(body_class()) class="leading-normal tracking-normal">
     @php(wp_body_open())
 
     <div id="app" class="min-h-screen flex flex-col">
