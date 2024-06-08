@@ -29,14 +29,11 @@ $base_font_size_px: 16;
 /* Import Layouts */
 @import 'layouts/header';
 
-/* Import Components */
-
 /* --------------------------- ACF --------------------------- */
-
-/* Import ACF Components */
 
 /* Import ACF Utils */
 @import 'acf/utils/background';
+@import 'acf/utils/background-image';
 @import 'acf/utils/svg';
 
 /* Import ACF Custom Lists */
@@ -44,7 +41,3 @@ $base_font_size_px: 16;
 
 /* Import ACF Footer */
 @import 'acf/footer-components/footer-main';
-@import 'acf/footer-components/footer-title';
-@import 'acf/footer-components/footer-text';
-@import 'acf/footer-components/footer-logo';
-@import 'acf/footer-components/footer-copyright';

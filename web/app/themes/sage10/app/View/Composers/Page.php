@@ -24,11 +24,6 @@ class Page extends Composer
     {
         return [
             'id' => $this->id(),
-            'gap' => $this->gap(),
-            'bg' => $this->bg(),
-            'bgImage' => $this->bgImage(),
-            'bgImageAlign' => $this->bgImageAlign(),
-            'bgImageSize' => $this->bgImageSize(),
             'alignCenter' => $this->alignCenter(),
             'textColor' => $this->textColor(),
             'moduleAttr' => $this->moduleAttr(),
@@ -44,74 +39,24 @@ class Page extends Composer
         return $id ? "id='{$id}' " : '';
     }
     
-    public static function gap()
-    {
-        $gap = get_sub_field('gap');
-        switch ($gap) {
-            case 'small-gap':
-                return ' gap-2';
-            case 'normal-gap':
-                return ' gap-4';
-            case 'large-gap':
-                return ' gap-8';
-            case 'no-gap-top':
-                return ' pt-0';
-            case 'no-gap-bottom':
-                return ' pb-0';
-            case 'no-gap':
-                return ' p-0';
-            default:
-                return '';
-        }
-    }
-    
-    public static function bg()
-    {
-        return ($bg = get_sub_field('background')) ? ' acf-bg-' . $bg : '';
-    }
-    
-
-    public static function bgImage()
-    {
-        $bg_image = get_sub_field('bg_image');
-        $bg_image_sm = get_sub_field('bg_image_sm');
-    
-        if ($bg_image && $bg_image_sm) {
-            return '<div class="acf-bg-image bg-cover bg-no-repeat xl:hidden" style="background-image:url(' . esc_url($bg_image_sm) . ')"></div>' .
-                   '<div class="acf-bg-image bg-cover bg-no-repeat hidden xl:block" style="background-image:url(' . esc_url($bg_image) . ')"></div>';
-        }
-    
-        $bg_image = $bg_image ?: $bg_image_sm;
-    
-        return $bg_image ? '<div class="acf-bg-image bg-cover bg-no-repeat" style="background-image:url(' . esc_url($bg_image) . ')"></div>' : '';
-    }    
-    
     public static function bgImageAlign()
     {
         $align = get_sub_field('bg_align');
-        switch ($align) {
-            case 'right-top':
-                return ' bg-right-top';
-            case 'right-center':
-                return ' bg-right';
-            case 'right-bottom':
-                return ' bg-right-bottom';
-            case 'left-top':
-                return ' bg-left-top';
-            case 'left-center':
-                return ' bg-left';
-            case 'left-bottom':
-                return ' bg-left-bottom';
-            case 'center-top':
-                return ' bg-center-top';
-            case 'center-center':
-                return ' bg-center';
-            case 'center-bottom':
-                return ' bg-center-bottom';
-            default:
-                return ' bg-center';
-        }
+        $alignments = [
+            'right-top' => 'bg-right-top',
+            'right-center' => 'bg-right',
+            'right-bottom' => 'bg-right-bottom',
+            'left-top' => 'bg-left-top',
+            'left-center' => 'bg-left',
+            'left-bottom' => 'bg-left-bottom',
+            'center-top' => 'bg-center-top',
+            'center-center' => 'bg-center',
+            'center-bottom' => 'bg-center-bottom',
+        ];
+
+        return isset($alignments[$align]) ? ' ' . $alignments[$align] : ' bg-center';
     }
+
     
     public static function bgImageSize()
     {
@@ -125,6 +70,25 @@ class Page extends Composer
                 return '';
         }
     }
+
+    public static function bgImage()
+    {
+        $bg_image = get_sub_field('bg_image');
+        $bg_image_sm = get_sub_field('bg_image_sm');
+        $bg_align = self::bgImageAlign();
+        $bg_size = self::bgImageSize();
+        $bg_classes = 'acf-bg-image bg-no-repeat' . $bg_align . $bg_size;
+
+        if ($bg_image && $bg_image_sm) {
+            return '<div class="' . $bg_classes . ' xl:hidden" style="background-image:url(' . esc_url($bg_image_sm) . ')"></div>' .
+                '<div class="' . $bg_classes . ' hidden xl:block" style="background-image:url(' . esc_url($bg_image) . ')"></div>';
+        }
+
+        $bg_image = $bg_image ?: $bg_image_sm;
+
+        return $bg_image ? '<div class="' . $bg_classes . '" style="background-image:url(' . esc_url($bg_image) . ')"></div>' : '';
+    }
+
     
     public static function alignCenter()
     {
@@ -133,7 +97,7 @@ class Page extends Composer
     
     public static function textColor()
     {
-        return ($text_color = get_sub_field('text_color')) ? ' acf-text-color-' . $text_color : '';
+        return ($text_color = get_sub_field('text_color')) ? ' text-' . $text_color : '';
     }
 
     public static function linkTarget()
@@ -151,10 +115,7 @@ class Page extends Composer
     
     public static function moduleAttr()
     {
-        return self::gap() .
-            self::bg() .
-            self::bgImageAlign() .
-            self::bgImageSize() .
+        return
             self::alignCenter() .
             self::textColor();
     }

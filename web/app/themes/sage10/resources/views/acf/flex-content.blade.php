@@ -1,4 +1,4 @@
-<div class="acf-flex-content">
+<div class="acf-flex-content flex flex-col gap-16">
   <?php
   $rows = get_field('flex_content');
   if ($rows) {

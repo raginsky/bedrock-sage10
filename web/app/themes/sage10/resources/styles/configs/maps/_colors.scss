@@ -18,11 +18,9 @@ $brand_gray: #808080;
   --color-gray: #{brand_gray};
   --color-light: #{$brand_light};
   --color-white: #{$brand_white};
-  --color-base-shadow: 0, 0, 0;
 }
 
 $brand_base: var(--base-color);
-$brand_gray: var(--color-gray);
 
 $brand_primary_active: color.adjust($brand_primary, $lightness: -10%);
 $brand_secondary_active: color.adjust($brand_secondary, $lightness: -10%);
@@ -50,19 +48,4 @@ $map_background_colors: (
   primary: $var_color_primary,
   secondary: $var_color_secondary,
   gray: $var_color_gray,
-);
-
-$map_buttons_colors: (
-  primary: $var_color_primary,
-  secondary: $var_color_secondary,
-  highlight: $var_color_highlight,
-);
-
-$map_admin_colors: (
-  white: $var_color_white,
-  light: $var_color_light,
-  dark: $var_color_dark,
-  primary: $var_color_primary,
-  secondary: $var_color_secondary,
-  highlight: $var_color_highlight,
 );

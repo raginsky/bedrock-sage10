@@ -34,31 +34,6 @@
   }
 }
 
-@mixin transition(
-  $prop: all,
-  $duration: 400ms,
-  $easing: cubic-bezier(0.4, 0.25, 0.3, 1)
-) {
-  @if (length($prop) == 1) {
-    transition: $prop $duration $easing;
-
-    @if ($prop != all) {
-      will-change: $prop;
-    }
-  } @else {
-    $result: ();
-
-    @each $item in $prop {
-      $result: list.append($result, $item, comma);
-    }
-
-    transition-timing-function: $easing;
-    transition-duration: $duration;
-    transition-property: $result;
-    will-change: $result;
-  }
-}
-
 @mixin secondary-font() {
   @if ($font_secondary) {
     font-family: $font_secondary;

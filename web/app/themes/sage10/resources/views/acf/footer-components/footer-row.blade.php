@@ -1,7 +1,7 @@
 @set($component, 'row')
 
 <div @class([
-    'acf-' . $component . ' flex flex-row gap-16',
+    'acf-' . $component . ' flex flex-row',
     'flex-row-reverse' => get_sub_field('reverse_columns'),
     'items-stretch' => get_sub_field('vertical_alignment'),
     'items-center' => !get_sub_field('vertical_alignment'),

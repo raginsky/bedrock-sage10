@@ -18,51 +18,6 @@ $settings
         'wrapper'     => ['width' => 20]
     ])
 
-    // Alignment and Container
-    ->addTrueFalse('align_center', [
-        'label'       => 'Align Text',
-        'ui'          => 1,
-        'ui_on_text'  => 'Center',
-        'ui_off_text' => 'Left',
-        'wrapper'     => ['width' => 15]
-    ])
-    ->addSelect('container', [
-        'label'       => 'Container',
-        'wrapper'     => ['width' => 20],
-        'choices'     => [
-            'large'  => 'Large Container',
-            'medium'   => 'Medium Container',
-            'none' => 'No Container',
-        ],
-        'default_value' => 'medium',
-        'ui'          => 1,
-    ])
-
-    // Gap
-    ->addSelect('gap', [
-        'label'       => 'Gap',
-        'allow_null'  => 1,
-        'wrapper'     => ['width' => 15]
-    ])
-    ->addChoices('normal-gap', 'large-gap', 'small-gap', 'no-gap-top', 'no-gap-bottom', 'no-gap')
-    ->setDefaultValue('normal-gap')
-
-    // Background and Text Color
-    ->addRadio('text_color', [
-        'label'       => 'Text Color',
-        'allow_null'  => 1,
-        'wrapper'     => ['width' => 30]
-    ])
-    ->setSelector( '.color-selector' )
-    ->addChoices($global_config->text_color_pallet)
-    ->addRadio('background', [
-        'label'       => 'Background Color',
-        'allow_null'  => 1,
-        'wrapper'     => ['width' => 20]
-    ])
-    ->setSelector( '.color-selector' )
-    ->addChoices($global_config->bg_color_pallet)
-
     // Background Images
     ->addImage('bg_image', [
         'label'         => 'Background Image',
@@ -99,6 +54,42 @@ $settings
         'left-top'      => 'Left Top',
         'left-center'   => 'Left Center',
         'left-bottom'   => 'Left Bottom'
-    ]);
+    ])
+
+    // Alignment and Container
+    ->addTrueFalse('align_center', [
+        'label'       => 'Align Text',
+        'ui'          => 1,
+        'ui_on_text'  => 'Center',
+        'ui_off_text' => 'Left',
+        'wrapper'     => ['width' => 15]
+    ])
+    ->addSelect('container', [
+        'label'       => 'Container',
+        'wrapper'     => ['width' => 15],
+        'choices'     => [
+            'large'  => 'Large Container',
+            'medium'   => 'Medium Container',
+            'none' => 'No Container',
+        ],
+        'default_value' => 'medium',
+        'ui'          => 1,
+    ])
+
+    // Background and Text Color
+    ->addRadio('text_color', [
+        'label'       => 'Text Color',
+        'allow_null'  => 1,
+        'wrapper'     => ['width' => 35]
+    ])
+    ->setSelector( '.color-selector' )
+    ->addChoices($global_config->text_color_pallet)
+    ->addRadio('background', [
+        'label'       => 'Background Color',
+        'allow_null'  => 1,
+        'wrapper'     => ['width' => 35]
+    ])
+    ->setSelector( '.color-selector' )
+    ->addChoices($global_config->bg_color_pallet);
 
 return $settings;

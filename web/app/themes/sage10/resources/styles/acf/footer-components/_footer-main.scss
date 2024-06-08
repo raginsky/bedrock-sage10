@@ -1,27 +1,5 @@
 .acf-footer-main {
-  position: relative;
-  overflow-x: hidden;
-
-  &__title {
-    padding-bottom: 0.5em;
-  }
-
-  .container {
-    padding-top: 10rem;
-  }
-
-  a {
-    @include transition(300ms);
-
-    &:hover,
-    &:active {
-      text-decoration: underline;
-    }
-  }
-
   .acf-row {
-    padding: 2rem 0;
-
     &__col:not(:last-child) {
       margin-bottom: 0;
     }

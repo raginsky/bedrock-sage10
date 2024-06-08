@@ -8,6 +8,6 @@ $footer_main = new FieldsBuilder( 'footer_main' );
 
 $footer_main
 	->addFields( get_field_partial( 'components.footer.footerBuilder' ) )
-	->addFields( get_field_partial( 'components.footer.footerSettings' ) );
+	->addFields( get_field_partial( 'partials.settings' ) );
 
 return $footer_main;

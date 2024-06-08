@@ -13,7 +13,7 @@ $svg
         'choices'    => [
             'default' => 'Default Icon',
         ],
-        'wrapper' => ['width' => 25]
+        'wrapper' => ['width' => 20]
     ]);
 
 return $svg;

@@ -60,6 +60,17 @@ const config = {
         gray: '#808080',
         highlight: '#ff2a00',
       }),
+      backgroundPosition: {
+        'center-top': 'center top',
+        'center-center': 'center center',
+        'center-bottom': 'center bottom',
+        'right-top': 'right top',
+        'right-center': 'right center',
+        'right-bottom': 'right bottom',
+        'left-top': 'left top',
+        'left-center': 'left center',
+        'left-bottom': 'left bottom',
+      },
     },
     screens: {
       xs: '321px',
@@ -123,6 +134,9 @@ const config = {
         /^(bg|text|font|md:w|lg:w)-(primary|secondary|highlight|dark|light|white|gray|xs|sm|md|lg|xl|1\/12|2\/12|3\/12|4\/12|5\/12|6\/12|7\/12|8\/12|9\/12|10\/12|11\/12|12\/12)$/,
     },
   ],
+  variants: {
+    backgroundPosition: ['responsive'],
+  },
   plugins: [typography],
 };
 

@@ -10,7 +10,7 @@ $button
     // Button Label
     ->addText('button_label', [
         'wrapper' => [
-            'width' => 16,
+            'width' => 25,
         ],
     ])
 
@@ -19,7 +19,7 @@ $button
         'label' => 'Page URL',
         'return_format' => 'url',
         'wrapper' => [
-            'width' => 20,
+            'width' => 35,
         ],
     ])
 
@@ -31,7 +31,7 @@ $button
         ],
         'default_value' => '_self',
         'wrapper' => [
-            'width' => 30,
+            'width' => 15,
         ],
     ])
 
@@ -40,14 +40,14 @@ $button
         'allow_null' => 1,
         'choices'    => ['Primary', 'Secondary', 'Outline'],
         'default_value' => 'primary',
-        'wrapper' => ['width' => 16]
+        'wrapper' => ['width' => 15]
     ])
 
     // Margin Bottom
     ->addSelect('margin_bottom', [
         'allow_null' => 1,
         'choices'    => ['small', 'normal', 'large'],
-        'wrapper'    => ['width' => 16]
+        'wrapper'    => ['width' => 10]
     ]);
 
 return $button;

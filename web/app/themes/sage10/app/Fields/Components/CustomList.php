@@ -24,7 +24,7 @@ $custom_list
     ])
     
     // Add SVG field
-    ->addFields(get_field_partial('fragments.svg', 20))
+    ->addFields(get_field_partial('fragments.svg'))
 
     // Add Image field
     ->addImage('image', [
@@ -53,7 +53,7 @@ $custom_list
         'ui'          => 1,
         'ui_on_text'  => 'Yes',
         'ui_off_text' => 'No',
-        'wrapper'     => ['width' => 5]
+        'wrapper'     => ['width' => 10]
     ])
 
     // Add Page Link field, conditional on URL toggle

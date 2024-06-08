@@ -1,6 +1,6 @@
-<nav class="wpbase-header sticky top-0 z-20 w-full bg-light py-4 items-center bg-grey p-6">
+<nav class="wpbase-header sticky top-0 z-20 w-full bg-light py-4 items-center bg-grey">
   <div class="flex max-w-container-lg mx-auto px-container justify-between flex-wrap">
-  <a class="flex items-center" href={{ home_url('/') }}>
+  <a class="flex items-center" href={{ home_url('/') }} title="{{ get_bloginfo('name', 'display') }}">
     <span class="w-16 h-16">@include('svg.logo')</span>
   </a>
 
