@@ -31,6 +31,9 @@ $base_font_size_px: 16;
 
 /* --------------------------- ACF --------------------------- */
 
+/* Import ACF Components */
+@import 'acf/components/hero';
+
 /* Import ACF Utils */
 @import 'acf/utils/background';
 @import 'acf/utils/background-image';

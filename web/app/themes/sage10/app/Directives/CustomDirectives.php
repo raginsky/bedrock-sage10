@@ -23,11 +23,12 @@ return layout() ? "</{$tag}>" : '';
 
 Blade::directive('container', function () {
 return "<?php if (get_sub_field('container') === 'large') : ?>
-<div class=\"acf-<?= layout() ?>__container max-w-container-lg z-3 mx-auto w-full px-container flex flex-col\">
+<div class=\"acf-<?= layout() ?>__container max-w-container-lg z-3 mx-auto w-full px-container flex flex-col relative\">
     <?php elseif (get_sub_field('container') === 'medium') : ?>
-    <div class=\"acf-<?= layout() ?>__container max-w-container-md z-3 mx-auto w-full px-container flex flex-col\">
+    <div class=\"acf-<?= layout() ?>__container max-w-container-md z-3 mx-auto w-full px-container flex flex-col
+        relative\">
         <?php elseif (get_sub_field('container') === 'none') : ?>
-        <div class=\"max-w-full mx-auto z-3 w-full px-container flex flex-col\">
+        <div class=\"max-w-full mx-auto z-3 w-full px-container flex flex-col relative\">
             <?php endif; ?>";
             });
 

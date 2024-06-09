@@ -37,10 +37,6 @@ const config = {
       padding: {
         container: '1.6rem', // 16px
       },
-      minHeight: {
-        heroLg: '56.25rem', // 900px
-        heroXl: '73.75rem', // 1180px
-      },
       backgroundColor: (theme) => ({
         ...theme('colors'),
         primary: '#2458ff',
