@@ -3,7 +3,7 @@
 Welcome to the WpBase Theme project! This repository contains a custom WordPress theme built with Sage 10, Acorn, TailwindCSS, ACF Pro, and ACF Builder. The project is structured using Bedrock and is intended to be used with LocalWP for local development.
 
 ## Table of Contents
-- [WP Theme Project](#wp-theme-project)
+- [WpBase Theme Project](#wpbase-theme-project)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Project Structure](#project-structure)
@@ -36,7 +36,7 @@ The project is structured as follows:
 │           ├── mu-plugins/
 │           ├── plugins/
 │           ├── themes/
-│               ├── sage10/
+│               ├── sage/
 ```
 
 ## Requirements
@@ -66,7 +66,7 @@ To get started, you will need the following:
 3. **Install JavaScript dependencies:**
 
     ```bash
-    cd web/app/themes/sage10
+    cd web/app/themes/sage
     composer install
     yarn
     ```
