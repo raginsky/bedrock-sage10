@@ -4,27 +4,27 @@
   // those formats specified in the list `$formats`.
   $result: ();
 
-  @if index($formats, eot) {
+  @if list.index($formats, eot) {
     $eot-val: url('#{$file-path}.eot?#iefix') format('embedded-opentype');
     $result: list.append($result, $eot-val, comma);
   }
 
-  @if index($formats, woff2) {
+  @if list.index($formats, woff2) {
     $woff2-val: url('#{$file-path}.woff2') format('woff2');
     $result: list.append($result, $woff2-val, comma);
   }
 
-  @if index($formats, woff) {
+  @if list.index($formats, woff) {
     $woff-val: url('#{$file-path}.woff') format('woff');
     $result: list.append($result, $woff-val, comma);
   }
 
-  @if index($formats, ttf) {
+  @if list.index($formats, ttf) {
     $ttf-val: url('#{$file-path}.ttf') format('truetype');
     $result: list.append($result, $ttf-val, comma);
   }
 
-  @if index($formats, svg) {
+  @if list.index($formats, svg) {
     $svg-val: url('#{$file-path}.svg##{$font-family}') format('svg');
     $result: list.append($result, $svg-val, comma);
   }
@@ -39,7 +39,7 @@
   $style: normal,
   $formats: eot woff2 woff ttf svg
 ) {
-  @if index('italic' 'oblique', $weight) {
+  @if list.index('italic' 'oblique', $weight) {
     $style: $weight;
     $weight: normal;
   }
@@ -49,7 +49,7 @@
     font-style: $style;
     font-weight: $weight;
 
-    @if index($formats, eot) {
+    @if list.index($formats, eot) {
       src: url('#{$file-path}.eot');
     }
 
