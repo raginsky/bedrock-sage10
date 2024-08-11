@@ -43,7 +43,7 @@
   },
   "require": {
     "php": ">=8.1",
-    "log1x/sage-directives": "^2.0"
+    "log1x/sage-directives": "^2.0.4"
   },
   "require-dev": {
     "laravel/pint": "^1.13"
