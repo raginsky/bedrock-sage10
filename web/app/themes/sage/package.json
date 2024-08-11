@@ -1,5 +1,6 @@
 {
-  "name": "sage",
+  "name": "WpBase",
+  "version": "1.0.0",
   "private": true,
   "browserslist": [
     "extends @roots/browserslist-config"

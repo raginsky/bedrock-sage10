@@ -31,7 +31,8 @@ body {
   @include breakpoint(until_lg) {
     &.mobile-menu-open {
       overflow: hidden;
-      &:before {
+
+      &::before {
         opacity: 1;
         pointer-events: auto;
         display: block;
@@ -88,7 +89,6 @@ select:-webkit-autofill {
   transition-property: color, background;
 }
 
-::-moz-selection,
 ::selection {
   background: $brand-primary;
   color: $brand-white;
@@ -138,6 +138,7 @@ iframe {
       }
     }
 
+    // stylelint-disable selector-class-pattern
     .lg\:text-center & {
       @include breakpoint(lg) {
         margin-left: auto;

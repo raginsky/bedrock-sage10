@@ -19,9 +19,9 @@
 .acf-buttons {
   display: flex;
   flex-wrap: wrap;
-
   align-items: center;
   gap: 2.4rem;
+
   @include breakpoint(lg) {
     gap: 3rem;
   }
@@ -32,6 +32,7 @@
     }
   }
 
+  // stylelint-disable selector-class-pattern
   .lg\:text-center & {
     @include breakpoint(lg) {
       justify-content: center;

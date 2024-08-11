@@ -1,235 +1,235 @@
 .wpbase-header {
-    position: absolute;
-  
-    .mobile-menu-open & {
-      position: fixed;
+  position: absolute;
+
+  .mobile-menu-open & {
+    position: fixed;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    width: 100%;
+    transition: padding 0.3s ease;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include breakpoint(lg) {
+      padding-top: 3.6rem;
+      padding-bottom: 3.6rem;
     }
-  
-    &__container {
-      position: relative;
-      width: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       margin: 0 auto;
-    }
-  
-    &__wrapper {
-      width: 100%;
-      transition: padding 0.3s ease;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-  
-      @include breakpoint(lg) {
-        padding-top: 3.6rem;
-        padding-bottom: 3.6rem;
+      width: calc(100% - 6rem);
+      height: 0.2rem;
+      background-color: $brand_white;
+
+      .navbar-primary & {
+        background-color: $brand_primary;
       }
-  
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
+    }
+
+    .logo {
+      color: $brand_white;
+
+      .navbar-primary & {
+        color: $brand_primary;
+      }
+
+      @include svg-size(350, 76, 45);
+
+      @include breakpoint(xxl) {
+        @include svg-size(350, 76, 76);
+      }
+    }
+
+    .menu-icon {
+      color: $brand_white;
+
+      .navbar-primary & {
+        color: $brand_primary;
+      }
+    }
+  }
+
+  // navigation menus
+  &__menu {
+    @include breakpoint(until_lg) {
+      position: fixed;
+      top: 0;
+      right: -25.5rem;
+      width: 25.5rem;
+      height: 100%;
+      border-radius: 2rem 0 0 2rem;
+      background-color: $brand_white;
+      z-index: 25;
+      padding: 3.5rem 4.5rem 8rem 3.5rem;
+      transition: right 0.3s ease-in-out;
+      pointer-events: none;
+      overflow-y: auto;
+
+      .mobile-menu-open & {
+        pointer-events: auto;
         right: 0;
-        margin: 0 auto;
-        width: calc(100% - 6rem);
-        height: 0.2rem;
-        background-color: $brand_white;
-  
-        .navbar-primary & {
-          background-color: $brand_primary;
-        }
-      }
-  
-      .logo {
-        color: $brand_white;
-  
-        .navbar-primary & {
-          color: $brand_primary;
-        }
-  
-        @include svg-size(350, 76, 45);
-  
-        @include breakpoint(xxl) {
-          @include svg-size(350, 76, 76);
-        }
-      }
-  
-      .menu-icon {
-        color: $brand_white;
-  
-        .navbar-primary & {
-          color: $brand_primary;
-        }
-      }
-    }
-  
-    // navigation menus
-    &__menu {
-      @include breakpoint(until_lg) {
-        position: fixed;
-        top: 0;
-        right: -25.5rem;
-        width: 25.5rem;
-        height: 100%;
-        border-radius: 2rem 0 0 2rem;
-        background-color: $brand_white;
-        z-index: 25;
-        padding: 3.5rem 4.5rem 8rem 3.5rem;
         transition: right 0.3s ease-in-out;
-        pointer-events: none;
-        overflow-y: auto;
-  
-        .mobile-menu-open & {
-          pointer-events: auto;
-          right: 0;
-          transition: right 0.3s ease-in-out;
-        }
-      }
-  
-      .close-icon {
-        display: flex;
-        justify-content: end;
-        width: 100%;
-        z-index: 50;
-  
-        @include breakpoint(lg) {
-          display: none;
-        }
       }
     }
-  
-    &__items {
+
+    .close-icon {
       display: flex;
-      flex-direction: column;
-  
+      justify-content: end;
+      width: 100%;
+      z-index: 50;
+
       @include breakpoint(lg) {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 2rem;
-      }
-  
-      @include breakpoint(desktop) {
-        gap: 4rem;
+        display: none;
       }
     }
-  
-    &__content {
-      ul {
-        .menu-item {
-          @include font-size-lg();
-          position: relative;
-          font-style: normal;
-          font-weight: $font_weight_medium;
-          line-height: 2.5rem;
-  
-          &.child-menu-item {
-            @include breakpoint(until_lg) {
-              @include font-size-md();
-              font-weight: $font_weight_normal;
-              line-height: 2rem;
-  
-              a {
-                margin-top: 1.6rem;
-              }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(lg) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 2rem;
+    }
+
+    @include breakpoint(desktop) {
+      gap: 4rem;
+    }
+  }
+
+  &__content {
+    ul {
+      .menu-item {
+        @include font-size-lg();
+
+        position: relative;
+        font-style: normal;
+        font-weight: $font_weight_medium;
+        line-height: 2.5rem;
+
+        &.child-menu-item {
+          @include breakpoint(until_lg) {
+            @include font-size-md();
+
+            font-weight: $font_weight_normal;
+            line-height: 2rem;
+
+            a {
+              margin-top: 1.6rem;
             }
           }
-  
-          &.current-menu-item {
-            @include breakpoint(until_lg) {
-              > a {
-                color: $brand_primary;
-              }
-            }
-          }
-  
-          @include breakpoint(lg) {
-            font-size: 1.8rem;
-            color: $brand_white;
-            transition: color 0.3s ease;
-  
-            .navbar-primary & {
+        }
+
+        &.current-menu-item {
+          @include breakpoint(until_lg) {
+            > a {
               color: $brand_primary;
             }
-  
-            &.current-menu-item {
-              color: $brand_secondary;
-            }
-  
-            &:hover {
-              color: $brand_secondary;
-            }
           }
-  
-          @include breakpoint(desktop) {
-            font-size: 2rem;
+        }
+
+        @include breakpoint(lg) {
+          font-size: 1.8rem;
+          color: $brand_white;
+          transition: color 0.3s ease;
+
+          .navbar-primary & {
+            color: $brand_primary;
           }
-  
-          a {
-            display: block;
-            margin-top: 1.8rem;
-            text-decoration: none;
-  
-            @include breakpoint(lg) {
-              margin: 0;
-            }
+
+          &.current-menu-item {
+            color: $brand_secondary;
           }
-  
-          & ul {
-            @include breakpoint(lg) {
-              position: absolute;
-              left: 0;
-              top: 100%;
-              font-size: 1.6rem;
-              display: none;
-              background-color: $brand_white;
-              border-radius: 1rem;
-              overflow: hidden;
-              z-index: 30;
-              transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
-              opacity: 0;
-              min-width: 18rem;
-              padding: 0.6rem 0;
-              transform: translateY(1rem);
-  
-              .menu-item {
-                width: 100%;
-                white-space: nowrap;
-                color: $brand_base;
-  
-                &.current-menu-item {
-                  color: $brand_primary;
-                }
-  
+
+          &:hover {
+            color: $brand_secondary;
+          }
+        }
+
+        @include breakpoint(desktop) {
+          font-size: 2rem;
+        }
+
+        a {
+          display: block;
+          margin-top: 1.8rem;
+          text-decoration: none;
+
+          @include breakpoint(lg) {
+            margin: 0;
+          }
+        }
+
+        & ul {
+          @include breakpoint(lg) {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            font-size: 1.6rem;
+            display: none;
+            background-color: $brand_white;
+            border-radius: 1rem;
+            overflow: hidden;
+            z-index: 30;
+            transition:
+              opacity 0.3s ease,
+              transform 0.3s ease;
+            opacity: 0;
+            min-width: 18rem;
+            padding: 0.6rem 0;
+            transform: translateY(1rem);
+
+            .menu-item {
+              width: 100%;
+              white-space: nowrap;
+              color: $brand_base;
+
+              &.current-menu-item {
+                color: $brand_primary;
+              }
+
+              &:hover {
+                color: $brand_primary;
+              }
+
+              a {
+                display: block;
+                padding: 0.75rem 3rem 0.75rem 1.5rem;
+                text-decoration: none;
+                transition:
+                  background-color 0.3s ease,
+                  color 0.3s ease;
+
                 &:hover {
-                  color: $brand_primary;
-                }
-  
-                a {
-                  display: block;
-                  padding: 0.75rem 3rem 0.75rem 1.5rem;
-  
-                  text-decoration: none;
-                  transition:
-                    background-color 0.3s ease,
-                    color 0.3s ease;
-  
-                  &:hover {
-                    background-color: $brand_light;
-                  }
+                  background-color: $brand_light;
                 }
               }
             }
           }
-  
-          &:hover ul {
-            @include breakpoint(lg) {
-              display: block;
-              opacity: 1;
-              transform: translateY(0);
-            }
+        }
+
+        &:hover ul {
+          @include breakpoint(lg) {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
           }
         }
       }
     }
   }
-  
+}

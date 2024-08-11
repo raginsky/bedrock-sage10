@@ -33,7 +33,7 @@ export const nav = async (err) => {
       body.classList.remove('mobile-menu-open');
     }
   }, 300);
-  
+
   window.addEventListener('resize', handleResize);
   handleResize();
 };
