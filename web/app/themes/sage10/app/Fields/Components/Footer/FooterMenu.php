@@ -7,36 +7,31 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $footerMenu = new FieldsBuilder('footer_menu');
 
 $footerMenu
+    ->addText('menu_title', 
+    [
+        'label' => 'Menu Title'
+    ])
     ->addRepeater('menu_items', [
         'layout' => 'block',
         'button_label' => 'Add Menu Item',
         'min' => 1,
     ])
-        ->addText('menu_label', [
-            'label' => 'Menu Label',
-            'required' => 1,
-            'wrapper' => [
-                'width' => '50',
-            ],
-        ])
-        ->addLink('page_url', [
-            'label' => 'Page URL',
-            'return_format' => 'url',
-            'wrapper' => [
-                'width' => '20',
-            ],
-        ])
-        ->addSelect('target', [
-            'label' => 'Link Target',
-            'choices' => [
-                '_self' => 'Same Tab',
-                '_blank' => 'New Tab',
-            ],
-            'default_value' => '_self',
-            'wrapper' => [
-                'width' => '30',
-            ],
-        ])
+    ->addLink('link', [
+        'label' => 'URL Properties',
+        'wrapper'     => ['width' => 60]
+    ])
+    ->addSelect('font_weight', [
+        'label'       => 'Font Weight',
+        'choices'     => [
+            'normal' => 'Normal',
+            'light'  => 'Light',
+            'medium' => 'Medium',
+            'bold'   => 'Bold',
+            'black'   => 'Black'
+        ],
+        'default_value' => 'normal',
+        'wrapper'     => ['width' => 40]
+    ])
     ->endRepeater();
 
 return $footerMenu;

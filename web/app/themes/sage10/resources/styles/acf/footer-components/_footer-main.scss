@@ -1,12 +1,34 @@
 .acf-footer-main {
+  @include font-size-sm();
+
+  @include breakpoint(desktop) {
+    @include font-size-xs();
+  }
+
   &__container {
-    padding: 4rem 0;
-    gap: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include breakpoint(desktop) {
+      padding-top: 6rem;
+    }
   }
 
   .acf-row {
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+
+      @include breakpoint(desktop) {
+        margin-bottom: 6.5rem;
+      }
+    }
+
     &__col:not(:last-child) {
-      margin-bottom: 0;
+      margin-bottom: 2.6rem;
+
+      @include breakpoint(desktop) {
+        margin-bottom: 0;
+      }
     }
   }
 }

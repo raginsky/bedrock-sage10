@@ -8,6 +8,7 @@ $hero = new FieldsBuilder('hero');
 
 $hero
    ->addFields(get_field_partial('partials.builder'))
-   ->addFields(get_field_partial('partials.settings'));
+   ->addFields(get_field_partial('partials.settings'))
+   ->removeField('padding');
 
 return $hero;

@@ -3,18 +3,20 @@ $brand_primary: #2458ff;
 $brand_secondary: #ffa608;
 $brand_white: #fff;
 $brand_dark: #202020;
+$brand_bg_dark: #202020;
 $brand_black: #000;
 $brand_highlight: #ff2a00;
 $brand_light: #f5f5f5;
 $brand_gray: #808080;
 
 :root {
-  --base-color: #{$brand_dark};
+  --base-color: #{$brand_gray};
   --base-color-bg: #{$brand_white};
   --color-primary: #{$brand_primary};
   --color-secondary: #{$brand_secondary};
   --color-highlight: #{$brand_highlight};
   --color-dark: #{$brand_dark};
+  --color-bg-dark: #{$brand_bg_dark};
   --color-gray: #{brand_gray};
   --color-light: #{$brand_light};
   --color-white: #{$brand_white};
@@ -29,6 +31,7 @@ $var_color_primary: var(--color-primary);
 $var_color_secondary: var(--color-secondary);
 $var_color_highlight: var(--color-highlight);
 $var_color_dark: var(--color-dark);
+$var_color_bg_dark: var(--color-bg-dark);
 $var_color_gray: var(--color-gray);
 $var_color_light: var(--color-light);
 $var_color_white: var(--color-white);
@@ -45,6 +48,7 @@ $map_background_colors: (
   white: $var_color_white,
   light: $var_color_light,
   dark: $var_color_dark,
+  bg-dark: $var_color_bg_dark,
   primary: $var_color_primary,
   secondary: $var_color_secondary,
   gray: $var_color_gray,

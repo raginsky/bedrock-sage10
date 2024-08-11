@@ -1,0 +1,7 @@
+.acf-footer-copyright {
+  @include font-size-xs();
+
+  @include breakpoint(desktop) {
+    font-size: 1.2rem;
+  }
+}

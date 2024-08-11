@@ -40,7 +40,7 @@ $settings
     ])
     ->addChoices('cover', 'contain')
     ->addSelect('bg_align', [
-        'label'       => 'Alignment',
+        'label'       => 'Background Alignment',
         'allow_null'  => 1,
         'wrapper'     => ['width' => 15]
     ])
@@ -57,13 +57,39 @@ $settings
     ])
 
     // Alignment and Container
-    ->addTrueFalse('align_center', [
-        'label'       => 'Align Text',
+    ->addSelect('padding', [
+        'label'       => 'Padding',
+        'allow_null'  => 1,
+        'choices'     => [
+            'large-padding' => 'Large Padding',
+            'normal-padding' => 'Normal Padding',
+            'small-padding' => 'Small Padding',
+            'smallest-padding' => 'Smallest Padding',
+            'no-padding-top' => 'No Padding Top',
+            'no-padding-bottom' => 'No Padding Bottom',
+            'no-padding' => 'No Padding'
+        ],
+        'wrapper'     => [
+            'width' => 15
+        ]
+    ])
+    
+    ->addTrueFalse('align_mobile_center', [
+        'label'       => 'Align Mobile Text',
         'ui'          => 1,
         'ui_on_text'  => 'Center',
         'ui_off_text' => 'Left',
         'wrapper'     => ['width' => 15]
     ])
+
+    ->addTrueFalse('align_center', [
+        'label'       => 'Align Desktop Text',
+        'ui'          => 1,
+        'ui_on_text'  => 'Center',
+        'ui_off_text' => 'Left',
+        'wrapper'     => ['width' => 15]
+    ])
+    
     ->addSelect('container', [
         'label'       => 'Container',
         'wrapper'     => ['width' => 15],
@@ -80,14 +106,14 @@ $settings
     ->addRadio('text_color', [
         'label'       => 'Text Color',
         'allow_null'  => 1,
-        'wrapper'     => ['width' => 35]
+        'wrapper'     => ['width' => 25]
     ])
     ->setSelector( '.color-selector' )
     ->addChoices($global_config->text_color_pallet)
     ->addRadio('background', [
         'label'       => 'Background Color',
         'allow_null'  => 1,
-        'wrapper'     => ['width' => 35]
+        'wrapper'     => ['width' => 15]
     ])
     ->setSelector( '.color-selector' )
     ->addChoices($global_config->bg_color_pallet);

@@ -51,7 +51,6 @@ $row
             ->addLayout(get_field_partial('components.customList'))
         ->endFlexibleContent()
         
-        // Additional Fields for Columns
         ->addFields(get_field_partial('partials.rowSettings'))
     ->endRepeater();
 

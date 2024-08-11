@@ -43,6 +43,14 @@ $text
             'large' => 'Large'
         ],
         'wrapper'     => ['width' => 15]
+    ])
+
+    ->addTrueFalse('contained', [
+        'label'       => 'Fixed Width',
+        'ui'          => 1,
+        'ui_on_text'  => 'Fixed',
+        'ui_off_text' => 'Full',
+        'wrapper'     => ['width' => 15]
     ]);
 
 return $text;

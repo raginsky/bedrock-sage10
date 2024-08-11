@@ -20,7 +20,7 @@ $image
         'wrapper'      => ['width' => 40]
     ])
     
-    ->addNumber('new_width', [
+    ->addText('new_width', [
         'label'   => 'New Width',
         'wrapper' => ['width' => 20]
     ]);

@@ -8,13 +8,13 @@
   background-repeat: no-repeat;
 
   &-hide-mobile {
-    @media #{$navbar_until_breakpoint} {
+    @include breakpoint(until_desktop) {
       display: none;
     }
   }
 
   &-hide-desktop {
-    @media #{$navbar_breakpoint} {
+    @include breakpoint(desktop) {
       display: none;
     }
   }

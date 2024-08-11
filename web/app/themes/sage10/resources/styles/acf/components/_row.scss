@@ -1,10 +1,59 @@
 .acf-row {
+  &.reverse-columns {
+    @include breakpoint(until_lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.justify {
+    &-center {
+      justify-content: center;
+    }
+    &-right {
+      justify-content: right;
+    }
+    &-left {
+      justify-content: left;
+    }
+  }
+
   &__col {
     &:not(:last-child) {
       margin-bottom: 1rem;
 
-      @include media($navbar_breakpoint) {
+      @include breakpoint(lg) {
         margin-bottom: 0;
+      }
+    }
+
+    .reverse-columns & {
+      margin-bottom: 1rem;
+
+      &:first-child {
+        margin-bottom: 0;
+      }
+
+      @include breakpoint(lg) {
+        &:not(:first-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    // dynamic width property for 1-100 range
+    @for $i from 1 through 100 {
+      @include breakpoint(until_lg) {
+        &.md-w-#{$i} {
+          max-width: #{$i + '%'};
+          flex: 0 0 #{$i + '%'};
+        }
+      }
+
+      @include breakpoint(lg) {
+        &.lg-w-#{$i} {
+          max-width: #{$i + '%'};
+          flex: 0 0 #{$i + '%'};
+        }
       }
     }
   }

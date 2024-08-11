@@ -1,1 +1,24 @@
 /* 404 page */
+.error404 {
+  .current-container {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42rem;
+    justify-content: center;
+    padding-top: 8.4rem;
+    padding-bottom: 2rem;
+
+    @include breakpoint(desktop) {
+      padding-top: 14.6rem;
+    }
+  }
+
+  .wpbase-header {
+    background-color: $brand_primary;
+    color: $brand_white;
+  }
+}

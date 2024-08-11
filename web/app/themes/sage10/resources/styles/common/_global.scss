@@ -4,14 +4,41 @@ html {
 }
 
 body {
+  @include font-size-sm();
+
   position: relative;
   box-sizing: border-box;
   margin: 0;
   overflow-x: hidden;
   font-family: $font_base;
-  font-size: $base_font_size;
   color: $brand_base;
   background: $brand_white;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba($brand_dark, 0.75);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  @include breakpoint(until_lg) {
+    &.mobile-menu-open {
+      overflow: hidden;
+      &:before {
+        opacity: 1;
+        pointer-events: auto;
+        display: block;
+        z-index: 10;
+      }
+    }
+  }
 }
 
 *,
@@ -61,24 +88,61 @@ select:-webkit-autofill {
   transition-property: color, background;
 }
 
+::-moz-selection,
+::selection {
+  background: $brand-primary;
+  color: $brand-white;
+}
+
 svg {
   max-width: 100%;
   max-height: 100%;
   fill: currentcolor;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-  font: inherit;
-}
-
 iframe {
   max-width: 100%;
   border: none;
+}
+
+.container {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.mx-auto {
+  .acf-image {
+    margin: 0 auto;
+  }
+}
+
+.acf-image + .acf-image {
+  margin-top: 3rem;
+}
+
+.text-center-mobile {
+  @include breakpoint(until_lg) {
+    text-align: center;
+  }
+}
+
+.acf-text,
+.acf-title {
+  &.contained {
+    max-width: 63.5rem;
+
+    .text-center-mobile & {
+      @include breakpoint(until_lg) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .lg\:text-center & {
+      @include breakpoint(lg) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }

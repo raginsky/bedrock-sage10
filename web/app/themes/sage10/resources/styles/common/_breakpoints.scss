@@ -1,16 +1,15 @@
 $breakpoints: (
-  'xs': 'screen and (min-width: em(321, 16))',
-  'sm': 'screen and (min-width: em(576, 16))',
-  'until-md': 'screen and (max-width: em(767, 16))',
-  'md': 'screen and (min-width: em(768, 16))',
-  'until-lg': 'screen and (max-width: em(991, 16))',
-  'lg': 'screen and (min-width: em(992, 16))',
-  'until-xl': 'screen and (max-width: em(1199, 16))',
-  'xl': 'screen and (min-width: em(1200, 16))',
-  'until-xxl': 'screen and (max-width: em(1599, 16))',
-  'xxl': 'screen and (min-width: em(1600, 16))',
-  'xxxl': 'screen and (min-width: em(1920, 16))',
+  'xs': 'min-width: 321px',
+  'sm': 'min-width: 576px',
+  'until_md': 'max-width: 767px',
+  'md': 'min-width: 768px',
+  'until_lg': 'max-width: 991px',
+  'lg': 'min-width: 992px',
+  'until_xl': 'max-width: 1199px',
+  'xl': 'min-width: 1200px',
+  'until_xxl': 'max-width: 1599px',
+  'xxl': 'min-width: 1600px',
+  'xxxl': 'min-width: 1920px',
+  'until_desktop': 'max-width: 1199px',
+  'desktop': 'min-width: 1200px',
 );
-
-$navbar_until_breakpoint: map.get($breakpoints, 'until-xl');
-$navbar_breakpoint: map.get($breakpoints, 'xl');

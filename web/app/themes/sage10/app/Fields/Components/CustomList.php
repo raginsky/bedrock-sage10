@@ -16,6 +16,14 @@ $custom_list
         'wrapper'    => ['width' => 50],
     ])
 
+    ->addTrueFalse('slider', [
+        'label'       => 'Enable Slider for Mobile',
+        'ui'          => 1,
+        'ui_on_text'  => 'Enable',
+        'ui_off_text' => 'Disable',
+        'wrapper'    => ['width' => 50]
+        ])
+
     ->addRepeater('custom_list', [
         'min'          => 1,
         'layout'       => 'block',
@@ -23,69 +31,30 @@ $custom_list
         'instructions' => 'Click "Add List Item" to add new Item to the List'
     ])
     
-    // Add SVG field
-    ->addFields(get_field_partial('fragments.svg'))
-
+    ->addTab("Main")
     // Add Image field
     ->addImage('image', [
         'label'        => 'Image',
         'preview_size' => 'medium',
-        'wrapper'      => ['width' => 20]
+        'wrapper'      => ['width' => 30]
     ])
 
     // Add Title field
     ->addTextarea('title', [
         'rows'      => 2,
         'new_lines' => 'br',
-        'wrapper'   => ['width' => 25]
+        'wrapper'   => ['width' => 35]
     ])
 
     // Add Text field
     ->addTextarea('text', [
-        'rows'      => 2,
+        'rows'      => 4,
         'new_lines' => 'br',
-        'wrapper'   => ['width' => 25]
+        'wrapper'   => ['width' => 35]
     ])
 
-    // Add URL toggle field
-    ->addTrueFalse('page_url', [
-        'label'       => 'URL',
-        'ui'          => 1,
-        'ui_on_text'  => 'Yes',
-        'ui_off_text' => 'No',
-        'wrapper'     => ['width' => 10]
-    ])
-
-    // Add Page Link field, conditional on URL toggle
-    ->addPageLink('id_link', [
-        'label'          => 'Page URL',
-        'post_type'      => ['page'],
-        'allow_archives' => 0,
-        'allow_null'     => 1,
-        'wrapper'        => ['width' => 25]
-    ])
-    ->conditional('page_url', '==', 1)
-
-    // Add Custom URL field, conditional on URL toggle
-    ->addText('url', [
-        'label'   => 'Custom URL',
-        'wrapper' => ['width' => 25]
-    ])
-    ->conditional('page_url', '==', 1)
-
-    // Add Link Target field, conditional on URL toggle
-    ->addSelect('target', [
-        'label'      => 'Link Target',
-        'allow_null' => 1,
-        'choices'    => [
-            'blank'    => 'Open in new Tab',
-            'self'     => 'Open in same Tab',
-            'download' => 'Download File',
-        ],
-        'wrapper' => ['width' => 20]
-    ])
-    ->conditional('page_url', '==', 1)
-
+    ->addTab("Button")
+    ->addFields(get_field_partial('fragments.button'))
     ->endRepeater();
 
 return $custom_list;

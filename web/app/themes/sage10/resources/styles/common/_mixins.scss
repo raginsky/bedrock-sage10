@@ -1,37 +1,20 @@
 // stylelint-disable
-@mixin media($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $query: map.get($breakpoints, $breakpoint);
-
-    @media #{$query} {
+@mixin breakpoint($user-value) {
+  $value: map-get($breakpoints, $user-value);
+  @if $value {
+    @media (#{$value}) {
       @content;
     }
   } @else {
-    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map.";
+    @warn "This breakpoint '#{$user-value}' isn't supported yet";
   }
 }
 
-@mixin responsive-font($pixelSize: 21, $minimum: 4) {
-  $rem: #{calc($pixelSize / 10)}rem;
-  $threeQuarter: math.ceil($pixelSize - calc($pixelSize / 4));
-
-  @if ($minimum != 4) {
-    $threeQuarter: $minimum;
-    font-size: rem($minimum);
-  } @else {
-    font-size: rem($threeQuarter);
-  }
-
-  @include media('xs') {
-    font-size: calc(
-      #{$threeQuarter}px + (#{$pixelSize} - #{$threeQuarter}) *
-        calc((100vw - 320px) / (1200 - 320))
-    );
-  }
-
-  @include media('xl') {
-    font-size: rem($pixelSize);
-  }
+@mixin svg-size($width, $height, $newHeight) {
+  $aspectRatio: $width / $height;
+  $newWidth: ($newHeight * $aspectRatio);
+  width: em($newWidth);
+  height: em($newHeight);
 }
 
 @mixin secondary-font() {
@@ -47,23 +30,124 @@
 }
 
 @mixin font-size-xs {
-  @include responsive-font(14);
+  font-size: 1.4rem;
 }
 
 @mixin font-size-sm {
-  @include responsive-font(18);
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  @include breakpoint(desktop) {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
 }
 
 @mixin font-size-md {
-  @include responsive-font(20);
+  font-size: 1.8rem;
+  line-height: 2rem;
+
+  @include breakpoint(desktop) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
 }
 
 @mixin font-size-lg {
-  @include responsive-font(50);
-  @include letter-spacing();
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+
+  @include breakpoint(desktop) {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
 }
 
 @mixin font-size-xl {
-  @include responsive-font(80);
-  @include letter-spacing();
+  font-size: 4.4rem;
+  line-height: 4.6rem;
+
+  @include breakpoint(desktop) {
+    font-size: 7.2rem;
+    line-height: 7rem;
+  }
+}
+
+@mixin button {
+  @include font-size-xs();
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  min-width: 23.6rem;
+  width: fit-content;
+  height: 4.3rem;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  font-weight: $font_weight_black;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-transform: uppercase;
+
+  .btn-label {
+    width: 100%;
+  }
+}
+
+@mixin button-primary {
+  @include button();
+  border-radius: 5rem;
+  color: $brand_white;
+  background-color: $brand_primary;
+  border: 2px solid $brand_primary;
+
+  &:hover,
+  &:focus {
+    color: $brand_base;
+    background-color: $brand_secondary;
+    border-color: $brand_secondary;
+  }
+}
+
+@mixin button-secondary {
+  @include button();
+  border-radius: 5rem;
+  color: $brand_gray;
+  background-color: $brand_secondary;
+  border: 2px solid $brand_secondary;
+
+  &:hover,
+  &:focus {
+    color: $brand_white;
+    background-color: transparent;
+    border-color: $brand_white;
+  }
+}
+
+@mixin button-outline {
+  @include button();
+  border-radius: 2.4rem;
+  border: 2px solid $brand_primary;
+  color: $brand_primary;
+
+  &:hover,
+  &:focus {
+    color: $brand_white;
+    background-color: $brand_primary;
+    border-color: $brand_primary;
+  }
+}
+
+@mixin button-outline-white {
+  @include button();
+  border-radius: 2.4rem;
+  border: 2px solid $brand_white;
+  color: $brand_white;
+
+  &:hover,
+  &:focus {
+    color: $brand_base;
+    background-color: $brand_secondary;
+    border-color: $brand_secondary;
+  }
 }

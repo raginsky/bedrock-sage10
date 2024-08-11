@@ -5,7 +5,10 @@
     $colorClass = $color ? " text-$color" : '';
     
     $size = get_sub_field('size');
-    $sizeClass = $size ? " text-$size" : '';
+    $sizeClass = $size ? " acf-text-$size" : '';
+
+    $contained = get_sub_field('contained');
+    $containedClass = $contained ? " contained" : '';
     
     $weight = strtolower(get_sub_field('weight'));
     $weightClass = '';
@@ -22,6 +25,9 @@
         case 'bold':
             $weightClass = ' font-bold';
             break;
+        case 'black':
+            $weightClass = ' font-black';
+            break;
     }
     
     $uppercase = get_sub_field('uppercase');
@@ -31,13 +37,13 @@
     $marginClass = '';
     switch ($margin_bottom) {
         case 'small':
-            $marginClass = ' mb-2';
+            $marginClass = ' acf-small-margin';
             break;
         case 'normal':
-            $marginClass = ' mb-4';
+            $marginClass = ' acf-normal-margin';
             break;
         case 'large':
-            $marginClass = ' mb-6';
+            $marginClass = ' acf-large-margin';
             break;
     }
     
@@ -48,6 +54,6 @@
     }
 @endphp
 
-<{{$tag}} class="acf-title{{$colorClass}}{{$sizeClass}}{{$weightClass}}{{$uppercaseClass}}{{$marginClass}}"{{$href}}>
-    <span>{!! get_sub_field('title') !!}</span>
+<{{$tag}} class="acf-title{{$colorClass}}{{$sizeClass}}{{$weightClass}}{{$uppercaseClass}}{{$marginClass}}{{$containedClass}}"{{$href}}>
+    {!! get_sub_field('title') !!}
 </{{$tag}}>

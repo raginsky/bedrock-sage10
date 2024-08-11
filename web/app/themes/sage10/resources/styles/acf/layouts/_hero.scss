@@ -1,0 +1,43 @@
+.acf-hero {
+  &__container {
+    min-height: 42rem;
+    justify-content: center;
+    padding-top: 14.6rem;
+    padding-bottom: 5rem;
+
+    @include breakpoint(desktop) {
+      padding-top: 14.6rem;
+    }
+
+    body.home & {
+      @include breakpoint(desktop) {
+        min-height: 58.5rem;
+        max-width: 69.5rem;
+      }
+    }
+
+    body.integrated-page & {
+      @include breakpoint(desktop) {
+        min-height: 75rem;
+      }
+    }
+
+    body:not(.home) & {
+      @include breakpoint(desktop) {
+        height: 50rem;
+      }
+    }
+
+    h1 {
+      margin-bottom: 0.8rem;
+
+      @include breakpoint(desktop) {
+        margin-bottom: 2.6rem;
+      }
+    }
+
+    .acf-image {
+      margin: 0;
+    }
+  }
+}

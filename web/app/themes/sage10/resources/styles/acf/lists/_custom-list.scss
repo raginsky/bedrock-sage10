@@ -1,0 +1,49 @@
+.acf-custom-list {
+  position: relative;
+
+  &.swiper {
+    @include breakpoint(until_lg) {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  .swiper-container,
+  .swiper-wrapper {
+    @include breakpoint(lg) {
+      display: contents;
+    }
+  }
+
+  &__navigation {
+    @include breakpoint(lg) {
+      display: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      width: 2rem;
+      height: 1.8rem;
+      transform: translateY(-50%);
+      margin-top: 0;
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
+  }
+}

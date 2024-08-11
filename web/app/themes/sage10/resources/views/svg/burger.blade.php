@@ -1,1 +1,5 @@
-<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+    <path d="M27 6H3C1.3425 6 0 4.6575 0 3C0 1.3425 1.3425 0 3 0H27C28.6575 0 30 1.3425 30 3C30 4.6575 28.6575 6 27 6Z"/>
+    <path d="M27 30H3C1.3425 30 0 28.6575 0 27C0 25.3425 1.3425 24 3 24H27C28.6575 24 30 25.3425 30 27C30 28.6575 28.6575 30 27 30Z"/>
+    <path d="M27 18H3C1.3425 18 0 16.6575 0 15C0 13.3425 1.3425 12 3 12H27C28.6575 12 30 13.3425 30 15C30 16.6575 28.6575 18 27 18Z"/>
+</svg>

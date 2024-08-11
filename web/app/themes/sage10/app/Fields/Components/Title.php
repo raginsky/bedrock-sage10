@@ -39,11 +39,10 @@ $title
             'small' => 'Small'
         ],
         'default_value' => 'h4',
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 10]
     ])
-    ->addText('url', [])
+    ->addText('url', ['wrapper' => ['width' => 15]])
     ->conditional('tag', '==', 'a')
-    ->setWidth(15)
     ->addSelect('size', [
         'label'       => 'Size',
         'allow_null'  => 1,
@@ -55,7 +54,7 @@ $title
             'xs' => 'Extra Small'
         ],
         'default_value' => 'md',
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 12]
     ])
     ->addSelect('weight', [
         'label'       => 'Font Weight',
@@ -63,10 +62,11 @@ $title
             'normal' => 'Normal',
             'light'  => 'Light',
             'medium' => 'Medium',
-            'bold'   => 'Bold'
+            'bold'   => 'Bold',
+            'black'   => 'Black'
         ],
         'default_value' => 'normal',
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 12]
     ])
     ->addTrueFalse('uppercase', [
         'label'       => 'Text Style',
@@ -83,7 +83,15 @@ $title
             'normal' => 'Normal',
             'large'  => 'Large'
         ],
-        'wrapper'     => ['width' => 15]
-    ]);
+        'wrapper'     => ['width' => 14]
+    ])
+    
+    ->addTrueFalse('contained', [
+        'label'       => 'Fixed Width',
+        'ui'          => 1,
+        'ui_on_text'  => 'Fixed',
+        'ui_off_text' => 'Full',
+        'wrapper'     => ['width' => 12]
+    ]);;
 
 return $title;

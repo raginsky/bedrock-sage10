@@ -1,43 +1,60 @@
 @set($component, 'acf-list-' . get_sub_field('style'))
+@set($sliderClass, get_sub_field('slider') ? 'swiper' : '')
 
-<ul class="acf-{{ layout() }} {{ $component }}">
-    @fields('custom_list')
+<ul class="acf-{{layout()}} {{$component}} {{$sliderClass}}">
 
-    @set($link, get_sub_field('id_link') ?: (get_sub_field('url') ?: '#'))
-
-    @hassub('page_url')
-        <a href="{{ $link }}" class="{{ $component }}__link" {{ Page::linkTarget() }}>
+    @hassub('slider')
+    <div class="acf-{{layout()}}-slider swiper-container" id="{{$component}}">
+    <div class="swiper-wrapper">
     @endsub
 
-        <li class="{{ $component }}__item">
+    @fields('custom_list')
+        <li class="{{$component}}__item @if($sliderClass){{$sliderClass}}-slide @endif">
             @hassub('svg')
-                <div class="{{ $component }}__icon icon-{{ str_replace('.', '-', get_sub_field('svg')) }}">
+                <div class="{{$component}}__icon icon-{{ str_replace('.', '-', get_sub_field('svg')) }}">
                     @include('svg.acf.' . get_sub_field('svg'))
                 </div>
             @endsub
 
             @hassub('image')
-                <div class="{{ $component }}__image">
+                <div class="{{$component}}__image">
                     <img class="acf-image" src="@sub('image', 'url')" alt="@sub('image', 'alt')">
                 </div>
             @endsub
 
-            @hassub('title')
-                <div class="{{ $component }}__title">
-                    @sub('title')
+                <div class="{{$component}}__content">
+                @hassub('title')
+                    <div class="{{$component}}__title">
+                        @sub('title')
+                    </div>
+                @endsub
+    
+                @hassub('text')
+                    <div class="{{$component}}__text">
+                        @sub('text')
+                    </div>
+                @endsub
+    
+                @hassub('link')
+                <div class="{{$component}}__button">
+                    @include('acf.fragments.button')
                 </div>
-            @endsub
-
-            @hassub('text')
-                <div class="{{ $component }}__text">
-                    @sub('text')
+                @endsub
                 </div>
-            @endsub
         </li>
 
-    @hassub('page_url')
-        </a>
-    @endsub
-
     @endfields
+
+    @hassub('slider')
+        </div>
+    </div>
+        <div class="acf-{{layout()}}__navigation">
+            <div class="swiper-button-next {{$component}}-next">
+                @include('svg.acf.arrow-right')
+            </div>
+            <div class="swiper-button-prev {{$component}}-prev">
+                @include('svg.acf.arrow-left')
+            </div>
+        </div>
+    @endsub
 </ul>

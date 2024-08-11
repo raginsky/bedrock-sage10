@@ -1,6 +1,6 @@
 @wrapper(div)
-<a class="acf-{{layout()}}__link flex w-16 h-16" href="{{ home_url() }}"
+<a class="acf-{{layout()}}__link flex" href="{{ home_url() }}"
    title="{{ get_bloginfo('name', 'display') }}">
-  @include('svg.logo')
+  <div class="logo">@include('svg.footer-logo')</div>
 </a>
 @endwrapper(div)

@@ -1,0 +1,21 @@
+.acf-text {
+  &-xs {
+    @include font-size-xs();
+  }
+
+  &-sm {
+    @include font-size-sm();
+  }
+
+  &-md {
+    @include font-size-md();
+  }
+
+  &-lg {
+    @include font-size-lg();
+  }
+
+  &-xl {
+    @include font-size-xl();
+  }
+}
