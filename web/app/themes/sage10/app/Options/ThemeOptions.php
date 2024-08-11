@@ -39,6 +39,28 @@ class ThemeOptions extends Field
         // Social Media Links
         $themeOptions->addFields( get_field_partial( 'layouts.footerContent' ) );
 
+        // Meta Information Tab
+        $themeOptions->addTab('Meta', [
+            'placement' => 'top',
+        ]);
+
+        // Meta Fields
+        $themeOptions->addText('meta_title', [
+            'label' => 'Meta Title',
+        ]);
+        $themeOptions->addText('meta_description', [
+            'label' => 'Meta Description',
+        ]);
+        $themeOptions->addText('meta_image', [
+            'label' => 'Meta Image',
+        ]);
+        $themeOptions->addText('meta_url', [
+            'label' => 'Meta URL',
+        ]);
+        $themeOptions->addText('meta_type', [
+            'label' => 'Meta Type',
+        ]);
+
         // Return the built field group
         return $themeOptions->build();
     }

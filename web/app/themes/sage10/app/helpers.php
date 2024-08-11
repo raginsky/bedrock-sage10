@@ -13,6 +13,18 @@ if (!function_exists('get_field_partial')) {
     }
 }
 
+if (!function_exists('pageClass')) {
+    function pageClass() {
+    $page_class = get_field( 'page_class' );
+
+    if ( $page_class ) {
+        return ' ' . $page_class;
+    }
+
+    return '';
+    }
+}
+
 if (!function_exists('layout')) {
     function layout()
     {

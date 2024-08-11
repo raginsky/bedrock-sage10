@@ -25,9 +25,9 @@ class Page extends Composer
         return [
             'id' => $this->id(),
             'alignCenter' => $this->alignCenter(),
+            'alignCenterMobile' => $this->alignCenterMobile(),
             'textColor' => $this->textColor(),
             'moduleAttr' => $this->moduleAttr(),
-            'linkTarget' => $this->linkTarget(),
         ];
     }
 
@@ -37,6 +37,12 @@ class Page extends Composer
         $id = $title ? strtolower(preg_replace('/[-\s]/', '_', $title)) : '';
     
         return $id ? "id='{$id}' " : '';
+    }
+
+    public static function bg()
+    {
+        $background = get_sub_field('background');
+        return $background ? ' acf-bg-' . $background : '';
     }
     
     public static function bgImageAlign()
@@ -92,7 +98,12 @@ class Page extends Composer
     
     public static function alignCenter()
     {
-        return get_sub_field('align_center') ? ' text-center' : '';
+        return get_sub_field('align_center') ? ' lg:text-center' : '';
+    }
+
+    public static function alignCenterMobile()
+    {
+        return get_sub_field('align_mobile_center') ? ' text-center-mobile' : '';
     }
     
     public static function textColor()
@@ -100,24 +111,20 @@ class Page extends Composer
         return ($text_color = get_sub_field('text_color')) ? ' text-' . $text_color : '';
     }
 
-    public static function linkTarget()
+    public static function padding()
     {
-        $link_target = get_sub_field('target');
-    
-        $targets = [
-            'blank' => 'target=_blank',
-            'self' => 'target=_self',
-            'download' => 'download'
-        ];
-    
-        return $targets[$link_target] ?? 'target=_blank';
+        $padding = get_sub_field('padding');
+        return $padding ? ' acf-' . $padding : '';
     }
     
     public static function moduleAttr()
     {
         return
+            self::padding() .
             self::alignCenter() .
-            self::textColor();
+            self::alignCenterMobile() .
+            self::textColor() .
+            self::bg();
     }
       
     private static function esc_url($url)
