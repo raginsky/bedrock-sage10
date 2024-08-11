@@ -132,6 +132,23 @@ Config::define('WP_DEBUG_LOG', false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
 
+// Check for the 'dbg' query parameter
+if ( isset( $_GET['dbg'] ) ) {
+    // Enable full error reporting and display errors
+    error_reporting( E_ALL );
+    Config::define('WP_DEBUG', true);
+    Config::define('WP_DEBUG_LOG', true);
+    Config::define('WP_DEBUG_DISPLAY', true);
+    @ini_set( 'display_errors', 1 );
+} else {
+    // Disable error reporting and hide errors
+    error_reporting( 0 );
+    Config::define('WP_DEBUG', false);
+    Config::define('WP_DEBUG_LOG', true);
+    Config::define('WP_DEBUG_DISPLAY', false);
+    @ini_set( 'display_errors', 0 );
+}
+
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
