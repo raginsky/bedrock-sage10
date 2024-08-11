@@ -37,6 +37,8 @@
     "@roots/sage": "6.20.0"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.13"
+    "@tailwindcss/typography": "^0.5.13",
+    "lodash": "^4.17.21",
+    "swiper": "^11.1.4"
   }
 }
