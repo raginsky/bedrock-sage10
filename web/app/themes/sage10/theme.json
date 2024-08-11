@@ -96,7 +96,7 @@
           "slug": "slate-950"
         },
         {
-          "color": "#808080",
+          "color": "#545454",
           "name": "Gray",
           "slug": "gray"
         },
@@ -1216,6 +1216,11 @@
           "slug": "dark"
         },
         {
+          "color": "#11162e",
+          "name": "Bg-dark",
+          "slug": "bg-dark"
+        },
+        {
           "color": "#ff2a00",
           "name": "Highlight",
           "slug": "highlight"
@@ -1267,27 +1272,27 @@
       "fontSizes": [
         {
           "name": "xs",
-          "size": "0.875rem",
+          "size": "1.4rem",
           "slug": "xs"
         },
         {
           "name": "sm",
-          "size": "1.125rem",
+          "size": "1.8rem",
           "slug": "sm"
         },
         {
           "name": "base",
-          "size": "1rem",
+          "size": "16px",
           "slug": "base"
         },
         {
           "name": "lg",
-          "size": "3.125rem",
+          "size": "3.2rem",
           "slug": "lg"
         },
         {
           "name": "xl",
-          "size": "5rem",
+          "size": "7.2rem",
           "slug": "xl"
         },
         {
@@ -1332,7 +1337,7 @@
         },
         {
           "name": "md",
-          "size": "1.25rem",
+          "size": "2.4rem",
           "slug": "md"
         }
       ]

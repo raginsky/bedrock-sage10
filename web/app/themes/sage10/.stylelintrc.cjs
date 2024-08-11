@@ -6,6 +6,8 @@ module.exports = {
   ],
   customSyntax: 'postcss-scss',
   rules: {
+    'selector-id-pattern': null,
+    'no-invalid-position-at-import-rule': null,
     'function-no-unknown': [
       true,
       {
