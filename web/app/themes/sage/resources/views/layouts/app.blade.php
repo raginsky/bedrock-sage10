@@ -14,6 +14,7 @@ $meta_fields = [
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {!! get_field('after_head_start', 'option') !!}
     @php(do_action('get_header'))
     @php(wp_head())
 
@@ -25,6 +26,7 @@ $meta_fields = [
     @endforeach
   </head>
   <body @php(body_class(pageClass())) class="leading-normal tracking-normal">
+    {!! get_field('after_body_start', 'option') !!}
     @php(wp_body_open())
 
     <div id="app" class="min-h-screen flex flex-col">

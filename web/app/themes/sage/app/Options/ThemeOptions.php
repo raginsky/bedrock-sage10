@@ -44,6 +44,10 @@ class ThemeOptions extends Field
             'placement' => 'top',
         ]);
 
+        // Analytics fields
+        $themeOptions->addTextarea( 'after_head_start', [ 'label' => 'After <b>head</b> start', 'rows' => '7', ] );
+        $themeOptions->addTextarea( 'after_body_start', [ 'label' => 'After <b>body</b> start', 'rows' => '7', ] );
+
         // Meta Fields
         $themeOptions->addText('meta_title', [
             'label' => 'Meta Title',
