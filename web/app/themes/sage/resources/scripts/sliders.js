@@ -1,5 +1,6 @@
 import 'swiper/swiper-bundle.css';
 import Swiper from 'swiper/bundle';
+import _ from 'lodash';
 
 export const sliders = async (err) => {
   if (err) {
@@ -36,7 +37,7 @@ export const sliders = async (err) => {
   let swiperInstance;
   const breakpoint = 992;
 
-  const checkBreakpoint = () => {
+  const checkBreakpoint = _.debounce(() => {
     if (window.innerWidth < breakpoint) {
       if (!swiperInstance) {
         swiperInstance = initializeSwiper();
@@ -47,7 +48,7 @@ export const sliders = async (err) => {
         swiperInstance = null;
       }
     }
-  };
+  }, 300);
 
   window.addEventListener('resize', checkBreakpoint);
   document.addEventListener('DOMContentLoaded', () => {
