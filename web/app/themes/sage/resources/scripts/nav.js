@@ -10,22 +10,24 @@ export const nav = async (err) => {
   const closeBtn = document.getElementById('nav_close');
   const body = document.body;
 
-  if (navContent) {
-    navContent.querySelectorAll('li').forEach((li) => {
-      li.classList.add('acf-hover');
+  if (!navContent) {
+    return; // Stop execution if nav content is not found
+  }
+
+  navContent.querySelectorAll('li').forEach((li) => {
+    li.classList.add('acf-hover');
+  });
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      body.classList.toggle('mobile-menu-open');
     });
+  }
 
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        body.classList.toggle('mobile-menu-open');
-      });
-    }
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        body.classList.toggle('mobile-menu-open');
-      });
-    }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      body.classList.toggle('mobile-menu-open');
+    });
   }
 
   const handleResize = _.debounce(() => {
