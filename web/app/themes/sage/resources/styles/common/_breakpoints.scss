@@ -9,7 +9,9 @@ $breakpoints: (
   'xl': 'min-width: 1200px',
   'until_xxl': 'max-width: 1599px',
   'xxl': 'min-width: 1600px',
-  'xxxl': 'min-width: 1920px',
+  'until_xxxl': 'max-width: 1920px',
+  'xxxl': 'min-width: 1921px',
+
   'until_desktop': 'max-width: 1199px',
   'desktop': 'min-width: 1200px',
 );

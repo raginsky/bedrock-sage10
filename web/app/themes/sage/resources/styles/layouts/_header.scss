@@ -22,42 +22,18 @@
       padding-bottom: 3.6rem;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: calc(100% - 6rem);
-      height: 0.2rem;
-      background-color: $brand_white;
-
-      .navbar-primary & {
-        background-color: $brand_primary;
-      }
-    }
-
     .logo {
-      color: $brand_white;
+      color: $brand_primary;
 
-      .navbar-primary & {
-        color: $brand_primary;
-      }
-
-      @include svg-size(350, 76, 45);
+      @include svg-size(512, 512, 64);
 
       @include breakpoint(xxl) {
-        @include svg-size(350, 76, 76);
+        @include svg-size(512, 512, 128);
       }
     }
 
     .menu-icon {
-      color: $brand_white;
-
-      .navbar-primary & {
-        color: $brand_primary;
-      }
+      color: $brand_primary;
     }
   }
 

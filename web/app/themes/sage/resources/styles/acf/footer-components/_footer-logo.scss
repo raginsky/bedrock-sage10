@@ -1,6 +1,6 @@
 .acf-footer-logo {
   .logo {
-    @include svg-size(140, 62, 62);
+    @include svg-size(512, 512, 64);
 
     transition: transform 0.3s ease;
     transform-origin: left bottom;
