@@ -11,7 +11,7 @@
 }
 
 @mixin svg-size($width, $height, $newHeight) {
-  $aspectRatio: $width / $height;
+  $aspectRatio: calc($width / $height);
   $newWidth: ($newHeight * $aspectRatio);
   width: em($newWidth);
   height: em($newHeight);
@@ -30,64 +30,44 @@
 }
 
 @mixin font-size-xs {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
 }
 
 @mixin font-size-sm {
-  font-size: 1.6rem;
-  line-height: 2rem;
-
-  @include breakpoint(desktop) {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-  }
+  font-size: 2.8rem;
 }
 
 @mixin font-size-md {
-  font-size: 1.8rem;
-  line-height: 2rem;
-
-  @include breakpoint(desktop) {
-    font-size: 2.4rem;
-    line-height: 3rem;
-  }
+  font-size: 3.6rem;
 }
 
 @mixin font-size-lg {
-  font-size: 2.4rem;
-  line-height: 2.8rem;
-
-  @include breakpoint(desktop) {
-    font-size: 3.2rem;
-    line-height: 4rem;
-  }
+  font-size: 5.4rem;
 }
 
 @mixin font-size-xl {
-  font-size: 4.4rem;
-  line-height: 4.6rem;
-
-  @include breakpoint(desktop) {
-    font-size: 7.2rem;
-    line-height: 7rem;
-  }
+  font-size: 7.2rem;
 }
 
 @mixin button {
   @include font-size-xs();
-  display: inline-flex;
-  align-items: center;
-  padding: 0 2rem;
-  min-width: 23.6rem;
-  width: fit-content;
-  height: 4.3rem;
-  line-height: 1;
-  text-decoration: none;
-  text-align: center;
-  font-weight: $font_weight_black;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-  text-transform: uppercase;
+
+  & {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    min-width: 23.6rem;
+    width: fit-content;
+    height: 4.3rem;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    font-weight: $font_weight_black;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    text-transform: uppercase;
+  }
 
   .btn-label {
     width: 100%;
@@ -96,10 +76,13 @@
 
 @mixin button-primary {
   @include button();
-  border-radius: 5rem;
-  color: $brand_white;
-  background-color: $brand_primary;
-  border: 2px solid $brand_primary;
+
+  & {
+    border-radius: 5rem;
+    color: $brand_white;
+    background-color: $brand_primary;
+    border: 2px solid $brand_primary;
+  }
 
   &:hover,
   &:focus {
@@ -111,10 +94,13 @@
 
 @mixin button-secondary {
   @include button();
-  border-radius: 5rem;
-  color: $brand_gray;
-  background-color: $brand_secondary;
-  border: 2px solid $brand_secondary;
+
+  & {
+    border-radius: 5rem;
+    color: $brand_gray;
+    background-color: $brand_secondary;
+    border: 2px solid $brand_secondary;
+  }
 
   &:hover,
   &:focus {
@@ -126,9 +112,12 @@
 
 @mixin button-outline {
   @include button();
-  border-radius: 2.4rem;
-  border: 2px solid $brand_primary;
-  color: $brand_primary;
+
+  & {
+    border-radius: 2.4rem;
+    border: 2px solid $brand_primary;
+    color: $brand_primary;
+  }
 
   &:hover,
   &:focus {
@@ -140,9 +129,12 @@
 
 @mixin button-outline-white {
   @include button();
-  border-radius: 2.4rem;
-  border: 2px solid $brand_white;
-  color: $brand_white;
+
+  & {
+    border-radius: 2.4rem;
+    border: 2px solid $brand_white;
+    color: $brand_white;
+  }
 
   &:hover,
   &:focus {
