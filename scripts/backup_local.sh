@@ -1,45 +1,35 @@
 #!/bin/bash
 
-# Set the project root directory
-PROJECT_ROOT=~/wordpress/wpbase/app/bedrock
-BACKUP_DIR="$PROJECT_ROOT/backups"
-DB_DIR="$PROJECT_ROOT/.db"
-DB_FILE="$DB_DIR/db.sql"
+# Source the local variables from variables.sh
+source "$(dirname "$0")/variables.sh"
 
-# Navigate to the project root directory
-cd $PROJECT_ROOT || {
-  echo "Project root directory not found: $PROJECT_ROOT"
-  exit 1
-}
+# Set the relevant paths
+BACKUP_DIR="$PROJECT_ROOT/backups"
+DB_FILE="$PROJECT_ROOT/.db/db.sql"
+
+# Load environment variables from .env file (sensitive info)
+set -a
+source "$PROJECT_ROOT/.env"
+set +a
 
 # Ensure the backups and db directories exist
-mkdir -p $BACKUP_DIR
-mkdir -p $DB_DIR
+mkdir -p "$BACKUP_DIR"
+mkdir -p "$(dirname "$DB_FILE")"
 
-# Export the WordPress database using WP-CLI
-EXPORT_FILE=$BACKUP_DIR/db_backup_$(date +'%Y-%m-%d_%H-%M-%S').sql
+# Create a timestamped backup file
+EXPORT_FILE="$BACKUP_DIR/db_backup_$(date +'%Y-%m-%d_%H-%M-%S').sql"
 
-# Check if wp-cli is available
-if ! command -v wp &> /dev/null; then
-  echo "wp-cli could not be found. Please ensure WP-CLI is installed."
+# Export the WordPress database using mysqldump
+if ! mysqldump -u "$DB_USER" -p"$DB_PASSWORD" --socket="$SOCKET_PATH" "$DB_NAME" > "$EXPORT_FILE"; then
+  echo "Error: Database export failed."
   exit 1
 fi
 
-# Export the database to the backup directory
-wp db export $EXPORT_FILE
+# Copy the export to the .db directory as db.sql
+cp "$EXPORT_FILE" "$DB_FILE"
 
-# Check if the export was successful
-if [ $? -ne 0 ]; then
-  echo "Failed to export the database. Please check your WP-CLI configuration and try again."
-  exit 1
-fi
-
-# Copy the same dump to the db directory as db.sql (for deploy db purposes)
-cp $EXPORT_FILE $DB_FILE
-
-# Add to git
-cd $PROJECT_ROOT
-git add backups/
+# Add the backup to Git and push
+git add "$BACKUP_DIR/"
 git commit -m "Automated backup $(date +'%Y-%m-%d %H:%M:%S')"
 git push
 
