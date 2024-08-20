@@ -5,7 +5,8 @@ source "$(dirname "$0")/variables.sh"
 
 # Set the relevant paths
 BACKUP_DIR="$PROJECT_ROOT/backups"
-DB_FILE="$PROJECT_ROOT/.db/db.sql"
+DB_DIR="$PROJECT_ROOT/.db"
+DB_FILE="db.sql"
 
 # Load environment variables from .env file (sensitive info)
 set -a
@@ -26,10 +27,10 @@ if ! mysqldump -u "$DB_USER" -p"$DB_PASSWORD" --socket="$SOCKET_PATH" "$DB_NAME"
 fi
 
 # Copy the export to the .db directory as db.sql
-cp "$EXPORT_FILE" "$DB_FILE"
+cp "$EXPORT_FILE" "$DB_DIR/$DB_FILE"
 
 # Add the backup to Git and push
-git add "$BACKUP_DIR/"
+git add "$BACKUP_DIR/" && git add "$DB_DIR/"
 git commit -m "Automated backup $(date +'%Y-%m-%d %H:%M:%S')"
 git push
 
