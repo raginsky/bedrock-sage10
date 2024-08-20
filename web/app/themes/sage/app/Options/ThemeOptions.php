@@ -38,32 +38,17 @@ class ThemeOptions extends Field
 
         // Social Media Links
         $themeOptions->addFields( get_field_partial( 'layouts.footerContent' ) );
-
+        
         // Meta Information Tab
         $themeOptions->addTab('Meta', [
             'placement' => 'top',
         ]);
-
+        
         // Analytics fields
         $themeOptions->addTextarea( 'after_head_start', [ 'label' => 'After <b>head</b> start', 'rows' => '7', ] );
         $themeOptions->addTextarea( 'after_body_start', [ 'label' => 'After <b>body</b> start', 'rows' => '7', ] );
-
-        // Meta Fields
-        $themeOptions->addText('meta_title', [
-            'label' => 'Meta Title',
-        ]);
-        $themeOptions->addText('meta_description', [
-            'label' => 'Meta Description',
-        ]);
-        $themeOptions->addText('meta_image', [
-            'label' => 'Meta Image',
-        ]);
-        $themeOptions->addText('meta_url', [
-            'label' => 'Meta URL',
-        ]);
-        $themeOptions->addText('meta_type', [
-            'label' => 'Meta Type',
-        ]);
+        
+        $themeOptions->addFields( get_field_partial( 'partials.metaFields' ) );
 
         // Return the built field group
         return $themeOptions->build();
