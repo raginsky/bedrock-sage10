@@ -78,7 +78,6 @@ const config = {
       },
     },
     screens: {
-      screens: {
         xs: '321px',
         sm: '576px',
         md: '768px',
@@ -93,7 +92,6 @@ const config = {
         'until-xl': { max: '1199px' },
         'until-xxl': { max: '1599px' },
         'until-xxxl': { max: '1920px' },
-      },
     },
   },
   safelist: [
