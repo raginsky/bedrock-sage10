@@ -2,23 +2,9 @@
     $style = strtolower(str_replace(' ', '-', get_sub_field('class')));
     $margin = strtolower(str_replace(' ', '-', get_sub_field('margin_bottom')));
     $styleClass = $style ? 'acf-btn-' . $style : '';
-
-    $marginClass = '';
-    if ($margin) {
-        switch ($margin) {
-            case 'small':
-                $marginClass = 'acf-small-margin';
-                break;
-            case 'normal':
-                $marginClass = 'acf-normal-margin';
-                break;
-            case 'large':
-                $marginClass = 'acf-large-margin';
-                break;
-            default:
-                $marginClass = '';
-        }
-    }
+    
+    $margin_bottom = get_sub_field('margin_bottom');
+    $marginClass = $margin_bottom ? " acf-margin-$margin_bottom" : '';
 
     $class = $styleClass . ' ' . $marginClass;
 

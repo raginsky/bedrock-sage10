@@ -30,9 +30,16 @@ $button
 
     // Margin Bottom
     ->addSelect('margin_bottom', [
-        'allow_null' => 1,
-        'choices'    => ['small', 'normal', 'large'],
-        'wrapper'    => ['width' => 15]
+        'label'       => 'Margin Bottom',
+        'allow_null'  => 1,
+        'choices'     => [
+            'xs'  => 'Small [8px]',
+            'sm' => 'Normal [16px]',
+            'md'  => 'Medium [24px]',
+            'lg' => 'Large [32px]',
+            'xl' => 'Extra Large [40px]'
+        ],
+        'wrapper'     => ['width' => 14]
     ]);
 
 return $button;

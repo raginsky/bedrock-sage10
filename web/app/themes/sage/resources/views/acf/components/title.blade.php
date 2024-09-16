@@ -11,41 +11,13 @@
     $containedClass = $contained ? " contained" : '';
     
     $weight = strtolower(get_sub_field('weight'));
-    $weightClass = '';
-    switch ($weight) {
-        case 'normal':
-            $weightClass = ' font-normal';
-            break;
-        case 'light':
-            $weightClass = ' font-light';
-            break;
-        case 'medium':
-            $weightClass = ' font-medium';
-            break;
-        case 'bold':
-            $weightClass = ' font-bold';
-            break;
-        case 'black':
-            $weightClass = ' font-black';
-            break;
-    }
+    $weightClass = $weight ? " font-$weight" : '';
     
     $uppercase = get_sub_field('uppercase');
     $uppercaseClass = $uppercase ? ' uppercase' : '';
     
     $margin_bottom = get_sub_field('margin_bottom');
-    $marginClass = '';
-    switch ($margin_bottom) {
-        case 'small':
-            $marginClass = ' acf-small-margin';
-            break;
-        case 'normal':
-            $marginClass = ' acf-normal-margin';
-            break;
-        case 'large':
-            $marginClass = ' acf-large-margin';
-            break;
-    }
+    $marginClass = $margin_bottom ? " acf-margin-$margin_bottom" : '';
     
     $href = '';
     if ($tag == 'a') {

@@ -14,18 +14,9 @@ $font_weight_black: 900;
 
 $base_font_size: #{calc($base_font_size_px / 10)}rem;
 
-// Variables for padding values
-$padding_large: 10rem;
-$padding_normal: 9rem;
-$padding_small: 8rem;
-$padding_smallest: 6rem;
-
-$padding_xs_large: 3.5rem;
-$padding_xs_normal: 3em;
-$padding_xs_small: $padding_xs_normal;
-$padding_xs_smallest: $padding_xs_normal;
-
-// Variables for margin values
-$margin_large: 3.5rem;
-$margin_normal: 2.5rem;
-$margin_small: 1.5rem;
+$spacing: 0.8rem;
+$spacing_1: spacing;
+$spacing_2: $spacing * 2;
+$spacing_3: $spacing * 3;
+$spacing_4: $spacing * 4;
+$spacing_5: $spacing * 5;

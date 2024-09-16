@@ -1,11 +1,21 @@
-.acf-small-margin {
-  margin-bottom: $margin_small;
-}
+.acf-margin {
+  &-xs {
+    margin-bottom: $spacing_1;
+  }
 
-.acf-normal-margin {
-  margin-bottom: $margin_normal;
-}
+  &-sm {
+    margin-bottom: $spacing_2;
+  }
 
-.acf-large-margin {
-  margin-bottom: $margin_large;
+  &-md {
+    margin-bottom: $spacing_3;
+  }
+
+  &-lg {
+    margin-bottom: $spacing_4;
+  }
+
+  &-xl {
+    margin-bottom: $spacing_5;
+  }
 }

@@ -38,11 +38,13 @@ $text
         'label'       => 'Margin Bottom',
         'allow_null'  => 1,
         'choices'     => [
-            'small' => 'Small',
-            'normal' => 'Normal',
-            'large' => 'Large'
+            'xs'  => 'Small [8px]',
+            'sm' => 'Normal [16px]',
+            'md'  => 'Medium [24px]',
+            'lg' => 'Large [32px]',
+            'xl' => 'Extra Large [40px]'
         ],
-        'wrapper'     => ['width' => 15]
+        'wrapper'     => ['width' => 14]
     ])
 
     ->addTrueFalse('contained', [

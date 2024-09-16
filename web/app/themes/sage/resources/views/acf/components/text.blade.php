@@ -9,18 +9,7 @@
     $containedClass = $contained ? " contained" : '';
     
     $margin_bottom = get_sub_field('margin_bottom');
-    $marginClass = '';
-    switch ($margin_bottom) {
-        case 'small':
-            $marginClass = ' acf-small-margin';
-            break;
-        case 'normal':
-            $marginClass = ' acf-normal-margin';
-            break;
-        case 'large':
-            $marginClass = ' acf-large-margin';
-            break;
-    }
+    $marginClass = $margin_bottom ? " acf-margin-$margin_bottom" : '';
 @endphp
 
 <div class="acf-{{ layout() }}{{$sizeClass}}{{$colorClass}}{{$marginClass}}{{$containedClass}}">
