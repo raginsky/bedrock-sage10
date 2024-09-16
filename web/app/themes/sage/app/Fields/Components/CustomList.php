@@ -12,6 +12,7 @@ $custom_list
         'allow_null' => 1,
         'choices'    => [
             'default' => 'Default Style',
+            'platform' => 'One Platform List',
         ],
         'wrapper'    => ['width' => 50],
     ])
@@ -36,21 +37,23 @@ $custom_list
     ->addImage('image', [
         'label'        => 'Image',
         'preview_size' => 'medium',
-        'wrapper'      => ['width' => 30]
+        'wrapper'      => ['width' => 20]
     ])
 
     // Add Title field
     ->addTextarea('title', [
         'rows'      => 2,
         'new_lines' => 'br',
-        'wrapper'   => ['width' => 35]
+        'wrapper'   => ['width' => 40]
     ])
 
     // Add Text field
-    ->addTextarea('text', [
-        'rows'      => 4,
-        'new_lines' => 'br',
-        'wrapper'   => ['width' => 35]
+    ->addWysiwyg('text', [
+        'label' => '',
+        'wrapper'   => ['width' => 40],
+        'media_upload' => 0,
+        'toolbar' => 'basic',
+        'delay' => 1
     ])
 
     ->addTab("Button")

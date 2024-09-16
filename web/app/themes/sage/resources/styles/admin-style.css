@@ -101,3 +101,11 @@
   font-weight: 700;
   color: #1e8cbe;
 }
+
+.acf-field-flex-content-flex-content-section-components-custom-list-custom-list-text
+  textarea,
+.acf-field-flex-content-flex-content-section-components-custom-list-custom-list-text
+  iframe {
+  height: 100px !important;
+  min-height: 100px !important;
+}

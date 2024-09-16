@@ -10,12 +10,6 @@
 
     @fields('custom_list')
         <li class="{{$component}}__item @if($sliderClass){{$sliderClass}}-slide @endif">
-            @hassub('svg')
-                <div class="{{$component}}__icon icon-{{ str_replace('.', '-', get_sub_field('svg')) }}">
-                    @include('svg.acf.' . get_sub_field('svg'))
-                </div>
-            @endsub
-
             @hassub('image')
                 <div class="{{$component}}__image">
                     <img class="acf-image" src="@sub('image', 'url')" alt="@sub('image', 'alt')">
