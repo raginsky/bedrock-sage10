@@ -17,6 +17,10 @@
     }
   }
 
+  .swiper-slide {
+    box-sizing: border-box;
+  }
+
   &__navigation {
     @include breakpoint(lg) {
       display: none;
