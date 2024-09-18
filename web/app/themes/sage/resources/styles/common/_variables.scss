@@ -12,11 +12,13 @@ $font_weight_medium: 600;
 $font_weight_bold: 700;
 $font_weight_black: 900;
 
-$base_font_size: #{calc($base_font_size_px / 10)}rem;
+$base_font_size: calc($base_font_size_px / 10) * 1rem;
 
-$spacing: 0.8rem;
-$spacing_1: spacing;
+$spacing: 1rem;
+$spacing_1: $spacing;
 $spacing_2: $spacing * 2;
 $spacing_3: $spacing * 3;
 $spacing_4: $spacing * 4;
 $spacing_5: $spacing * 5;
+$spacing_10: $spacing * 10;
+$spacing_20: $spacing * 20;

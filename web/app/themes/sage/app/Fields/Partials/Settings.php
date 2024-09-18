@@ -61,13 +61,9 @@ $settings
         'label'       => 'Padding',
         'allow_null'  => 1,
         'choices'     => [
-            'large-padding' => 'Large Padding',
-            'normal-padding' => 'Normal Padding',
-            'small-padding' => 'Small Padding',
-            'smallest-padding' => 'Smallest Padding',
-            'no-padding-top' => 'No Padding Top',
-            'no-padding-bottom' => 'No Padding Bottom',
-            'no-padding' => 'No Padding'
+            'padding-lg' => 'Lg Padding [xs:100px / lg:200px]',
+            'padding-md' => 'Md Padding [xs:50px / lg:100px]',
+            'padding-sm' => 'Sm Padding [xs:40px / lg:50px]',
         ],
         'wrapper'     => [
             'width' => 15

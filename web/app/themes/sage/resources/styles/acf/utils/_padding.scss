@@ -1,67 +1,23 @@
-@mixin padding($padding, $desktop-padding) {
-  padding-top: $padding;
-  padding-bottom: $padding;
+@mixin padding($padding, $desktop-padding: false) {
+  padding: $padding;
 
-  @include breakpoint(desktop) {
-    padding-top: $desktop-padding;
-    padding-bottom: $desktop-padding;
+  @if $desktop-padding {
+    @include breakpoint(desktop) {
+      padding: $desktop-padding;
+    }
   }
 }
 
-@mixin padding-top($padding, $desktop-padding) {
-  padding-top: $padding;
-  padding-bottom: $spacing_2;
-
-  @include breakpoint(desktop) {
-    padding-top: 0;
-    padding-bottom: $desktop-padding;
+.acf-padding {
+  &-lg {
+    @include padding($spacing_10, $spacing_20);
   }
-}
 
-@mixin padding-bottom($padding, $desktop-padding) {
-  padding-top: $spacing_2;
-  padding-bottom: $padding;
-
-  @include breakpoint(desktop) {
-    padding-top: $desktop-padding;
-    padding-bottom: 0;
+  &-md {
+    @include padding($spacing_5, $spacing_10);
   }
-}
 
-.acf-normal-padding {
-  @include padding($spacing_3, $spacing_4);
-}
-
-.acf-large-padding {
-  @include padding($spacing_4, $spacing_5);
-}
-
-.acf-small-padding {
-  @include padding($spacing_2, $spacing_3);
-}
-
-.acf-smallest-padding {
-  @include padding($spacing_1, $spacing_2);
-}
-
-.acf-no-padding-top {
-  padding-top: 0;
-  padding-bottom: $spacing_2;
-
-  @include breakpoint(desktop) {
-    padding-bottom: $spacing_3;
+  &-sm {
+    @include padding($spacing_4, $spacing_5);
   }
-}
-
-.acf-no-padding-bottom {
-  padding-top: $spacing_2;
-  padding-bottom: 0;
-
-  @include breakpoint(desktop) {
-    padding-top: $spacing_3;
-  }
-}
-
-.acf-no-padding {
-  padding: 0;
 }
