@@ -16,7 +16,7 @@
 @endphp
 
 @hassub('link')
-    <a class="acf-btn {{ $class }}" href="{{ $link_url }}" target="{{$link_target}}">
+<a class="acf-btn {{ $class }}" href="{{ $link_url }}" aria-label="{{$link_title}}" target="{{$link_target}}">
         <span class="btn-label"><?= $link_title ?></span>
     </a>
 @endsub

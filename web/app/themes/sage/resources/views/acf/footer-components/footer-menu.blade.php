@@ -27,13 +27,12 @@
         case 'bold':
             $weightClass = ' font-bold';
             break;
-        case 'black':
-            $weightClass = ' font-black';
-            break;
     }
     @endphp
         <li class="mb-4">
-            <a href="{{ $link_url }}" target="{{ $link_target }}" class="hover:text-blue-700 no-underline{{$weightClass}}">
+            <a href="{{ $link_url }}" target="{{ $link_target }}" class="hover:text-blue-700 no-underline{{$weightClass}}"
+            aria-label="{{$link_title}}"
+            >
                 <?= $link_title ?>
             </a>
         </li>

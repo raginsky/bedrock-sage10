@@ -8,7 +8,8 @@
         {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
       </div>
       <br>
-      <a class="acf-btn acf-btn-primary "  title="{{ get_bloginfo('name', 'display') }}" href="{{ home_url('/') }}" target="_self">
+      <a class="acf-btn acf-btn-primary" title="{{ get_bloginfo('name', 'display') }}" 
+      href="{{ home_url('/') }}" target="_self">
         <span class="btn-label">{{ __('BACK TO HOMEPAGE', 'sage') }}</span>
     </a>
     @endif
