@@ -39,3 +39,7 @@ $meta_per_page = get_field('meta_per_page', 'option');
         <meta property="{{ $property }}" content="{{ $content }}">
     @endif
 @endforeach
+
+@if (!empty($meta_fields['og:description']))
+    <meta name="description" content="{{ $meta_fields['og:description'] }}">
+@endif
