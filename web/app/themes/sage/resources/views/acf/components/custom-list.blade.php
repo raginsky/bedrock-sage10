@@ -1,9 +1,9 @@
 @php
 $styleClass = get_sub_field('style');
-$component =  $styleClass ? ' acf-list-' . get_sub_field('style') : '';
+$component =  $styleClass ? 'acf-list-' . get_sub_field('style') : '';
 
 $sliderClass = get_sub_field('slider') ? 'swiper' : '';
-$slideClass = $sliderClass ? " $sliderClass-slider" : '';
+$slideClass = $sliderClass ? " $sliderClass-slide" : '';
 
 $className = $class_name ?? '';
 @endphp
