@@ -34,12 +34,12 @@
     "@roots/bud-sass": "6.23.3",
     "@roots/bud-stylelint": "6.23.3",
     "@roots/bud-tailwindcss": "6.23.3",
-    "@roots/eslint-config": "^6.23.2",
+    "@roots/eslint-config": "6.23.3",
     "@roots/sage": "6.23.3"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.14",
+    "@tailwindcss/typography": "^0.5.15",
     "lodash": "^4.17.21",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.14"
   }
 }
