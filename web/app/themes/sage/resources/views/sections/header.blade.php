@@ -12,7 +12,7 @@
         </button>
       </div>
       <div id="nav_content" class="wpbase-header__content w-full flex-grow lg:flex lg:items-center lg:w-auto" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-        <div class="wpbase-header__menu lg:flex justify-end flex-1 items-center">
+        <ul class="wpbase-header__menu lg:flex justify-end flex-1 items-center">
           <button id="nav_close" class="close-icon">
             @include('svg.close')  
             </button>
