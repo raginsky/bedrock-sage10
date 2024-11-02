@@ -34,21 +34,21 @@ class ThemeOptions extends Field
         // Footer Tab
         $themeOptions->addTab('Footer', [
             'placement' => 'top',
-        ]);
+        ])
 
         // Social Media Links
-        $themeOptions->addFields( get_field_partial( 'layouts.footerContent' ) );
+        ->addFields( get_field_partial( 'layouts.footerContent' ) )
         
         // Meta Information Tab
-        $themeOptions->addTab('Meta', [
+        ->addTab('Meta', [
             'placement' => 'top',
-        ]);
+        ])
         
         // Analytics fields
-        $themeOptions->addTextarea( 'after_head_start', [ 'label' => 'After <b>head</b> start', 'rows' => '7', ] );
-        $themeOptions->addTextarea( 'after_body_start', [ 'label' => 'After <b>body</b> start', 'rows' => '7', ] );
+        ->addTextarea( 'after_head_start', [ 'label' => 'After <b>head</b> start', 'rows' => '7', ] )
+        ->addTextarea( 'after_body_start', [ 'label' => 'After <b>body</b> start', 'rows' => '7', ] )
         
-        $themeOptions->addFields( get_field_partial( 'partials.metaFields' ) );
+        ->addFields( get_field_partial( 'partials.metaFields' ) );
 
         // Return the built field group
         return $themeOptions->build();
