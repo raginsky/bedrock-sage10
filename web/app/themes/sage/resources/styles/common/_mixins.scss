@@ -10,6 +10,30 @@
   }
 }
 
+@mixin padding(
+  $padding-top,
+  $padding-bottom,
+  $desktop-padding-top: false,
+  $desktop-padding-bottom: false
+) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+
+  @include breakpoint(desktop) {
+    @if $desktop-padding-top != false {
+      padding-top: $desktop-padding-top;
+    } @else {
+      padding-top: $padding-top;
+    }
+
+    @if $desktop-padding-bottom != false {
+      padding-bottom: $desktop-padding-bottom;
+    } @else {
+      padding-bottom: $padding-bottom;
+    }
+  }
+}
+
 @mixin svg-size($width, $height, $newHeight) {
   $aspectRatio: calc($width / $height);
   $newWidth: ($newHeight * $aspectRatio);

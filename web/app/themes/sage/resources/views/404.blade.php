@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('sections.header')
+  {{-- @include('sections.header') --}}
   <div class="current-container container max-w-container-lg z-3 mx-auto w-full overflow-hidden flex flex-col relative">
     @if (!have_posts())
       <div class="alert alert-warning">

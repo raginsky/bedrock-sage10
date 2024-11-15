@@ -1,4 +1,8 @@
 .acf-row {
+  @include breakpoint(until_lg) {
+    gap: 2.4rem;
+  }
+
   &.reverse-columns {
     @include breakpoint(until_lg) {
       flex-direction: column-reverse;

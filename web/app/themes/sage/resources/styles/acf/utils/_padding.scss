@@ -1,23 +1,35 @@
-@mixin padding($padding, $desktop-padding: false) {
-  padding: $padding;
-
-  @if $desktop-padding {
-    @include breakpoint(desktop) {
-      padding: $desktop-padding;
-    }
-  }
-}
-
-.acf-padding {
+.acf-padding-top {
   &-lg {
-    @include padding($spacing_10, $spacing_20);
+    @include padding(8rem, null, 12rem, null);
   }
 
   &-md {
-    @include padding($spacing_5, $spacing_10);
+    @include padding(5rem, null, 6rem, null);
   }
 
   &-sm {
-    @include padding($spacing_4, $spacing_5);
+    @include padding(4rem, null, 5rem, null);
+  }
+
+  &-none {
+    @include padding(null, null, null, null);
+  }
+}
+
+.acf-padding-bottom {
+  &-lg {
+    @include padding(null, 8rem, null, 12rem);
+  }
+
+  &-md {
+    @include padding(null, 5rem, null, 6rem);
+  }
+
+  &-sm {
+    @include padding(null, 4rem, null, 5rem);
+  }
+
+  &-none {
+    @include padding(null, null, null, null);
   }
 }

@@ -1,6 +1,6 @@
 import 'swiper/swiper-bundle.css';
 import Swiper from 'swiper/bundle';
-import _ from 'lodash';
+import { debounce } from 'lodash';
 
 export const sliders = async (err) => {
   if (err) {
@@ -12,9 +12,10 @@ export const sliders = async (err) => {
     const swipers = document.querySelectorAll('.swiper-container');
 
     if (swipers.length === 0) {
-      return null; // Stop if no swiper containers are found
+      return []; // Return an empty array if no swiper containers are found
     }
 
+    const instances = [];
     swipers.forEach(function (swiperContainer) {
       const swiperId = swiperContainer.id;
       if (!swiperId) {
@@ -22,35 +23,57 @@ export const sliders = async (err) => {
         return; // Skip this swiper if it doesn't have an ID
       }
 
-      return new Swiper('.acf-custom-list-slider', {
+      const swiper = new Swiper(`#${swiperId}`, {
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 16,
         loop: true,
-        navigation: {
-          nextEl: '.' + swiperId + '-next',
-          prevEl: '.' + swiperId + '-prev',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            let out = '';
+            for (let i = 1; i <= total; i++) {
+              const isActive =
+                i === current ? 'swiper-pagination-bullet-active' : '';
+              out += `
+                <span 
+                  class="swiper-pagination-bullet ${isActive}" 
+                  tabindex="0" 
+                  role="button" 
+                  aria-label="Go to slide ${i}">
+                </span>`;
+            }
+            return out;
+          },
         },
       });
+      instances.push(swiper);
     });
+
+    return instances;
   }
 
-  let swiperInstance;
+  let swiperInstances = [];
   const breakpoint = 992;
 
-  const checkBreakpoint = _.debounce(() => {
+  const checkBreakpoint = debounce(() => {
     if (window.innerWidth < breakpoint) {
-      if (!swiperInstance) {
-        swiperInstance = initializeSwiper();
+      // Initialize Swiper on smaller screens if not already initialized
+      if (swiperInstances.length === 0) {
+        swiperInstances = initializeSwiper();
       }
     } else {
-      if (swiperInstance) {
-        swiperInstance.destroy(true, true);
-        swiperInstance = null;
+      // Destroy Swiper instances on larger screens
+      if (swiperInstances.length > 0) {
+        swiperInstances.forEach((instance) => instance.destroy(true, true));
+        swiperInstances = [];
       }
     }
   }, 300);
 
-  window.addEventListener('resize', checkBreakpoint);
+  window.addEventListener('resize', debounce(checkBreakpoint, 300));
+
   document.addEventListener('DOMContentLoaded', () => {
     checkBreakpoint();
   });
