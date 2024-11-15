@@ -7,6 +7,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
     @include('partials.meta-fields')
+    @include('partials.schema')
   </head>
   <body @php(body_class(pageClass())) class="leading-normal tracking-normal">
     {!! get_field('after_body_start', 'option') !!}
