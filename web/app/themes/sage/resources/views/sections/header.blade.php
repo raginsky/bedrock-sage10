@@ -7,13 +7,13 @@
     
       @if (has_nav_menu('primary_navigation'))
       <div class="flex items-center lg:hidden">
-        <button id="nav_toggle" class="menu-icon px-3 py-2">
+        <button id="nav_toggle" class="menu-icon px-3 py-2" aria-label="menu">
         @include('svg.burger')  
         </button>
       </div>
       <div id="nav_content" class="wpbase-header__content w-full flex-grow lg:flex lg:items-center lg:w-auto" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
         <ul class="wpbase-header__menu lg:flex justify-end flex-1 items-center">
-          <button id="nav_close" class="close-icon">
+          <button id="nav_close" class="close-icon" aria-label="close">
             @include('svg.close')  
             </button>
           {!! wp_nav_menu([
