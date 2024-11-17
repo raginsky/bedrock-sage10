@@ -66,7 +66,15 @@ export const sliders = async (err) => {
     } else {
       // Destroy Swiper instances on larger screens
       if (swiperInstances.length > 0) {
-        swiperInstances.forEach((instance) => instance.destroy(true, true));
+        swiperInstances.forEach((instance) => {
+          if (instance && instance.el && instance.el.parentNode) {
+            instance.destroy(true, true);
+          } else {
+            console.warn(
+              'Swiper instance container not found or already removed.',
+            );
+          }
+        });
         swiperInstances = [];
       }
     }
