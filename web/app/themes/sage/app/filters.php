@@ -58,3 +58,26 @@ add_filter('nav_menu_link_attributes', function ($attr, $item, $args) {
     }
     return $attr;
 }, 10, 3);
+
+/**
+ * Modify the document title based on Options page
+ */
+add_filter('pre_get_document_title', function ($title) {
+    $custom_titles = get_field('custom_page_titles', 'option');
+    $current_page_id = get_queried_object_id(); // Get the current page ID
+
+    // Check if custom titles are available
+    if (!empty($custom_titles) && is_array($custom_titles)) {
+        foreach ($custom_titles as $custom_title) {
+            // Match the current page ID to the target page ID in the repeater
+            if (!empty($custom_title['target_page']) && (int) $custom_title['target_page'] === $current_page_id) {
+                if (!empty($custom_title['custom_title'])) {
+                    return $custom_title['custom_title'];
+                }
+            }
+        }
+    }
+
+    // Fallback to the default WordPress title if no conditions are met.
+    return $title;
+});
