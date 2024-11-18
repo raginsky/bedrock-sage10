@@ -48,7 +48,32 @@ class ThemeOptions extends Field
         ->addTextarea( 'after_head_start', [ 'label' => 'After <b>head</b> start', 'rows' => '7', ] )
         ->addTextarea( 'after_body_start', [ 'label' => 'After <b>body</b> start', 'rows' => '7', ] )
         
-        ->addFields( get_field_partial( 'partials.metaFields' ) );
+        ->addFields( get_field_partial( 'partials.metaFields' ) )
+
+        // Titles Repeater Tab
+        ->addTab('Page Titles', [
+            'placement' => 'top',
+        ])
+        ->addRepeater('custom_page_titles', [
+            'label' => 'Custom Page Titles',
+            'instructions' => 'Add custom titles for specific pages.',
+            'layout' => 'block',
+        ])
+        ->addPostObject('target_page', [
+            'label' => 'Target Page',
+            'instructions' => 'Select the page for which this title should apply.',
+            'return_format' => 'id', // Store the post ID
+            'required' => 1,
+            'post_type' => ['page'],
+            'wrapper'     => ['width' => 50]
+        ])
+        ->addText('custom_title', [
+            'label' => 'Custom Title',
+            'instructions' => 'Enter the title to display on the frontend for this page.',
+            'required' => 1,
+            'wrapper'     => ['width' => 50]
+        ])
+        ->endRepeater();
 
         // Return the built field group
         return $themeOptions->build();

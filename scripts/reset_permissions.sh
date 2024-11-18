@@ -3,7 +3,7 @@
 # Navigate to the parent directory
 cd "$(dirname "$0")"
 source ./variables.sh
-cd ../
+cd ..
 
 # Change ownership
 sudo chown ${LOCAL_USER}:${DOCKER_GROUP} web/ -R

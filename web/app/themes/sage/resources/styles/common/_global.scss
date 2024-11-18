@@ -112,8 +112,25 @@ iframe {
   padding-left: 3rem;
 }
 
-.mx-auto {
-  .acf-image {
+.acf-image {
+  .text-center-mobile & {
+    @include breakpoint(until_lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // stylelint-disable selector-class-pattern
+  .lg\:text-center & {
+    @include breakpoint(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .mx-auto & {
     margin: 0 auto;
   }
 }
@@ -131,7 +148,7 @@ iframe {
 .acf-text,
 .acf-title {
   &.contained {
-    max-width: 63.5rem;
+    max-width: 120rem;
 
     .text-center-mobile & {
       @include breakpoint(until_lg) {
@@ -140,12 +157,16 @@ iframe {
       }
     }
 
-    // stylelint-disable selector-class-pattern
     .lg\:text-center & {
       @include breakpoint(lg) {
         margin-left: auto;
         margin-right: auto;
       }
+    }
+
+    @include breakpoint(until_desktop) {
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
     }
   }
 }

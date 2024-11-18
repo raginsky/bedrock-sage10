@@ -15,6 +15,7 @@ $builder
     ->addLayout( get_field_partial( 'components.buttons' ) )
     ->addLayout( get_field_partial( 'components.customList' ) )
     ->addLayout( get_field_partial( 'components.row' ) )
+    ->addLayout( get_field_partial( 'components.spacer' ) )
     
     ->endFlexibleContent();
 

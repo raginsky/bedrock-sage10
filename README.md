@@ -30,6 +30,7 @@ The project is structured as follows:
 ```bash
 ├── bedrock/
 │   ├── config/
+│   ├── build/
 │   ├── scripts/
 │   ├── web/
 │       ├── app/
@@ -96,8 +97,11 @@ To get started, you will need the following:
     Compile the assets for production with:
 
     ```bash
-    yarn build
+    yarn prod
     ```
+
+    Deployment process based on  - [Bedrock-docker](https://github.com/roots/bedrock-docker)
+    Use ./build folder
 
 ## Documentation and Resources
 

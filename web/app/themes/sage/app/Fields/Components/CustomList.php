@@ -12,8 +12,6 @@ $custom_list
         'allow_null' => 1,
         'choices'    => [
             'default' => 'Default Style',
-            'platform' => 'One Platform List',
-            'streamline' => 'Streamline your crypto',
         ],
         'wrapper'    => ['width' => 50],
     ])
@@ -49,13 +47,13 @@ $custom_list
     ->addWysiwyg('text', [
         'label' => null,
         'wrapper'   => ['width' => 40, 'class' => 'acf-custom-list-wysiwyg'],
-        'media_upload' => 0,
         'toolbar' => 'basic',
         'delay' => 1,
     ])
 
     ->addTab("Button")
     ->addFields(get_field_partial('fragments.button'))
+    
     ->addTab("Settings")
     ->addText('class_name', [
         'label' => 'Item class name',

@@ -8,9 +8,9 @@
 @fields('menu_items')
     @php
     $link = get_sub_field('link');
-    $link_url = $link['url'];
-    $link_title = esc_html($link['title']);
-    $link_target = $link['target'] ? $link['target'] : '_self';
+    $link_url = $link && $link['url'] ? $link['url'] : '';
+    $link_title = $link && $link['title'] ? esc_html($link['title']) : '';
+    $link_target = $link && $link['target'] ? $link['target'] : '_self';
 
     $weight = strtolower(get_sub_field('font_weight'));
     $weightClass = '';
@@ -29,6 +29,7 @@
             break;
     }
     @endphp
+    @if($link)
         <li class="mb-4">
             <a href="{{ $link_url }}" target="{{ $link_target }}" class="hover:text-blue-700 no-underline{{$weightClass}}"
             aria-label="{{$link_title}}"
@@ -36,6 +37,7 @@
                 <?= $link_title ?>
             </a>
         </li>
+        @endif
         @endfields
     </ul>
 @endwrapper(div)

@@ -92,3 +92,30 @@ add_action('admin_enqueue_scripts', 'custom_admin_styles');
 */
 
 add_theme_support('admin-bar', ['callback' => function() {} ]);
+
+/*
+|--------------------------------------------------------------------------
+| Optional Password Protect
+|--------------------------------------------------------------------------
+|
+| Imitates .htaccess AuthProtection
+|
+*/
+function wp_basic_auth() {
+    if (getenv('WP_ENV') !== 'staging') {
+        return;
+    }
+    
+    $username = getenv('BASIC_AUTH_USERNAME');
+    $password = getenv('BASIC_AUTH_PASSWORD');
+
+    if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])
+        || ($_SERVER['PHP_AUTH_USER'] != $username) || ($_SERVER['PHP_AUTH_PW'] != $password)) {
+        header('WWW-Authenticate: Basic realm="Protected Area"');
+        header('HTTP/1.0 401 Unauthorized');
+        echo 'Unauthorized access!';
+        exit;
+    }
+}
+
+wp_basic_auth();
