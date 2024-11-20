@@ -1,13 +1,16 @@
-<nav class="wpbase-header top-0 left-0 right-0 z-20 w-full">
+<nav class="wpbase-header top-0 left-0 right-0 z-20 w-full" aria-label="Primary Navigation">
   <div class="wpbase-header__container container max-w-container-lg mx-auto">
     <div class="wpbase-header__wrapper flex justify-between flex-wrap">
       <a class="flex items-center" href="{{ home_url('/') }}" title="{{ get_bloginfo('name', 'display') }}">
-        <div class="logo">@include('svg.logo')</div>
+        <div class="logo">
+          @include('svg.logo')
+          <span class="sr-only">{{ get_bloginfo('name') }}</span>
+        </div>
       </a>
     
       @if (has_nav_menu('primary_navigation'))
       <div class="flex items-center lg:hidden">
-        <button id="nav_toggle" class="menu-icon px-3 py-2" aria-label="menu">
+        <button id="nav_toggle" class="menu-icon px-3 py-2" aria-label="Toggle navigation">
         @include('svg.burger')  
         </button>
       </div>
