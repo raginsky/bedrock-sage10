@@ -8,7 +8,7 @@
         </div>
       </a>
     
-      @if (has_nav_menu('primary_navigation'))
+      {{-- @if (has_nav_menu('primary_navigation'))
       <div class="flex items-center lg:hidden">
         <button id="nav_toggle" class="menu-icon px-3 py-2" aria-label="Toggle navigation">
         @include('svg.burger')  
@@ -25,8 +25,10 @@
             'echo' => false]) !!}
         </ul>
       </div>
-      @endif
+      @endif --}}
       
+      @include('components.menu', ['name' => 'primary_navigation', 'inactive' => 'hover:text-blue-500', 'active' => 'text-blue-500'])
+
     </div>
   </div>
 </nav>
