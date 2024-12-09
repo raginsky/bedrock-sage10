@@ -31,7 +31,6 @@ body {
   @include breakpoint(until_lg) {
     &.mobile-menu-open {
       overflow: hidden;
-
       &::before {
         opacity: 1;
         pointer-events: auto;
