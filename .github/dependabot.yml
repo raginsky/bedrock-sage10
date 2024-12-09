@@ -7,7 +7,7 @@ updates:
       interval: "weekly"
     ignore:
       - dependency-name: "php" # Ignore platform dependencies (optional)
-
+    target-branch: "develop"
   # npm dependencies for Sage 10
   - package-ecosystem: "npm"
     directory: "/web/app/themes/sage"
