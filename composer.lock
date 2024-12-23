@@ -2671,16 +2671,16 @@
         },
         {
             "name": "log1x/acf-composer",
-            "version": "v3.2.0",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/acf-composer.git",
-                "reference": "5b25b6b0066a712bdfb3a176e9e2f805e1b93b07"
+                "reference": "9b3ba57c8865edc53d130fde68b0d783f32c470b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/5b25b6b0066a712bdfb3a176e9e2f805e1b93b07",
-                "reference": "5b25b6b0066a712bdfb3a176e9e2f805e1b93b07",
+                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/9b3ba57c8865edc53d130fde68b0d783f32c470b",
+                "reference": "9b3ba57c8865edc53d130fde68b0d783f32c470b",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
             "description": "Create fields, blocks, option pages, and widgets using ACF Builder and Sage 10",
             "support": {
                 "issues": "https://github.com/Log1x/acf-composer/issues",
-                "source": "https://github.com/Log1x/acf-composer/tree/v3.2.0"
+                "source": "https://github.com/Log1x/acf-composer/tree/v3.2.2"
             },
             "funding": [
                 {
@@ -2726,7 +2726,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-24T12:12:21+00:00"
+            "time": "2024-12-19T09:16:20+00:00"
         },
         {
             "name": "log1x/sage-svg",
@@ -5708,8 +5708,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
