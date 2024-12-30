@@ -2671,16 +2671,16 @@
         },
         {
             "name": "log1x/acf-composer",
-            "version": "v3.2.0",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/acf-composer.git",
-                "reference": "5b25b6b0066a712bdfb3a176e9e2f805e1b93b07"
+                "reference": "6c22d9f83a44ad5df7a1423ac2f200b3ae5c0346"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/5b25b6b0066a712bdfb3a176e9e2f805e1b93b07",
-                "reference": "5b25b6b0066a712bdfb3a176e9e2f805e1b93b07",
+                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/6c22d9f83a44ad5df7a1423ac2f200b3ae5c0346",
+                "reference": "6c22d9f83a44ad5df7a1423ac2f200b3ae5c0346",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
             "description": "Create fields, blocks, option pages, and widgets using ACF Builder and Sage 10",
             "support": {
                 "issues": "https://github.com/Log1x/acf-composer/issues",
-                "source": "https://github.com/Log1x/acf-composer/tree/v3.2.0"
+                "source": "https://github.com/Log1x/acf-composer/tree/v3.2.3"
             },
             "funding": [
                 {
@@ -2726,7 +2726,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-24T12:12:21+00:00"
+            "time": "2024-12-21T00:54:09+00:00"
         },
         {
             "name": "log1x/sage-svg",
@@ -4742,12 +4742,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -5708,8 +5708,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -6086,12 +6086,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
