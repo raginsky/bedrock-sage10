@@ -39,9 +39,9 @@
     "@roots/sage": "6.24.0"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "alpinejs": "^3.14.3",
+    "@tailwindcss/typography": "^0.5.16",
+    "alpinejs": "^3.14.8",
     "lodash": "^4.17.21",
-    "swiper": "^11.1.15"
+    "swiper": "^11.2.1"
   }
 }
