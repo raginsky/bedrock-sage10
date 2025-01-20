@@ -2671,16 +2671,16 @@
         },
         {
             "name": "log1x/acf-composer",
-            "version": "v3.2.4",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Log1x/acf-composer.git",
-                "reference": "f4a88d781727e40d2f537d401809bbd6064d079d"
+                "reference": "eb2d1bb43addecfddd64a4013b489e5576477a41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/f4a88d781727e40d2f537d401809bbd6064d079d",
-                "reference": "f4a88d781727e40d2f537d401809bbd6064d079d",
+                "url": "https://api.github.com/repos/Log1x/acf-composer/zipball/eb2d1bb43addecfddd64a4013b489e5576477a41",
+                "reference": "eb2d1bb43addecfddd64a4013b489e5576477a41",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2718,7 @@
             "description": "Create fields, blocks, option pages, and widgets using ACF Builder and Sage 10",
             "support": {
                 "issues": "https://github.com/Log1x/acf-composer/issues",
-                "source": "https://github.com/Log1x/acf-composer/tree/v3.2.4"
+                "source": "https://github.com/Log1x/acf-composer/tree/v3.3.0"
             },
             "funding": [
                 {
@@ -2726,7 +2726,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-07T11:18:41+00:00"
+            "time": "2025-01-18T07:29:05+00:00"
         },
         {
             "name": "log1x/sage-svg",
@@ -7628,5 +7628,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
