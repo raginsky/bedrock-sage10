@@ -39,7 +39,7 @@
     "@roots/sage": "6.23.3"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/typography": "^0.5.16",
     "lodash": "^4.17.21",
     "swiper": "^11.1.14"
   }
