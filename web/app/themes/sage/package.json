@@ -41,6 +41,6 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "lodash": "^4.17.21",
-    "swiper": "^11.2.5"
+    "swiper": "^11.2.6"
   }
 }
