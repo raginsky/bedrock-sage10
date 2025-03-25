@@ -10,9 +10,9 @@
 
     // Determine the link URL
     $link = get_sub_field('link');
-    $link_url = $link['url'];
-    $link_title = esc_html($link['title']);
-    $link_target = $link['target'] ? $link['target'] : '_self';
+    $link_url = $link && $link['url'] ? $link['url'] : '';
+    $link_title = $link && $link['title'] ? esc_html($link['title']) : '';
+    $link_target = $link && $link['target'] ? $link['target'] : '_self';
 @endphp
 
 @hassub('link')

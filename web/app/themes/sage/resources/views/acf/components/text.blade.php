@@ -1,7 +1,4 @@
 @php
-    $size = get_sub_field('size');
-    $sizeClass = $size ? " acf-text-$size" : '';
-    
     $color = get_sub_field('color');
     $colorClass = $color ? " text-$color" : '';
 
@@ -12,6 +9,6 @@
     $marginClass = $margin_bottom ? " acf-margin-$margin_bottom" : '';
 @endphp
 
-<div class="acf-{{ layout() }}{{$sizeClass}}{{$colorClass}}{{$marginClass}}{{$containedClass}}">
+<div class="acf-{{ layout() }}{{$colorClass}}{{$marginClass}}{{$containedClass}}">
     @sub('text')
 </div>

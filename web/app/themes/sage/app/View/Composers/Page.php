@@ -113,9 +113,21 @@ class Page extends Composer
 
     public static function padding()
     {
-        $padding = get_sub_field('padding');
-        return $padding ? ' acf-' . $padding : '';
-    }
+        $padding_top = get_sub_field('padding_top');
+        $padding_bottom = get_sub_field('padding_bottom');
+    
+        $classes = '';
+
+        if (!empty($padding_top)) {
+            $classes .= ' acf-' . esc_attr($padding_top);
+        }
+    
+        if (!empty($padding_bottom)) {
+            $classes .= ' acf-' . esc_attr($padding_bottom);
+        }
+    
+        return $classes;
+    }   
     
     public static function moduleAttr()
     {

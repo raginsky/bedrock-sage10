@@ -3,9 +3,6 @@
     
     $color = strtolower(get_sub_field('color'));
     $colorClass = $color ? " text-$color" : '';
-    
-    $size = get_sub_field('size');
-    $sizeClass = $size ? " acf-text-$size" : '';
 
     $contained = get_sub_field('contained');
     $containedClass = $contained ? " contained" : '';
@@ -26,6 +23,6 @@
     }
 @endphp
 
-<{{$tag}} class="acf-title{{$colorClass}}{{$sizeClass}}{{$weightClass}}{{$uppercaseClass}}{{$marginClass}}{{$containedClass}}"{{$href}}>
+<{{$tag}} class="acf-title{{$colorClass}}{{$weightClass}}{{$uppercaseClass}}{{$marginClass}}{{$containedClass}}"{{$href}}>
     {!! get_sub_field('title') !!}
 </{{$tag}}>

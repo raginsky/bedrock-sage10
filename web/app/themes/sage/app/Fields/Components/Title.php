@@ -43,19 +43,6 @@ $title
     ])
     ->addText('url', ['wrapper' => ['width' => 15]])
     ->conditional('tag', '==', 'a')
-    ->addSelect('size', [
-        'label'       => 'Size',
-        'allow_null'  => 1,
-        'choices'     => [
-            'xl' => 'Extra Large',
-            'lg' => 'Large',
-            'md' => 'Medium',
-            'sm' => 'Small',
-            'xs' => 'Extra Small'
-        ],
-        'default_value' => 'md',
-        'wrapper'     => ['width' => 12]
-    ])
     ->addSelect('weight', [
         'label'       => 'Font Weight',
         'choices'     => [
