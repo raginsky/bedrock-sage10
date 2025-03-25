@@ -18,12 +18,4 @@
   &-xl {
     margin-bottom: 4rem;
   }
-
-  &-xxl {
-    margin-bottom: 4rem;
-
-    @include breakpoint(desktop) {
-      margin-bottom: 6rem;
-    }
-  }
 }

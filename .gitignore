@@ -12,6 +12,9 @@ web/app/cache/*
 web/wp
 web/.htaccess
 
+#Updraft
+web/app/updraft
+
 # Logs
 *.log
 

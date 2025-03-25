@@ -60,12 +60,13 @@ $meta_fields
         ])
         ->addText('meta_url', [
             'label' => 'Meta URL',
-            'wrapper'    => ['width' => 20]
+            'wrapper' => ['width' => 20],
+            'default_value' => home_url(),
         ])
         ->addText('meta_type', [
             'label' => 'Meta Type',
             'default_value' => 'website',
-            'wrapper'    => ['width' => 10]
+            'wrapper' => ['width' => 10]
         ])
         ->endRepeater();
 

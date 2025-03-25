@@ -15,18 +15,6 @@ $text
 
     // Settings Tab
     ->addTab('Settings')
-    ->addSelect('size', [
-        'label'       => 'Size',
-        'allow_null'  => 1,
-        'choices'     => [
-            'xs' => 'Extra Small',
-            'sm' => 'Small',
-            'md' => 'Medium',
-            'lg' => 'Large',
-            'xl' => 'Extra Large',
-        ],
-        'wrapper'     => ['width' => 15]
-    ])
     ->addRadio('color', [
         'label'       => 'Color',
         'allow_null'  => 1,

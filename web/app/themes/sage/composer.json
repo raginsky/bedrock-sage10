@@ -43,6 +43,7 @@
   },
   "require": {
     "php": ">=8.2",
+    "log1x/navi": "^3.1",
     "log1x/sage-directives": "^2.0.4"
   },
   "require-dev": {

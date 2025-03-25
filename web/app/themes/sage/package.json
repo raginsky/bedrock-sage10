@@ -1,6 +1,6 @@
 {
   "name": "WpBase",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "browserslist": [
     "extends @roots/browserslist-config"
@@ -29,17 +29,18 @@
     "fix": "yarn lint:js:fix && yarn lint:css:fix && yarn prettier:fix"
   },
   "devDependencies": {
-    "@roots/bud": "6.23.3",
-    "@roots/bud-eslint": "6.23.3",
-    "@roots/bud-prettier": "6.23.3",
-    "@roots/bud-sass": "6.23.3",
-    "@roots/bud-stylelint": "6.23.3",
-    "@roots/bud-tailwindcss": "6.23.3",
-    "@roots/eslint-config": "6.23.3",
-    "@roots/sage": "6.23.3"
+    "@roots/bud": "6.24.0",
+    "@roots/bud-eslint": "6.24.0",
+    "@roots/bud-prettier": "6.24.0",
+    "@roots/bud-sass": "6.24.0",
+    "@roots/bud-stylelint": "6.24.0",
+    "@roots/bud-tailwindcss": "6.24.0",
+    "@roots/eslint-config": "6.24.0",
+    "@roots/sage": "6.24.0"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/typography": "^0.5.16",
+    "alpinejs": "^3.14.8",
     "lodash": "^4.17.21",
     "swiper": "^11.2.5"
   }

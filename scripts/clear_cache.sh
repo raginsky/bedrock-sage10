@@ -10,4 +10,4 @@ docker-compose exec bedrock chown -R www-data:www-data /srv/bedrock/web/app/cach
 # Run yarn dev in the Sage theme directory
 docker-compose exec bedrock bash -c "cd /srv/bedrock/web/app/themes/sage && yarn prod"
 
-echo "Acorn cache has been cleared, permissions set, and dependecies has been built."
+echo "Acorn cache has been cleared, permissions set, and dependencies has been built."
