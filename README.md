@@ -1,3 +1,8 @@
+# ⚠️ Archived / Not Maintained ![status: archived](https://img.shields.io/badge/status-archived-red)
+
+This repository is no longer maintained following the release of Sage 11.  
+For the latest version, please see [Sage 11](https://roots.io/sage/).
+
 # WpBase Theme Project
 
 Welcome to the WpBase Theme project! This repository contains a custom WordPress theme built with Sage 10, Acorn, TailwindCSS, ACF Pro, and ACF Builder. The project is structured using Bedrock and is intended to be used with LocalWP for local development.
